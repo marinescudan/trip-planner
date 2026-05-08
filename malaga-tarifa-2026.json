@@ -1,0 +1,6122 @@
+{
+  "$schema": "trip-app/v1.0.0",
+  "trip": {
+    "id": "malaga-tarifa-2026",
+    "title": "Málaga + Tarifa",
+    "subtitle": "11 days · May 2026",
+    "description": "Andalusia road trip: 5 nights Málaga, 3 in Tarifa, 3 back in Málaga. Birthday on day 7.",
+    "startDate": "2026-05-12",
+    "endDate": "2026-05-23",
+    "timezone": "Europe/Madrid",
+    "currency": "EUR",
+    "language": "en",
+    "travelers": [
+      {
+        "id": "dan",
+        "name": "Dan"
+      },
+      {
+        "id": "raluca",
+        "name": "Raluca",
+        "birthdayDuringTrip": "2026-05-18"
+      }
+    ],
+    "theme": {
+      "primary": "#0ea5e9",
+      "accent": "#a855f7",
+      "bg": "#fefcf9"
+    }
+  },
+  "homeBases": [
+    {
+      "id": "malaga-1",
+      "label": "Málaga 1",
+      "city": "Málaga",
+      "coords": [
+        36.7213,
+        -4.4214
+      ],
+      "dateRange": {
+        "from": "2026-05-12",
+        "to": "2026-05-17"
+      },
+      "notes": "First stay, 5 nights"
+    },
+    {
+      "id": "tarifa",
+      "label": "Tarifa",
+      "city": "Tarifa",
+      "coords": [
+        36.0143,
+        -5.6063
+      ],
+      "dateRange": {
+        "from": "2026-05-17",
+        "to": "2026-05-20"
+      },
+      "notes": "Birthday stay, rental car here"
+    },
+    {
+      "id": "malaga-2",
+      "label": "Málaga 2",
+      "city": "Málaga",
+      "coords": [
+        36.7213,
+        -4.4214
+      ],
+      "dateRange": {
+        "from": "2026-05-20",
+        "to": "2026-05-23"
+      },
+      "notes": "Final stay, 3 nights"
+    }
+  ],
+  "taxonomy": {
+    "slots": [
+      {
+        "id": "morning",
+        "label": "Morning",
+        "icon": "🌅",
+        "order": 1,
+        "timeHint": "9–12"
+      },
+      {
+        "id": "lunch",
+        "label": "Lunch",
+        "icon": "🍽",
+        "order": 2,
+        "timeHint": "12–14"
+      },
+      {
+        "id": "afternoon",
+        "label": "Afternoon",
+        "icon": "☀️",
+        "order": 3,
+        "timeHint": "14–17"
+      },
+      {
+        "id": "snack",
+        "label": "Snack / coffee",
+        "icon": "☕",
+        "order": 4,
+        "timeHint": "17–18"
+      },
+      {
+        "id": "evening",
+        "label": "Evening",
+        "icon": "🌇",
+        "order": 5,
+        "timeHint": "18–21"
+      },
+      {
+        "id": "dinner",
+        "label": "Dinner",
+        "icon": "🍷",
+        "order": 6,
+        "timeHint": "21–23"
+      },
+      {
+        "id": "night",
+        "label": "Night",
+        "icon": "🌙",
+        "order": 7,
+        "timeHint": "23+"
+      }
+    ],
+    "priorityTiers": [
+      {
+        "id": "must",
+        "label": "Must",
+        "color": "#ef4444",
+        "weight": 4
+      },
+      {
+        "id": "recommended",
+        "label": "Recommended",
+        "color": "#f59e0b",
+        "weight": 3
+      },
+      {
+        "id": "optional",
+        "label": "Optional",
+        "color": "#10b981",
+        "weight": 2
+      },
+      {
+        "id": "backup",
+        "label": "Backup",
+        "color": "#94a3b8",
+        "weight": 1
+      }
+    ],
+    "costTiers": [
+      {
+        "id": "free",
+        "label": "Free",
+        "symbol": "Free",
+        "max": 0
+      },
+      {
+        "id": "cheap",
+        "label": "≤€10",
+        "symbol": "€",
+        "max": 10
+      },
+      {
+        "id": "mid",
+        "label": "€10–30",
+        "symbol": "€€",
+        "max": 30
+      },
+      {
+        "id": "high",
+        "label": "€30+",
+        "symbol": "€€€",
+        "max": null
+      }
+    ],
+    "zones": [
+      {
+        "id": 1,
+        "label": "Walking",
+        "hint": "≤10 min walk"
+      },
+      {
+        "id": 2,
+        "label": "Near",
+        "hint": "10–25 min"
+      },
+      {
+        "id": 3,
+        "label": "Drive",
+        "hint": "≤30 min"
+      },
+      {
+        "id": 4,
+        "label": "Day trip",
+        "hint": "30 min – 2 h"
+      }
+    ],
+    "energy": [
+      {
+        "id": "light",
+        "label": "Light",
+        "icon": "🪶"
+      },
+      {
+        "id": "moderate",
+        "label": "Moderate",
+        "icon": "🚶"
+      },
+      {
+        "id": "heavy",
+        "label": "Heavy",
+        "icon": "💪"
+      }
+    ],
+    "weatherFlags": [
+      "sun",
+      "wind-bad",
+      "indoor-friendly"
+    ]
+  },
+  "places": [
+    {
+      "id": "mlg-alcazaba",
+      "name": "Alcazaba",
+      "type": "monument",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72175,
+        -4.41541
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72175,-4.41541",
+      "photos": [
+        {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Alcazaba_de_M%C3%A1laga_overview.jpg?width=800",
+          "alt": "Alcazaba",
+          "credit": "Wikimedia Commons",
+          "fallback": "https://picsum.photos/seed/mlg-alcazaba/800/600"
+        }
+      ],
+      "description": "11th-c Moorish fortress with gardens and views over the city.",
+      "priority": "must",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 90,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "history",
+        "views",
+        "walking",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "notes": "Combo €5.50 with Gibralfaro. Go early to avoid heat.",
+      "pairs": [
+        "mlg-gibralfaro",
+        "mlg-roman-theatre"
+      ]
+    },
+    {
+      "id": "mlg-gibralfaro",
+      "name": "Castillo de Gibralfaro",
+      "type": "monument",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72374,
+        -4.41024
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72374,-4.41024",
+      "photos": [
+        {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Castillo_de_Gibralfaro%2C_M%C3%A1laga%2C_Andalucia%2C_Spain.jpg?width=800",
+          "alt": "Castillo de Gibralfaro",
+          "credit": "Wikimedia Commons",
+          "fallback": "https://picsum.photos/seed/mlg-gibralfaro/800/600"
+        }
+      ],
+      "description": "Hilltop castle with the best panoramic views of Málaga.",
+      "priority": "must",
+      "zone": 2,
+      "cost": "cheap",
+      "duration": 60,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "evening"
+      ],
+      "tags": [
+        "history",
+        "views",
+        "golden-hour",
+        "walking",
+        "raluca-camera"
+      ],
+      "energy": "heavy",
+      "bookingRequired": false,
+      "notes": "Walk up via Paseo Don Juan de Temboury for the path. Sunset is unbeatable.",
+      "pairs": [
+        "mlg-alcazaba"
+      ]
+    },
+    {
+      "id": "mlg-roman-theatre",
+      "name": "Roman Theatre",
+      "type": "monument",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72163,
+        -4.41753
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72163,-4.41753",
+      "photos": [
+        {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Teatro_Romano_de_M%C3%A1laga_2.jpg?width=800",
+          "alt": "Roman Theatre",
+          "credit": "Wikimedia Commons",
+          "fallback": "https://picsum.photos/seed/mlg-roman-theatre/800/600"
+        }
+      ],
+      "description": "1st-c BC Roman theatre at the foot of the Alcazaba.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "free",
+      "duration": 20,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "evening"
+      ],
+      "tags": [
+        "history",
+        "free",
+        "photo-friendly"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "pairs": [
+        "mlg-alcazaba"
+      ]
+    },
+    {
+      "id": "mlg-catedral",
+      "name": "Catedral La Manquita",
+      "type": "monument",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.7199,
+        -4.4205
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.7199,-4.4205",
+      "photos": [
+        {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Catedral_de_M%C3%A1laga.JPG?width=800",
+          "alt": "Catedral La Manquita",
+          "credit": "Wikimedia Commons",
+          "fallback": "https://picsum.photos/seed/mlg-catedral/800/600"
+        }
+      ],
+      "description": "‘The one-armed lady’ — Renaissance cathedral with rooftop access.",
+      "priority": "must",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 75,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "architecture",
+        "views",
+        "history",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "notes": "Climb rooftop (€10) for 360° views. Closes early on Sundays."
+    },
+    {
+      "id": "mlg-english-cemetery",
+      "name": "English Cemetery",
+      "type": "monument",
+      "homeBase": "malaga-1",
+      "area": "Centro Este",
+      "coords": [
+        36.72294,
+        -4.407
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72294,-4.407",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-english-cemetery/800/600",
+          "alt": "English Cemetery"
+        }
+      ],
+      "description": "Oldest Protestant cemetery in Spain. Quiet, weirdly beautiful.",
+      "priority": "optional",
+      "zone": 2,
+      "cost": "cheap",
+      "duration": 30,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "mystic",
+        "quirky",
+        "walking",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-picasso",
+      "name": "Museo Picasso",
+      "type": "museum",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72163,
+        -4.41842
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72163,-4.41842",
+      "photos": [
+        {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Museo_Picasso_M%C3%A1laga.jpg?width=800",
+          "alt": "Museo Picasso",
+          "credit": "Wikimedia Commons",
+          "fallback": "https://picsum.photos/seed/mlg-picasso/800/600"
+        }
+      ],
+      "description": "Picasso's hometown collection in a 16th-c palace.",
+      "priority": "must",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 90,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "art",
+        "museum",
+        "indoor",
+        "rainy-day"
+      ],
+      "energy": "moderate",
+      "bookingRequired": true,
+      "bookingUrl": "https://www.museopicassomalaga.org/"
+    },
+    {
+      "id": "mlg-picasso-natal",
+      "name": "Casa Natal Picasso",
+      "type": "museum",
+      "homeBase": "malaga-1",
+      "area": "Plaza Merced",
+      "coords": [
+        36.72285,
+        -4.41737
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72285,-4.41737",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-picasso-natal/800/600",
+          "alt": "Casa Natal Picasso"
+        }
+      ],
+      "description": "Picasso's birthplace, small but evocative.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 30,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "art",
+        "history",
+        "quirky",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-pompidou",
+      "name": "Centre Pompidou Málaga",
+      "type": "museum",
+      "homeBase": "malaga-1",
+      "area": "Muelle Uno",
+      "coords": [
+        36.71562,
+        -4.41463
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71562,-4.41463",
+      "photos": [
+        {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Centre_Pompidou_M%C3%A1laga.jpg?width=800",
+          "alt": "Centre Pompidou Málaga",
+          "credit": "Wikimedia Commons",
+          "fallback": "https://picsum.photos/seed/mlg-pompidou/800/600"
+        }
+      ],
+      "description": "Modern art in an iconic glass cube on the port.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 90,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "evening"
+      ],
+      "tags": [
+        "art",
+        "museum",
+        "architecture",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-thyssen",
+      "name": "Carmen Thyssen Museum",
+      "type": "museum",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72066,
+        -4.42298
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72066,-4.42298",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-thyssen/800/600",
+          "alt": "Carmen Thyssen Museum"
+        }
+      ],
+      "description": "19th-c Andalusian painting collection.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 60,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "art",
+        "museum",
+        "indoor",
+        "rainy-day"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-museo-malaga",
+      "name": "Museo de Málaga",
+      "type": "museum",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.7202,
+        -4.41671
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.7202,-4.41671",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-museo-malaga/800/600",
+          "alt": "Museo de Málaga"
+        }
+      ],
+      "description": "Fine arts + archaeology, free for EU citizens.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "free",
+      "duration": 90,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "art",
+        "museum",
+        "history",
+        "free",
+        "indoor",
+        "rainy-day"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-cac",
+      "name": "CAC Málaga",
+      "type": "gallery",
+      "homeBase": "malaga-1",
+      "area": "Soho",
+      "coords": [
+        36.716,
+        -4.42655
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.716,-4.42655",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-cac/800/600",
+          "alt": "CAC Málaga"
+        }
+      ],
+      "description": "Contemporary art center, free, excellent rotating exhibitions.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "free",
+      "duration": 60,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "art",
+        "free",
+        "modern",
+        "indoor"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "pairs": [
+        "mlg-soho",
+        "mlg-maus-tour"
+      ]
+    },
+    {
+      "id": "mlg-termica",
+      "name": "La Térmica",
+      "type": "gallery",
+      "homeBase": "malaga-1",
+      "area": "Carretera de Cádiz",
+      "coords": [
+        36.70966,
+        -4.45146
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.70966,-4.45146",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-termica/800/600",
+          "alt": "La Térmica"
+        }
+      ],
+      "description": "Cultural center in old hospital — exhibitions, talks, free.",
+      "priority": "optional",
+      "zone": 3,
+      "cost": "free",
+      "duration": 60,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "evening"
+      ],
+      "tags": [
+        "art",
+        "free",
+        "local",
+        "indoor"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-automovilistico",
+      "name": "Museo Automovilístico",
+      "type": "museum",
+      "homeBase": "malaga-1",
+      "area": "Tabacalera",
+      "coords": [
+        36.71042,
+        -4.43955
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71042,-4.43955",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-automovilistico/800/600",
+          "alt": "Museo Automovilístico"
+        }
+      ],
+      "description": "Vintage cars and fashion in a former tobacco factory.",
+      "priority": "optional",
+      "zone": 2,
+      "cost": "cheap",
+      "duration": 90,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "quirky",
+        "museum",
+        "architecture",
+        "indoor"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-vidrio",
+      "name": "Museo del Vidrio",
+      "type": "museum",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72415,
+        -4.4225
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72415,-4.4225",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-vidrio/800/600",
+          "alt": "Museo del Vidrio"
+        }
+      ],
+      "description": "Glass museum in 18th-c building, guided visits in EN/ES.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 60,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "museum",
+        "quirky",
+        "architecture",
+        "indoor"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-flamenco-museum",
+      "name": "Museo del Flamenco",
+      "type": "museum",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72268,
+        -4.42203
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72268,-4.42203",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-flamenco-museum/800/600",
+          "alt": "Museo del Flamenco"
+        }
+      ],
+      "description": "Small flamenco-history museum.",
+      "priority": "backup",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 60,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "flamenco",
+        "museum",
+        "indoor",
+        "rainy-day"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-vino",
+      "name": "Museo del Vino Málaga",
+      "type": "museum",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72196,
+        -4.42026
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72196,-4.42026",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-vino/800/600",
+          "alt": "Museo del Vino Málaga"
+        }
+      ],
+      "description": "Wine history museum with complimentary tasting.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 60,
+      "validSlots": [
+        "afternoon",
+        "evening"
+      ],
+      "tags": [
+        "wine",
+        "local",
+        "quirky",
+        "indoor"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-oxo",
+      "name": "OXO Museum",
+      "type": "museum",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72056,
+        -4.41957
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72056,-4.41957",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-oxo/800/600",
+          "alt": "OXO Museum"
+        }
+      ],
+      "description": "Quirky video games museum.",
+      "priority": "backup",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 60,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "quirky",
+        "indoor",
+        "family",
+        "rainy-day"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-larios",
+      "name": "Calle Larios",
+      "type": "walk",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.71988,
+        -4.42172
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71988,-4.42172",
+      "photos": [
+        {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Calle_Larios_%28M%C3%A1laga%2C_Espa%C3%B1a%29.jpg?width=800",
+          "alt": "Calle Larios",
+          "credit": "Wikimedia Commons",
+          "fallback": "https://picsum.photos/seed/mlg-larios/800/600"
+        }
+      ],
+      "description": "Marble pedestrian shopping street, the city's spine.",
+      "priority": "must",
+      "zone": 1,
+      "cost": "free",
+      "duration": 30,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "snack",
+        "evening",
+        "night"
+      ],
+      "tags": [
+        "walking",
+        "free",
+        "photo-friendly",
+        "touristy"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-soho",
+      "name": "Soho district walk",
+      "type": "art-walk",
+      "homeBase": "malaga-1",
+      "area": "Soho",
+      "coords": [
+        36.71699,
+        -4.42435
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71699,-4.42435",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-soho/800/600",
+          "alt": "Soho district walk"
+        }
+      ],
+      "description": "Street art district, MAUS murals.",
+      "priority": "must",
+      "zone": 1,
+      "cost": "free",
+      "duration": 60,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "snack",
+        "evening"
+      ],
+      "tags": [
+        "art",
+        "street-art",
+        "walking",
+        "free",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "pairs": [
+        "mlg-cac",
+        "mlg-maus-tour"
+      ]
+    },
+    {
+      "id": "mlg-maus-tour",
+      "name": "MAUS murals self-tour",
+      "type": "art-walk",
+      "homeBase": "malaga-1",
+      "area": "Soho",
+      "coords": [
+        36.71653,
+        -4.42395
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71653,-4.42395",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-maus-tour/800/600",
+          "alt": "MAUS murals self-tour"
+        }
+      ],
+      "description": "MAUS project murals — Obey, D*Face, ROA, Boa Mistura.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "free",
+      "duration": 60,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "snack",
+        "evening"
+      ],
+      "tags": [
+        "street-art",
+        "art",
+        "walking",
+        "free",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "pairs": [
+        "mlg-soho"
+      ]
+    },
+    {
+      "id": "mlg-lagunillas",
+      "name": "Lagunillas barrio",
+      "type": "art-walk",
+      "homeBase": "malaga-1",
+      "area": "Lagunillas",
+      "coords": [
+        36.72475,
+        -4.41684
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72475,-4.41684",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-lagunillas/800/600",
+          "alt": "Lagunillas barrio"
+        }
+      ],
+      "description": "Alt street art neighborhood, gritty, gentrifying. Off-beaten path.",
+      "priority": "recommended",
+      "zone": 2,
+      "cost": "free",
+      "duration": 45,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "snack"
+      ],
+      "tags": [
+        "street-art",
+        "art",
+        "walking",
+        "free",
+        "local",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-pedregalejo-paseo",
+      "name": "Pedregalejo paseo",
+      "type": "walk",
+      "homeBase": "malaga-1",
+      "area": "Pedregalejo",
+      "coords": [
+        36.72013,
+        -4.36793
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72013,-4.36793",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-pedregalejo-paseo/800/600",
+          "alt": "Pedregalejo paseo"
+        }
+      ],
+      "description": "Old fishing barrio promenade, palms, chiringuitos.",
+      "priority": "recommended",
+      "zone": 3,
+      "cost": "free",
+      "duration": 60,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "evening"
+      ],
+      "tags": [
+        "walking",
+        "free",
+        "local",
+        "seafood",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "pairs": [
+        "mlg-pedregalejo-beach"
+      ]
+    },
+    {
+      "id": "mlg-muelle-uno",
+      "name": "Muelle Uno port",
+      "type": "walk",
+      "homeBase": "malaga-1",
+      "area": "Port",
+      "coords": [
+        36.71447,
+        -4.41509
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71447,-4.41509",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-muelle-uno/800/600",
+          "alt": "Muelle Uno port"
+        }
+      ],
+      "description": "Port promenade, sunset spot, glass cube of Pompidou.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "free",
+      "duration": 45,
+      "validSlots": [
+        "afternoon",
+        "snack",
+        "evening"
+      ],
+      "tags": [
+        "walking",
+        "free",
+        "golden-hour",
+        "photo-friendly"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-merced",
+      "name": "Plaza de la Merced",
+      "type": "walk",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72341,
+        -4.4173
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72341,-4.4173",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-merced/800/600",
+          "alt": "Plaza de la Merced"
+        }
+      ],
+      "description": "Picasso's birthplace square, late-night bars, palm tree obelisk.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "free",
+      "duration": 30,
+      "validSlots": [
+        "snack",
+        "evening",
+        "dinner",
+        "night"
+      ],
+      "tags": [
+        "walking",
+        "free",
+        "local",
+        "night-owl"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-pimpi",
+      "name": "El Pimpi",
+      "type": "food",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72175,
+        -4.41685
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72175,-4.41685",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-pimpi/800/600",
+          "alt": "El Pimpi"
+        }
+      ],
+      "description": "Iconic 1971 wine cellar bar; share tapas, touristy but right.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 90,
+      "validSlots": [
+        "lunch",
+        "dinner"
+      ],
+      "tags": [
+        "tapas",
+        "food",
+        "local",
+        "romantic",
+        "touristy"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "openingHours": "12:00–01:00"
+    },
+    {
+      "id": "mlg-casa-lola",
+      "name": "Casa Lola",
+      "type": "food",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.7224,
+        -4.41842
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.7224,-4.41842",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-casa-lola/800/600",
+          "alt": "Casa Lola"
+        }
+      ],
+      "description": "Cheap solid tapas, multiple branches.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 60,
+      "validSlots": [
+        "lunch",
+        "dinner"
+      ],
+      "tags": [
+        "tapas",
+        "food",
+        "budget",
+        "local"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-tapeo-cervantes",
+      "name": "El Tapeo de Cervantes",
+      "type": "food",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72333,
+        -4.41684
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72333,-4.41684",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-tapeo-cervantes/800/600",
+          "alt": "El Tapeo de Cervantes"
+        }
+      ],
+      "description": "Small, excellent modern tapas. Book ahead.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 90,
+      "validSlots": [
+        "dinner"
+      ],
+      "tags": [
+        "tapas",
+        "food",
+        "romantic"
+      ],
+      "energy": "moderate",
+      "bookingRequired": true
+    },
+    {
+      "id": "mlg-tranca",
+      "name": "La Tranca",
+      "type": "food",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72327,
+        -4.42028
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72327,-4.42028",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-tranca/800/600",
+          "alt": "La Tranca"
+        }
+      ],
+      "description": "Vermouth + tapas, no-reservation, packed with locals.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 45,
+      "validSlots": [
+        "snack",
+        "evening"
+      ],
+      "tags": [
+        "tapas",
+        "wine",
+        "local",
+        "budget",
+        "night-owl"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-uvedoble",
+      "name": "Uvedoble",
+      "type": "food",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72085,
+        -4.41889
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72085,-4.41889",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-uvedoble/800/600",
+          "alt": "Uvedoble"
+        }
+      ],
+      "description": "Modern, refined tapas.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "high",
+      "duration": 90,
+      "validSlots": [
+        "lunch",
+        "dinner"
+      ],
+      "tags": [
+        "tapas",
+        "food",
+        "romantic"
+      ],
+      "energy": "moderate",
+      "bookingRequired": true
+    },
+    {
+      "id": "mlg-kgb",
+      "name": "KGB",
+      "type": "food",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72026,
+        -4.42212
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72026,-4.42212",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-kgb/800/600",
+          "alt": "KGB"
+        }
+      ],
+      "description": "Gourmet fusion tapas, top-rated.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "high",
+      "duration": 90,
+      "validSlots": [
+        "lunch",
+        "dinner"
+      ],
+      "tags": [
+        "food",
+        "fusion",
+        "romantic"
+      ],
+      "energy": "moderate",
+      "bookingRequired": true
+    },
+    {
+      "id": "mlg-patios-beatas",
+      "name": "Los Patios de Beatas",
+      "type": "food",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72213,
+        -4.42235
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72213,-4.42235",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-patios-beatas/800/600",
+          "alt": "Los Patios de Beatas"
+        }
+      ],
+      "description": "Wine bar with tapas in a converted patio house.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 90,
+      "validSlots": [
+        "lunch",
+        "dinner"
+      ],
+      "tags": [
+        "wine",
+        "tapas",
+        "romantic",
+        "architecture"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-mariano",
+      "name": "Mesón Mariano",
+      "type": "food",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72445,
+        -4.42083
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72445,-4.42083",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-mariano/800/600",
+          "alt": "Mesón Mariano"
+        }
+      ],
+      "description": "Old-school tavern, famous for artichokes.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 90,
+      "validSlots": [
+        "lunch",
+        "dinner"
+      ],
+      "tags": [
+        "tapas",
+        "food",
+        "local"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-tintero",
+      "name": "El Tintero",
+      "type": "food",
+      "homeBase": "malaga-1",
+      "area": "El Palo",
+      "coords": [
+        36.71792,
+        -4.34861
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71792,-4.34861",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-tintero/800/600",
+          "alt": "El Tintero"
+        }
+      ],
+      "description": "Auction-style fish — waiters yell dishes, you grab. Lunch only.",
+      "priority": "must",
+      "zone": 3,
+      "cost": "mid",
+      "duration": 90,
+      "validSlots": [
+        "lunch"
+      ],
+      "tags": [
+        "seafood",
+        "food",
+        "local",
+        "quirky",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "notes": "No reservations. Get there before 14:00."
+    },
+    {
+      "id": "mlg-guardia",
+      "name": "Antigua Casa de Guardia",
+      "type": "food",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72018,
+        -4.42388
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72018,-4.42388",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-guardia/800/600",
+          "alt": "Antigua Casa de Guardia"
+        }
+      ],
+      "description": "Oldest taberna (1840), wines from the barrel.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 30,
+      "validSlots": [
+        "snack",
+        "evening"
+      ],
+      "tags": [
+        "wine",
+        "local",
+        "quirky",
+        "budget",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-atarazanas-eat",
+      "name": "Mercado Atarazanas stalls",
+      "type": "food",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.71927,
+        -4.42485
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71927,-4.42485",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-atarazanas-eat/800/600",
+          "alt": "Mercado Atarazanas stalls"
+        }
+      ],
+      "description": "Eat at the bar inside the historic market.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 45,
+      "validSlots": [
+        "lunch"
+      ],
+      "tags": [
+        "food",
+        "seafood",
+        "local",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-melhor-croissant",
+      "name": "O Melhor Croissant",
+      "type": "cafe",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72155,
+        -4.42036
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72155,-4.42036",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-melhor-croissant/800/600",
+          "alt": "O Melhor Croissant"
+        }
+      ],
+      "description": "Caramelized sweet croissants with savory fillings (tuna, ham). Unique.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 30,
+      "validSlots": [
+        "morning",
+        "snack"
+      ],
+      "tags": [
+        "coffee",
+        "brunch",
+        "quirky",
+        "local",
+        "budget"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-catrina",
+      "name": "La Catrina Cervecería",
+      "type": "food",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72366,
+        -4.42008
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72366,-4.42008",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-catrina/800/600",
+          "alt": "La Catrina Cervecería"
+        }
+      ],
+      "description": "Best Mexican in Málaga, locals' tip.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 60,
+      "validSlots": [
+        "lunch",
+        "dinner"
+      ],
+      "tags": [
+        "food",
+        "local",
+        "budget"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-casa-aranda",
+      "name": "Casa Aranda",
+      "type": "cafe",
+      "homeBase": "malaga-1",
+      "area": "Atarazanas",
+      "coords": [
+        36.71977,
+        -4.42528
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71977,-4.42528",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-casa-aranda/800/600",
+          "alt": "Casa Aranda"
+        }
+      ],
+      "description": "Iconic 1932 churros + chocolate spot.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 30,
+      "validSlots": [
+        "morning",
+        "snack"
+      ],
+      "tags": [
+        "coffee",
+        "local",
+        "budget",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-cunaos",
+      "name": "Los Cuñaos",
+      "type": "food",
+      "homeBase": "malaga-1",
+      "area": "Pedregalejo",
+      "coords": [
+        36.71971,
+        -4.36918
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71971,-4.36918",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-cunaos/800/600",
+          "alt": "Los Cuñaos"
+        }
+      ],
+      "description": "Local-favorite chiringuito for sardine espetos.",
+      "priority": "recommended",
+      "zone": 3,
+      "cost": "mid",
+      "duration": 90,
+      "validSlots": [
+        "lunch",
+        "dinner"
+      ],
+      "tags": [
+        "seafood",
+        "food",
+        "local",
+        "budget",
+        "outdoor"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-heladeria-inma",
+      "name": "Heladería Inma",
+      "type": "food",
+      "homeBase": "malaga-1",
+      "area": "Las Delicias",
+      "coords": [
+        36.7145,
+        -4.45005
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.7145,-4.45005",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-heladeria-inma/800/600",
+          "alt": "Heladería Inma"
+        }
+      ],
+      "description": "Local-favorite ice cream, long-running.",
+      "priority": "backup",
+      "zone": 3,
+      "cost": "cheap",
+      "duration": 20,
+      "validSlots": [
+        "snack",
+        "evening"
+      ],
+      "tags": [
+        "food",
+        "local",
+        "budget"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-malagueta",
+      "name": "Playa de la Malagueta",
+      "type": "beach",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.71872,
+        -4.40774
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71872,-4.40774",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-malagueta/800/600",
+          "alt": "Playa de la Malagueta"
+        }
+      ],
+      "description": "Central city beach, easy access.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "free",
+      "duration": 120,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "beach",
+        "swim",
+        "free",
+        "family"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "weather": "sun"
+    },
+    {
+      "id": "mlg-pedregalejo-beach",
+      "name": "Playa Pedregalejo",
+      "type": "beach",
+      "homeBase": "malaga-1",
+      "area": "Pedregalejo",
+      "coords": [
+        36.71886,
+        -4.36926
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71886,-4.36926",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-pedregalejo-beach/800/600",
+          "alt": "Playa Pedregalejo"
+        }
+      ],
+      "description": "Calmer, palm trees, espetos at chiringuitos.",
+      "priority": "recommended",
+      "zone": 3,
+      "cost": "free",
+      "duration": 180,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "beach",
+        "swim",
+        "seafood",
+        "local",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "weather": "sun"
+    },
+    {
+      "id": "mlg-el-palo-beach",
+      "name": "Playa El Palo",
+      "type": "beach",
+      "homeBase": "malaga-1",
+      "area": "El Palo",
+      "coords": [
+        36.71761,
+        -4.34859
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71761,-4.34859",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-el-palo-beach/800/600",
+          "alt": "Playa El Palo"
+        }
+      ],
+      "description": "Most authentic, cheapest espetos.",
+      "priority": "optional",
+      "zone": 3,
+      "cost": "free",
+      "duration": 180,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "beach",
+        "local",
+        "seafood",
+        "budget"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "weather": "sun"
+    },
+    {
+      "id": "mlg-caleta",
+      "name": "Playa de la Caleta",
+      "type": "beach",
+      "homeBase": "malaga-1",
+      "area": "Caleta",
+      "coords": [
+        36.71895,
+        -4.39316
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71895,-4.39316",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-caleta/800/600",
+          "alt": "Playa de la Caleta"
+        }
+      ],
+      "description": "Quieter middle ground between Malagueta and Pedregalejo.",
+      "priority": "optional",
+      "zone": 2,
+      "cost": "free",
+      "duration": 120,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "beach",
+        "swim",
+        "free"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "weather": "sun"
+    },
+    {
+      "id": "mlg-mia-coffee",
+      "name": "Mia Coffee Shop",
+      "type": "cafe",
+      "homeBase": "malaga-1",
+      "area": "Soho",
+      "coords": [
+        36.71769,
+        -4.42434
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71769,-4.42434",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-mia-coffee/800/600",
+          "alt": "Mia Coffee Shop"
+        }
+      ],
+      "description": "Top specialty coffee.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 45,
+      "validSlots": [
+        "morning",
+        "snack"
+      ],
+      "tags": [
+        "coffee",
+        "brunch",
+        "modern"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-santa-coffee",
+      "name": "Santa Coffee",
+      "type": "cafe",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72096,
+        -4.421
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72096,-4.421",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-santa-coffee/800/600",
+          "alt": "Santa Coffee"
+        }
+      ],
+      "description": "Third-wave roaster.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 30,
+      "validSlots": [
+        "morning",
+        "snack"
+      ],
+      "tags": [
+        "coffee",
+        "modern"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-julia",
+      "name": "Julia Bakery & Coffee",
+      "type": "cafe",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72253,
+        -4.42193
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72253,-4.42193",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-julia/800/600",
+          "alt": "Julia Bakery & Coffee"
+        }
+      ],
+      "description": "Pastries + brunch, popular.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 45,
+      "validSlots": [
+        "morning",
+        "snack"
+      ],
+      "tags": [
+        "coffee",
+        "brunch",
+        "photo-friendly"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-libros",
+      "name": "Café con Libros",
+      "type": "cafe",
+      "homeBase": "malaga-1",
+      "area": "Plaza Merced",
+      "coords": [
+        36.72325,
+        -4.41826
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72325,-4.41826",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-libros/800/600",
+          "alt": "Café con Libros"
+        }
+      ],
+      "description": "Bookshop café on the plaza.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 45,
+      "validSlots": [
+        "morning",
+        "snack",
+        "evening"
+      ],
+      "tags": [
+        "coffee",
+        "quirky",
+        "local",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-recyclo",
+      "name": "Recyclo Bike Café",
+      "type": "cafe",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.71966,
+        -4.42667
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71966,-4.42667",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-recyclo/800/600",
+          "alt": "Recyclo Bike Café"
+        }
+      ],
+      "description": "Bikes + coffee + brunch, hipster.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 45,
+      "validSlots": [
+        "morning",
+        "snack"
+      ],
+      "tags": [
+        "coffee",
+        "brunch",
+        "quirky",
+        "modern"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-trinchera",
+      "name": "Sala Trinchera",
+      "type": "club",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.71992,
+        -4.42485
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71992,-4.42485",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-trinchera/800/600",
+          "alt": "Sala Trinchera"
+        }
+      ],
+      "description": "Main techno/electronic club, weekends.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 240,
+      "validSlots": [
+        "night"
+      ],
+      "tags": [
+        "nightlife",
+        "techno",
+        "night-owl",
+        "modern"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-liceo",
+      "name": "El Liceo",
+      "type": "club",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.71951,
+        -4.41957
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71951,-4.41957",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-liceo/800/600",
+          "alt": "El Liceo"
+        }
+      ],
+      "description": "Converted palace, eclectic alt crowd.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 180,
+      "validSlots": [
+        "night"
+      ],
+      "tags": [
+        "nightlife",
+        "quirky",
+        "architecture",
+        "night-owl"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-zz-pub",
+      "name": "ZZ Pub",
+      "type": "bar",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72205,
+        -4.42442
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72205,-4.42442",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-zz-pub/800/600",
+          "alt": "ZZ Pub"
+        }
+      ],
+      "description": "Live indie/rock, legendary dive.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 120,
+      "validSlots": [
+        "evening",
+        "night"
+      ],
+      "tags": [
+        "nightlife",
+        "music",
+        "local",
+        "night-owl"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-wabi-sabi",
+      "name": "Wabi Sabi Rooftop",
+      "type": "bar",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.71959,
+        -4.4222
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71959,-4.4222",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-wabi-sabi/800/600",
+          "alt": "Wabi Sabi Rooftop"
+        }
+      ],
+      "description": "Cocktails with city skyline view.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 90,
+      "validSlots": [
+        "evening",
+        "dinner"
+      ],
+      "tags": [
+        "bar",
+        "views",
+        "golden-hour",
+        "romantic",
+        "photo-friendly"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-bahia",
+      "name": "Bahía Beach Club",
+      "type": "club",
+      "homeBase": "malaga-1",
+      "area": "Beach",
+      "coords": [
+        36.71881,
+        -4.40499
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71881,-4.40499",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-bahia/800/600",
+          "alt": "Bahía Beach Club"
+        }
+      ],
+      "description": "Summer beachside dance.",
+      "priority": "backup",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 240,
+      "validSlots": [
+        "evening",
+        "night"
+      ],
+      "tags": [
+        "nightlife",
+        "beach",
+        "summer"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "weather": "sun"
+    },
+    {
+      "id": "mlg-teteria",
+      "name": "La Tetería",
+      "type": "bar",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72149,
+        -4.42221
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72149,-4.42221",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-teteria/800/600",
+          "alt": "La Tetería"
+        }
+      ],
+      "description": "Moroccan-style, hookah, chill.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 90,
+      "validSlots": [
+        "evening",
+        "night"
+      ],
+      "tags": [
+        "bar",
+        "quirky",
+        "romantic"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-paris-15",
+      "name": "París 15",
+      "type": "bar",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.7228,
+        -4.42107
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.7228,-4.42107",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-paris-15/800/600",
+          "alt": "París 15"
+        }
+      ],
+      "description": "Punk/indie dive, Calle París.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 90,
+      "validSlots": [
+        "evening",
+        "night"
+      ],
+      "tags": [
+        "bar",
+        "local",
+        "music",
+        "night-owl"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-suburbia",
+      "name": "Suburbia",
+      "type": "bar",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72132,
+        -4.42183
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72132,-4.42183",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-suburbia/800/600",
+          "alt": "Suburbia"
+        }
+      ],
+      "description": "Alt scene, electronic.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 90,
+      "validSlots": [
+        "evening",
+        "night"
+      ],
+      "tags": [
+        "bar",
+        "local",
+        "modern",
+        "night-owl"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-velvet",
+      "name": "Velvet Club",
+      "type": "club",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.71939,
+        -4.42291
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71939,-4.42291",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-velvet/800/600",
+          "alt": "Velvet Club"
+        }
+      ],
+      "description": "Indie/rock alt nightlife.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 180,
+      "validSlots": [
+        "night"
+      ],
+      "tags": [
+        "nightlife",
+        "music",
+        "night-owl"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-sotanillo",
+      "name": "El Sotanillo",
+      "type": "bar",
+      "homeBase": "malaga-1",
+      "area": "Lagunillas",
+      "coords": [
+        36.72458,
+        -4.41679
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72458,-4.41679",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-sotanillo/800/600",
+          "alt": "El Sotanillo"
+        }
+      ],
+      "description": "Underground scene, very local.",
+      "priority": "backup",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 90,
+      "validSlots": [
+        "evening",
+        "night"
+      ],
+      "tags": [
+        "bar",
+        "local",
+        "quirky",
+        "night-owl"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-flamenco-paco",
+      "name": "Peña Flamenca Juan Breva",
+      "type": "flamenco",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72335,
+        -4.41811
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72335,-4.41811",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-flamenco-paco/800/600",
+          "alt": "Peña Flamenca Juan Breva"
+        }
+      ],
+      "description": "Authentic local flamenco. Reserve via Señor Paco.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 120,
+      "validSlots": [
+        "evening",
+        "night"
+      ],
+      "tags": [
+        "flamenco",
+        "music",
+        "local",
+        "romantic",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": true
+    },
+    {
+      "id": "mlg-recinto-ferial",
+      "name": "Mercadillo Recinto Ferial",
+      "type": "flea-market",
+      "homeBase": "malaga-1",
+      "area": "Cruz de Humilladero",
+      "coords": [
+        36.69835,
+        -4.4592
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.69835,-4.4592",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-recinto-ferial/800/600",
+          "alt": "Mercadillo Recinto Ferial"
+        }
+      ],
+      "description": "300+ stalls — Málaga's biggest Sunday flea. Vintage clothing, vinyl, antiques, plants.",
+      "priority": "must",
+      "zone": 3,
+      "cost": "free",
+      "duration": 120,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "flea-market",
+        "local",
+        "vintage",
+        "raluca-camera",
+        "photo-friendly",
+        "budget"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "validDays": [
+        "2026-05-17"
+      ],
+      "notes": "Arrive by 10am. Bus 4 from Alameda Principal.",
+      "openingHours": "9:00–15:00"
+    },
+    {
+      "id": "mlg-cortijo-torres",
+      "name": "Cortijo de Torres mercadillo",
+      "type": "flea-market",
+      "homeBase": "malaga-1",
+      "area": "Cruz de Humilladero",
+      "coords": [
+        36.69783,
+        -4.45964
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.69783,-4.45964",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-cortijo-torres/800/600",
+          "alt": "Cortijo de Torres mercadillo"
+        }
+      ],
+      "description": "315 stalls Wednesdays — biggest weekly. Clothing, sweets, plants, music CDs.",
+      "priority": "recommended",
+      "zone": 3,
+      "cost": "free",
+      "duration": 120,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "flea-market",
+        "local",
+        "budget",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "validDays": [
+        "2026-05-13",
+        "2026-05-20"
+      ],
+      "openingHours": "9:00–15:00"
+    },
+    {
+      "id": "mlg-zoco-muelle",
+      "name": "El Zoco Muelle Uno",
+      "type": "artisan-market",
+      "homeBase": "malaga-1",
+      "area": "Port",
+      "coords": [
+        36.71467,
+        -4.41522
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71467,-4.41522",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-zoco-muelle/800/600",
+          "alt": "El Zoco Muelle Uno"
+        }
+      ],
+      "description": "Curated artisan market on the port, 2nd Sunday.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "free",
+      "duration": 90,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "artisan-market",
+        "art",
+        "local"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "validDays": [
+        "2026-05-17"
+      ],
+      "openingHours": "10:00–14:00"
+    },
+    {
+      "id": "mlg-merced-artesania",
+      "name": "Merced Artisan Market",
+      "type": "artisan-market",
+      "homeBase": "malaga-1",
+      "area": "Plaza Merced",
+      "coords": [
+        36.72343,
+        -4.41748
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72343,-4.41748",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-merced-artesania/800/600",
+          "alt": "Merced Artisan Market"
+        }
+      ],
+      "description": "First Sunday/month — handmade crafts + live music.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "free",
+      "duration": 60,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "artisan-market",
+        "art",
+        "local",
+        "music"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "notes": "Skipped — first Sunday is May 3 which is outside trip range."
+    },
+    {
+      "id": "mlg-ecologico",
+      "name": "Mercadillo Ecológico",
+      "type": "indoor-market",
+      "homeBase": "malaga-1",
+      "area": "Paseo Reding",
+      "coords": [
+        36.7228,
+        -4.40766
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.7228,-4.40766",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-ecologico/800/600",
+          "alt": "Mercadillo Ecológico"
+        }
+      ],
+      "description": "Organic seasonal produce, 2nd & last Saturday.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "free",
+      "duration": 60,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "food",
+        "organic",
+        "local"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "validDays": [
+        "2026-05-16"
+      ],
+      "openingHours": "10:00–14:00"
+    },
+    {
+      "id": "mlg-el-palo-mercado",
+      "name": "Mercadillo El Palo",
+      "type": "indoor-market",
+      "homeBase": "malaga-1",
+      "area": "El Palo",
+      "coords": [
+        36.71777,
+        -4.34816
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71777,-4.34816",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-el-palo-mercado/800/600",
+          "alt": "Mercadillo El Palo"
+        }
+      ],
+      "description": "Saturday street market by the seaside promenade.",
+      "priority": "optional",
+      "zone": 3,
+      "cost": "free",
+      "duration": 45,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "flea-market",
+        "local",
+        "budget"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "validDays": [
+        "2026-05-16",
+        "2026-05-23"
+      ]
+    },
+    {
+      "id": "mlg-huelin",
+      "name": "Mercadillo Huelin",
+      "type": "indoor-market",
+      "homeBase": "malaga-1",
+      "area": "Huelin",
+      "coords": [
+        36.71172,
+        -4.44525
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71172,-4.44525",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-huelin/800/600",
+          "alt": "Mercadillo Huelin"
+        }
+      ],
+      "description": "Local non-touristy market, Wed & Sat.",
+      "priority": "backup",
+      "zone": 2,
+      "cost": "free",
+      "duration": 45,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "local",
+        "budget"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "validDays": [
+        "2026-05-13",
+        "2026-05-16",
+        "2026-05-20",
+        "2026-05-23"
+      ]
+    },
+    {
+      "id": "mlg-salamanca",
+      "name": "Mercado de Salamanca",
+      "type": "indoor-market",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72519,
+        -4.42305
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72519,-4.42305",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-salamanca/800/600",
+          "alt": "Mercado de Salamanca"
+        }
+      ],
+      "description": "Historic 1920s market hall, gorgeous ironwork.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "free",
+      "duration": 30,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "food",
+        "architecture",
+        "local",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-atarazanas",
+      "name": "Mercado Atarazanas",
+      "type": "indoor-market",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.71941,
+        -4.42481
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71941,-4.42481",
+      "photos": [
+        {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercado_Central_de_Atarazanas_%28M%C3%A1laga%29.jpg?width=800",
+          "alt": "Mercado Atarazanas",
+          "credit": "Wikimedia Commons",
+          "fallback": "https://picsum.photos/seed/mlg-atarazanas/800/600"
+        }
+      ],
+      "description": "Iconic 1879 market with Moorish arch. 250 stalls.",
+      "priority": "must",
+      "zone": 1,
+      "cost": "free",
+      "duration": 45,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "food",
+        "architecture",
+        "local",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-concepcion",
+      "name": "Jardín Botánico La Concepción",
+      "type": "nature",
+      "homeBase": "malaga-1",
+      "area": "North",
+      "coords": [
+        36.74848,
+        -4.40523
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.74848,-4.40523",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-concepcion/800/600",
+          "alt": "Jardín Botánico La Concepción"
+        }
+      ],
+      "description": "Huge garden, dome viewpoint, cactus garden, tranquil.",
+      "priority": "optional",
+      "zone": 3,
+      "cost": "cheap",
+      "duration": 120,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "nature",
+        "walking",
+        "views",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "weather": "sun"
+    },
+    {
+      "id": "mlg-parque-malaga",
+      "name": "Parque de Málaga",
+      "type": "nature",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.71867,
+        -4.41758
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71867,-4.41758",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-parque-malaga/800/600",
+          "alt": "Parque de Málaga"
+        }
+      ],
+      "description": "Tropical palm avenue between centro and port.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "free",
+      "duration": 45,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "evening"
+      ],
+      "tags": [
+        "nature",
+        "walking",
+        "free",
+        "photo-friendly"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-monte-victoria",
+      "name": "Monte Victoria viewpoint",
+      "type": "viewpoint",
+      "homeBase": "malaga-1",
+      "area": "North",
+      "coords": [
+        36.72768,
+        -4.40781
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72768,-4.40781",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-monte-victoria/800/600",
+          "alt": "Monte Victoria viewpoint"
+        }
+      ],
+      "description": "Hidden hike for sunset, no crowds.",
+      "priority": "optional",
+      "zone": 2,
+      "cost": "free",
+      "duration": 60,
+      "validSlots": [
+        "evening"
+      ],
+      "tags": [
+        "views",
+        "golden-hour",
+        "walking",
+        "free",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-monte-san-anton",
+      "name": "Monte San Antón hike",
+      "type": "hike",
+      "homeBase": "malaga-1",
+      "area": "East",
+      "coords": [
+        36.74005,
+        -4.34762
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.74005,-4.34762",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-monte-san-anton/800/600",
+          "alt": "Monte San Antón hike"
+        }
+      ],
+      "description": "500m peak, sea views, behind El Palo.",
+      "priority": "backup",
+      "zone": 3,
+      "cost": "free",
+      "duration": 180,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "hike",
+        "nature",
+        "views",
+        "free"
+      ],
+      "energy": "heavy",
+      "bookingRequired": false,
+      "weather": "sun"
+    },
+    {
+      "id": "mlg-cementerio-san-miguel",
+      "name": "Cementerio San Miguel",
+      "type": "mystic",
+      "homeBase": "malaga-1",
+      "area": "North",
+      "coords": [
+        36.73127,
+        -4.41891
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.73127,-4.41891",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-cementerio-san-miguel/800/600",
+          "alt": "Cementerio San Miguel"
+        }
+      ],
+      "description": "Old monumental cemetery, sculptures, atmospheric.",
+      "priority": "backup",
+      "zone": 2,
+      "cost": "free",
+      "duration": 45,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "mystic",
+        "quirky",
+        "walking",
+        "free",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-cueva-tesoro",
+      "name": "Cueva del Tesoro",
+      "type": "nature",
+      "homeBase": "malaga-1",
+      "area": "Rincón Victoria",
+      "coords": [
+        36.71867,
+        -4.27893
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71867,-4.27893",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-cueva-tesoro/800/600",
+          "alt": "Cueva del Tesoro"
+        }
+      ],
+      "description": "One of only 3 marine caves in Europe.",
+      "priority": "optional",
+      "zone": 3,
+      "cost": "cheap",
+      "duration": 90,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "nature",
+        "quirky",
+        "family"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-faro",
+      "name": "La Farola lighthouse",
+      "type": "walk",
+      "homeBase": "malaga-1",
+      "area": "Port",
+      "coords": [
+        36.71402,
+        -4.41443
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71402,-4.41443",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-faro/800/600",
+          "alt": "La Farola lighthouse"
+        }
+      ],
+      "description": "Iconic 1817 lighthouse, sunset.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "free",
+      "duration": 20,
+      "validSlots": [
+        "snack",
+        "evening"
+      ],
+      "tags": [
+        "walking",
+        "free",
+        "golden-hour",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-skatepark-ruben",
+      "name": "Skatepark Rubén Alcántara",
+      "type": "activity",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.72797,
+        -4.42655
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72797,-4.42655",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-skatepark-ruben/800/600",
+          "alt": "Skatepark Rubén Alcántara"
+        }
+      ],
+      "description": "Main Málaga skate park, named after pro BMX.",
+      "priority": "optional",
+      "zone": 2,
+      "cost": "free",
+      "duration": 60,
+      "validSlots": [
+        "afternoon",
+        "evening"
+      ],
+      "tags": [
+        "activity",
+        "free",
+        "local",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-skatepark-huelin",
+      "name": "Skatepark Huelin",
+      "type": "activity",
+      "homeBase": "malaga-1",
+      "area": "Huelin",
+      "coords": [
+        36.71057,
+        -4.44641
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71057,-4.44641",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-skatepark-huelin/800/600",
+          "alt": "Skatepark Huelin"
+        }
+      ],
+      "description": "Beachside, smaller, chill.",
+      "priority": "backup",
+      "zone": 2,
+      "cost": "free",
+      "duration": 60,
+      "validSlots": [
+        "afternoon",
+        "evening"
+      ],
+      "tags": [
+        "activity",
+        "free",
+        "local"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-skatepark-teatinos",
+      "name": "Skatepark Teatinos",
+      "type": "activity",
+      "homeBase": "malaga-1",
+      "area": "Teatinos",
+      "coords": [
+        36.7218,
+        -4.48345
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.7218,-4.48345",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-skatepark-teatinos/800/600",
+          "alt": "Skatepark Teatinos"
+        }
+      ],
+      "description": "Bigger bowls, north Málaga.",
+      "priority": "backup",
+      "zone": 3,
+      "cost": "free",
+      "duration": 60,
+      "validSlots": [
+        "afternoon"
+      ],
+      "tags": [
+        "activity",
+        "free"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "mlg-hammam",
+      "name": "Hammam Al Ándalus",
+      "type": "wellness",
+      "homeBase": "malaga-1",
+      "area": "Centro",
+      "coords": [
+        36.7203,
+        -4.42137
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.7203,-4.42137",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-hammam/800/600",
+          "alt": "Hammam Al Ándalus"
+        }
+      ],
+      "description": "Arab baths, 90-min experience.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "high",
+      "duration": 90,
+      "validSlots": [
+        "afternoon",
+        "evening"
+      ],
+      "tags": [
+        "wellness",
+        "romantic",
+        "indoor",
+        "rainy-day"
+      ],
+      "energy": "moderate",
+      "bookingRequired": true,
+      "bookingUrl": "https://malaga.hammamalandalus.com/"
+    },
+    {
+      "id": "mlg-aquarium-aula",
+      "name": "Aula del Mar",
+      "type": "aquarium",
+      "homeBase": "malaga-1",
+      "area": "Port",
+      "coords": [
+        36.71548,
+        -4.41615
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71548,-4.41615",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/mlg-aquarium-aula/800/600",
+          "alt": "Aula del Mar"
+        }
+      ],
+      "description": "Small marine biology center.",
+      "priority": "backup",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 60,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "family",
+        "quirky",
+        "indoor",
+        "rainy-day"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "dt-caminito",
+      "name": "Caminito del Rey",
+      "type": "daytrip",
+      "homeBase": "malaga-1",
+      "area": "El Chorro",
+      "coords": [
+        36.91367,
+        -4.76461
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.91367,-4.76461",
+      "photos": [
+        {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Caminito_del_Rey%2C_salida_sur%2C_desfiladero_del_Gran_Gait%C3%A1n.jpg?width=800",
+          "alt": "Caminito del Rey",
+          "credit": "Wikimedia Commons",
+          "fallback": "https://picsum.photos/seed/dt-caminito/800/600"
+        }
+      ],
+      "description": "Famous suspended walkway above the Guadalhorce canyon.",
+      "priority": "must",
+      "zone": 4,
+      "cost": "cheap",
+      "duration": 360,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "nature",
+        "hike",
+        "views",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "heavy",
+      "bookingRequired": true,
+      "notes": "BOOK NOW. 5–10 €. Often sells out 2–4 weeks ahead. Allow full day with transport.",
+      "bookingUrl": "https://www.caminitodelrey.info/"
+    },
+    {
+      "id": "dt-ronda",
+      "name": "Ronda",
+      "type": "daytrip",
+      "homeBase": "malaga-1",
+      "area": "Ronda",
+      "coords": [
+        36.74244,
+        -5.16563
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.74244,-5.16563",
+      "photos": [
+        {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Puente_Nuevo_Ronda_Spain.jpg?width=800",
+          "alt": "Ronda",
+          "credit": "Wikimedia Commons",
+          "fallback": "https://picsum.photos/seed/dt-ronda/800/600"
+        }
+      ],
+      "description": "Famous Puente Nuevo bridge over El Tajo gorge.",
+      "priority": "must",
+      "zone": 4,
+      "cost": "mid",
+      "duration": 480,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "history",
+        "architecture",
+        "views",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "notes": "Train ~2h from Málaga. Bullring, gorge views."
+    },
+    {
+      "id": "dt-nerja",
+      "name": "Nerja + Frigiliana",
+      "type": "daytrip",
+      "homeBase": "malaga-1",
+      "area": "East coast",
+      "coords": [
+        36.74641,
+        -3.87574
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.74641,-3.87574",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/dt-nerja/800/600",
+          "alt": "Nerja + Frigiliana"
+        }
+      ],
+      "description": "Cliffside town with caves, plus white village Frigiliana inland.",
+      "priority": "recommended",
+      "zone": 4,
+      "cost": "mid",
+      "duration": 480,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "nature",
+        "walking",
+        "views",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "dt-granada",
+      "name": "Granada / Alhambra",
+      "type": "daytrip",
+      "homeBase": "malaga-1",
+      "area": "Granada",
+      "coords": [
+        37.17681,
+        -3.58791
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=37.17681,-3.58791",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/dt-granada/800/600",
+          "alt": "Granada / Alhambra"
+        }
+      ],
+      "description": "The Alhambra. Book weeks ahead.",
+      "priority": "recommended",
+      "zone": 4,
+      "cost": "mid",
+      "duration": 720,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "history",
+        "architecture",
+        "art",
+        "raluca-camera"
+      ],
+      "energy": "heavy",
+      "bookingRequired": true,
+      "notes": "2h train. Without Alhambra tickets it's still worth visiting Albayzín.",
+      "bookingUrl": "https://tickets.alhambra-patronato.es/"
+    },
+    {
+      "id": "dt-antequera",
+      "name": "Antequera + Dolmens",
+      "type": "daytrip",
+      "homeBase": "malaga-1",
+      "area": "Inland",
+      "coords": [
+        37.01953,
+        -4.55967
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=37.01953,-4.55967",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/dt-antequera/800/600",
+          "alt": "Antequera + Dolmens"
+        }
+      ],
+      "description": "UNESCO megalithic dolmens + white town.",
+      "priority": "optional",
+      "zone": 4,
+      "cost": "cheap",
+      "duration": 360,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "history",
+        "mystic",
+        "architecture",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "dt-el-torcal",
+      "name": "El Torcal de Antequera",
+      "type": "daytrip",
+      "homeBase": "malaga-1",
+      "area": "Inland",
+      "coords": [
+        36.95349,
+        -4.54414
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.95349,-4.54414",
+      "photos": [
+        {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/El_Torcal_de_Antequera.jpg?width=800",
+          "alt": "El Torcal de Antequera",
+          "credit": "Wikimedia Commons",
+          "fallback": "https://picsum.photos/seed/dt-el-torcal/800/600"
+        }
+      ],
+      "description": "Surreal karst landscape, alien rock formations.",
+      "priority": "recommended",
+      "zone": 4,
+      "cost": "free",
+      "duration": 300,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "nature",
+        "hike",
+        "views",
+        "photo-friendly",
+        "raluca-camera",
+        "free"
+      ],
+      "energy": "heavy",
+      "bookingRequired": false,
+      "weather": "sun"
+    },
+    {
+      "id": "dt-rio-chillar",
+      "name": "Río Chíllar",
+      "type": "daytrip",
+      "homeBase": "malaga-1",
+      "area": "East",
+      "coords": [
+        36.77416,
+        -3.86825
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.77416,-3.86825",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/dt-rio-chillar/800/600",
+          "alt": "Río Chíllar"
+        }
+      ],
+      "description": "River-walk through canyon — you walk IN the water.",
+      "priority": "optional",
+      "zone": 4,
+      "cost": "free",
+      "duration": 360,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "nature",
+        "hike",
+        "swim",
+        "quirky",
+        "free"
+      ],
+      "energy": "heavy",
+      "bookingRequired": false,
+      "weather": "sun"
+    },
+    {
+      "id": "dt-cuevas-nerja",
+      "name": "Cuevas de Nerja",
+      "type": "daytrip",
+      "homeBase": "malaga-1",
+      "area": "East",
+      "coords": [
+        36.76097,
+        -3.84551
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.76097,-3.84551",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/dt-cuevas-nerja/800/600",
+          "alt": "Cuevas de Nerja"
+        }
+      ],
+      "description": "Massive prehistoric cave with paintings.",
+      "priority": "optional",
+      "zone": 4,
+      "cost": "mid",
+      "duration": 120,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "nature",
+        "history",
+        "mystic",
+        "family",
+        "indoor",
+        "rainy-day"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "dt-genalguacil",
+      "name": "Genalguacil open-air art village",
+      "type": "daytrip",
+      "homeBase": "malaga-1",
+      "area": "Sierra",
+      "coords": [
+        36.55167,
+        -5.23
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.55167,-5.23",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/dt-genalguacil/800/600",
+          "alt": "Genalguacil open-air art village"
+        }
+      ],
+      "description": "Open Museum, contemporary art village in the mountains.",
+      "priority": "backup",
+      "zone": 4,
+      "cost": "free",
+      "duration": 480,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "art",
+        "quirky",
+        "raluca-camera",
+        "free"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "dt-parauta",
+      "name": "Parauta Enchanted Forest",
+      "type": "daytrip",
+      "homeBase": "malaga-1",
+      "area": "Sierra",
+      "coords": [
+        36.62833,
+        -5.07417
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.62833,-5.07417",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/dt-parauta/800/600",
+          "alt": "Parauta Enchanted Forest"
+        }
+      ],
+      "description": "Forest with carved tree faces, magical.",
+      "priority": "backup",
+      "zone": 4,
+      "cost": "free",
+      "duration": 240,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "nature",
+        "quirky",
+        "mystic",
+        "raluca-camera",
+        "free"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "dt-juzcar",
+      "name": "Júzcar Smurf Village",
+      "type": "daytrip",
+      "homeBase": "malaga-1",
+      "area": "Sierra",
+      "coords": [
+        36.61931,
+        -5.16636
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.61931,-5.16636",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/dt-juzcar/800/600",
+          "alt": "Júzcar Smurf Village"
+        }
+      ],
+      "description": "Houses painted blue, ex-Smurfs movie promo.",
+      "priority": "backup",
+      "zone": 4,
+      "cost": "free",
+      "duration": 180,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "quirky",
+        "photo-friendly",
+        "raluca-camera",
+        "free"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "dt-frigiliana",
+      "name": "Frigiliana white village",
+      "type": "daytrip",
+      "homeBase": "malaga-1",
+      "area": "East",
+      "coords": [
+        36.78812,
+        -3.89522
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.78812,-3.89522",
+      "photos": [
+        {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Frigiliana_%28Spain%29.jpg?width=800",
+          "alt": "Frigiliana white village",
+          "credit": "Wikimedia Commons",
+          "fallback": "https://picsum.photos/seed/dt-frigiliana/800/600"
+        }
+      ],
+      "description": "One of Spain's prettiest pueblos blancos.",
+      "priority": "optional",
+      "zone": 4,
+      "cost": "free",
+      "duration": 180,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "walking",
+        "photo-friendly",
+        "free",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "dt-setenil",
+      "name": "Setenil de las Bodegas",
+      "type": "daytrip",
+      "homeBase": "malaga-1",
+      "area": "Cádiz",
+      "coords": [
+        36.86397,
+        -5.18078
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.86397,-5.18078",
+      "photos": [
+        {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Setenil_de_las_Bodegas-_panorama.jpg?width=800",
+          "alt": "Setenil de las Bodegas",
+          "credit": "Wikimedia Commons",
+          "fallback": "https://picsum.photos/seed/dt-setenil/800/600"
+        }
+      ],
+      "description": "Houses built INTO rock overhangs.",
+      "priority": "optional",
+      "zone": 4,
+      "cost": "free",
+      "duration": 240,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "quirky",
+        "architecture",
+        "photo-friendly",
+        "raluca-camera",
+        "free"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "dt-lagunas-fuente-piedra",
+      "name": "Laguna Fuente de Piedra",
+      "type": "daytrip",
+      "homeBase": "malaga-1",
+      "area": "North",
+      "coords": [
+        37.10778,
+        -4.74222
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=37.10778,-4.74222",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/dt-lagunas-fuente-piedra/800/600",
+          "alt": "Laguna Fuente de Piedra"
+        }
+      ],
+      "description": "Pink flamingo lake, May = peak season.",
+      "priority": "optional",
+      "zone": 4,
+      "cost": "free",
+      "duration": 180,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "nature",
+        "raluca-camera",
+        "free"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "weather": "sun"
+    },
+    {
+      "id": "trf-los-lances",
+      "name": "Playa Los Lances",
+      "type": "beach",
+      "homeBase": "tarifa",
+      "area": "Town",
+      "coords": [
+        36.02143,
+        -5.61237
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.02143,-5.61237",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-los-lances/800/600",
+          "alt": "Playa Los Lances"
+        }
+      ],
+      "description": "Main town beach, 10km of sand, kitesurfers everywhere.",
+      "priority": "must",
+      "zone": 1,
+      "cost": "free",
+      "duration": 180,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "snack"
+      ],
+      "tags": [
+        "beach",
+        "kitesurf",
+        "free",
+        "walking",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "weather": "sun"
+    },
+    {
+      "id": "trf-valdevaqueros",
+      "name": "Valdevaqueros + dune",
+      "type": "beach",
+      "homeBase": "tarifa",
+      "area": "West",
+      "coords": [
+        36.06331,
+        -5.69528
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.06331,-5.69528",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-valdevaqueros/800/600",
+          "alt": "Valdevaqueros + dune"
+        }
+      ],
+      "description": "Iconic dune, kitesurf central, chiringuitos.",
+      "priority": "must",
+      "zone": 2,
+      "cost": "cheap",
+      "duration": 240,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "beach",
+        "kitesurf",
+        "raluca-camera",
+        "photo-friendly",
+        "outdoor"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "notes": "Parking €5. Get there early on windy days.",
+      "weather": "sun"
+    },
+    {
+      "id": "trf-bolonia",
+      "name": "Playa Bolonia",
+      "type": "beach",
+      "homeBase": "tarifa",
+      "area": "West 20min",
+      "coords": [
+        36.08261,
+        -5.7801
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.08261,-5.7801",
+      "photos": [
+        {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Playa_de_Bolonia%2C_Tarifa.jpg?width=800",
+          "alt": "Playa Bolonia",
+          "credit": "Wikimedia Commons",
+          "fallback": "https://picsum.photos/seed/trf-bolonia/800/600"
+        }
+      ],
+      "description": "Wild beach + giant dune you can climb. Best in the area.",
+      "priority": "must",
+      "zone": 3,
+      "cost": "free",
+      "duration": 300,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "beach",
+        "nature",
+        "raluca-camera",
+        "photo-friendly",
+        "outdoor"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "weather": "sun",
+      "pairs": [
+        "trf-baelo-claudia",
+        "trf-las-rejas"
+      ]
+    },
+    {
+      "id": "trf-punta-paloma",
+      "name": "Punta Paloma clay baths",
+      "type": "nature",
+      "homeBase": "tarifa",
+      "area": "West",
+      "coords": [
+        36.07594,
+        -5.71983
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.07594,-5.71983",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-punta-paloma/800/600",
+          "alt": "Punta Paloma clay baths"
+        }
+      ],
+      "description": "Natural clay/mud baths at the cliff base — free spa.",
+      "priority": "recommended",
+      "zone": 2,
+      "cost": "free",
+      "duration": 120,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "nature",
+        "wellness",
+        "free",
+        "quirky",
+        "raluca-camera",
+        "outdoor"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "weather": "sun"
+    },
+    {
+      "id": "trf-playa-chica",
+      "name": "Playa Chica",
+      "type": "beach",
+      "homeBase": "tarifa",
+      "area": "Town",
+      "coords": [
+        36.00408,
+        -5.60697
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.00408,-5.60697",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-playa-chica/800/600",
+          "alt": "Playa Chica"
+        }
+      ],
+      "description": "Small sheltered cove, calm water (rare in Tarifa).",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "free",
+      "duration": 90,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "beach",
+        "swim",
+        "free",
+        "family"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "weather": "sun"
+    },
+    {
+      "id": "trf-alcornocales",
+      "name": "Los Alcornocales Natural Park",
+      "type": "nature",
+      "homeBase": "tarifa",
+      "area": "North",
+      "coords": [
+        36.31,
+        -5.51
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.31,-5.51",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-alcornocales/800/600",
+          "alt": "Los Alcornocales Natural Park"
+        }
+      ],
+      "description": "Cork oak forests, hidden waterfalls, network of trails.",
+      "priority": "recommended",
+      "zone": 4,
+      "cost": "free",
+      "duration": 300,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "nature",
+        "hike",
+        "free",
+        "outdoor",
+        "raluca-camera"
+      ],
+      "energy": "heavy",
+      "bookingRequired": false,
+      "weather": "sun"
+    },
+    {
+      "id": "trf-rio-de-la-miel",
+      "name": "Río de la Miel",
+      "type": "nature",
+      "homeBase": "tarifa",
+      "area": "Algeciras",
+      "coords": [
+        36.1,
+        -5.46
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.1,-5.46",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-rio-de-la-miel/800/600",
+          "alt": "Río de la Miel"
+        }
+      ],
+      "description": "Easy waterfall hike, 30min from Tarifa.",
+      "priority": "optional",
+      "zone": 3,
+      "cost": "free",
+      "duration": 180,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "nature",
+        "hike",
+        "free",
+        "photo-friendly",
+        "outdoor"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-canuto-rivera",
+      "name": "Garganta del Capitán",
+      "type": "nature",
+      "homeBase": "tarifa",
+      "area": "Alcornocales",
+      "coords": [
+        36.21,
+        -5.45
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.21,-5.45",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-canuto-rivera/800/600",
+          "alt": "Garganta del Capitán"
+        }
+      ],
+      "description": "Canyon hike with waterfalls.",
+      "priority": "optional",
+      "zone": 4,
+      "cost": "free",
+      "duration": 240,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "nature",
+        "hike",
+        "free",
+        "outdoor"
+      ],
+      "energy": "heavy",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-mirador-estrecho",
+      "name": "Mirador del Estrecho",
+      "type": "viewpoint",
+      "homeBase": "tarifa",
+      "area": "E15min",
+      "coords": [
+        36.07678,
+        -5.55014
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.07678,-5.55014",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-mirador-estrecho/800/600",
+          "alt": "Mirador del Estrecho"
+        }
+      ],
+      "description": "Panoramic views to Morocco. Free.",
+      "priority": "recommended",
+      "zone": 3,
+      "cost": "free",
+      "duration": 30,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "evening"
+      ],
+      "tags": [
+        "views",
+        "free",
+        "golden-hour",
+        "raluca-camera",
+        "photo-friendly"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-castillo",
+      "name": "Castillo Guzmán el Bueno",
+      "type": "monument",
+      "homeBase": "tarifa",
+      "area": "Old town",
+      "coords": [
+        36.00746,
+        -5.60598
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.00746,-5.60598",
+      "photos": [
+        {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Castillo_de_Guzm%C3%A1n_el_Bueno_%28Tarifa%29.jpg?width=800",
+          "alt": "Castillo Guzmán el Bueno",
+          "credit": "Wikimedia Commons",
+          "fallback": "https://picsum.photos/seed/trf-castillo/800/600"
+        }
+      ],
+      "description": "10th-century Moorish castle, sea views.",
+      "priority": "must",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 60,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "history",
+        "views",
+        "architecture",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-puerta-jerez",
+      "name": "Puerta de Jerez",
+      "type": "monument",
+      "homeBase": "tarifa",
+      "area": "Old town",
+      "coords": [
+        36.01203,
+        -5.60404
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.01203,-5.60404",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-puerta-jerez/800/600",
+          "alt": "Puerta de Jerez"
+        }
+      ],
+      "description": "Old town gate, photogenic.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "free",
+      "duration": 10,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "snack"
+      ],
+      "tags": [
+        "history",
+        "free",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-san-mateo",
+      "name": "Iglesia San Mateo",
+      "type": "monument",
+      "homeBase": "tarifa",
+      "area": "Old town",
+      "coords": [
+        36.01076,
+        -5.60522
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.01076,-5.60522",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-san-mateo/800/600",
+          "alt": "Iglesia San Mateo"
+        }
+      ],
+      "description": "Main church, free, atmospheric.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "free",
+      "duration": 20,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "history",
+        "architecture",
+        "free",
+        "indoor"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-punta-tarifa",
+      "name": "Punta de Tarifa",
+      "type": "monument",
+      "homeBase": "tarifa",
+      "area": "South",
+      "coords": [
+        36.00006,
+        -5.60887
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.00006,-5.60887",
+      "photos": [
+        {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Tarifa_island.jpg?width=800",
+          "alt": "Punta de Tarifa",
+          "credit": "Wikimedia Commons",
+          "fallback": "https://picsum.photos/seed/trf-punta-tarifa/800/600"
+        }
+      ],
+      "description": "Southernmost point of continental Europe — Atlantic meets Mediterranean.",
+      "priority": "must",
+      "zone": 1,
+      "cost": "free",
+      "duration": 30,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "evening"
+      ],
+      "tags": [
+        "views",
+        "free",
+        "quirky",
+        "photo-friendly",
+        "raluca-camera",
+        "golden-hour"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-murallas",
+      "name": "Murallas del Castillo",
+      "type": "walk",
+      "homeBase": "tarifa",
+      "area": "Old town",
+      "coords": [
+        36.0075,
+        -5.60607
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.0075,-5.60607",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-murallas/800/600",
+          "alt": "Murallas del Castillo"
+        }
+      ],
+      "description": "Sea views from the old walls.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "free",
+      "duration": 30,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "evening"
+      ],
+      "tags": [
+        "walking",
+        "views",
+        "free",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-old-town-walk",
+      "name": "Tarifa old town wander",
+      "type": "walk",
+      "homeBase": "tarifa",
+      "area": "Old town",
+      "coords": [
+        36.0108,
+        -5.6047
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.0108,-5.6047",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-old-town-walk/800/600",
+          "alt": "Tarifa old town wander"
+        }
+      ],
+      "description": "Whitewashed alleys, surf shops, Moorish details.",
+      "priority": "must",
+      "zone": 1,
+      "cost": "free",
+      "duration": 90,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "snack",
+        "evening"
+      ],
+      "tags": [
+        "walking",
+        "free",
+        "photo-friendly",
+        "raluca-camera",
+        "local"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-mercado-abastos",
+      "name": "Mercado de Abastos",
+      "type": "indoor-market",
+      "homeBase": "tarifa",
+      "area": "Old town",
+      "coords": [
+        36.01125,
+        -5.60453
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.01125,-5.60453",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-mercado-abastos/800/600",
+          "alt": "Mercado de Abastos"
+        }
+      ],
+      "description": "Local food market, mornings.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "free",
+      "duration": 30,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "food",
+        "local",
+        "free",
+        "photo-friendly"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-mirador-africa",
+      "name": "Mirador de África",
+      "type": "viewpoint",
+      "homeBase": "tarifa",
+      "area": "Old town",
+      "coords": [
+        36.00736,
+        -5.6066
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.00736,-5.6066",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-mirador-africa/800/600",
+          "alt": "Mirador de África"
+        }
+      ],
+      "description": "Hidden square behind Guzmán castle, view to Africa.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "free",
+      "duration": 15,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "evening"
+      ],
+      "tags": [
+        "views",
+        "free",
+        "quirky",
+        "golden-hour",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-tunel-tile-art",
+      "name": "Hidden tile-art tunnel",
+      "type": "art",
+      "homeBase": "tarifa",
+      "area": "Old town",
+      "coords": [
+        36.01183,
+        -5.60418
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.01183,-5.60418",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-tunel-tile-art/800/600",
+          "alt": "Hidden tile-art tunnel"
+        }
+      ],
+      "description": "Tunnel by tourism office with tile illustration + weathervane lamp.",
+      "priority": "backup",
+      "zone": 1,
+      "cost": "free",
+      "duration": 10,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "snack"
+      ],
+      "tags": [
+        "art",
+        "free",
+        "quirky",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-baelo-claudia",
+      "name": "Baelo Claudia ruins",
+      "type": "monument",
+      "homeBase": "tarifa",
+      "area": "Bolonia",
+      "coords": [
+        36.08222,
+        -5.775
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.08222,-5.775",
+      "photos": [
+        {
+          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Baelo_Claudia_2.jpg?width=800",
+          "alt": "Baelo Claudia ruins",
+          "credit": "Wikimedia Commons",
+          "fallback": "https://picsum.photos/seed/trf-baelo-claudia/800/600"
+        }
+      ],
+      "description": "1st-century BC Roman city overlooking the Atlantic.",
+      "priority": "must",
+      "zone": 3,
+      "cost": "cheap",
+      "duration": 90,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "history",
+        "architecture",
+        "raluca-camera",
+        "photo-friendly"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "notes": "€1.50 EU citizens with passport, €5 otherwise. Don't skip the museum.",
+      "pairs": [
+        "trf-bolonia",
+        "trf-las-rejas"
+      ]
+    },
+    {
+      "id": "trf-cueva-moro",
+      "name": "Cueva del Moro",
+      "type": "mystic",
+      "homeBase": "tarifa",
+      "area": "Bolonia area",
+      "coords": [
+        36.08,
+        -5.79
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.08,-5.79",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-cueva-moro/800/600",
+          "alt": "Cueva del Moro"
+        }
+      ],
+      "description": "Prehistoric cave paintings (check access seasonally).",
+      "priority": "optional",
+      "zone": 3,
+      "cost": "free",
+      "duration": 30,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "history",
+        "mystic",
+        "quirky",
+        "free",
+        "outdoor"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-necropolis-algarbes",
+      "name": "Necrópolis de los Algarbes",
+      "type": "mystic",
+      "homeBase": "tarifa",
+      "area": "Bolonia",
+      "coords": [
+        36.09,
+        -5.785
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.09,-5.785",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-necropolis-algarbes/800/600",
+          "alt": "Necrópolis de los Algarbes"
+        }
+      ],
+      "description": "Ancient burial site, atmospheric.",
+      "priority": "backup",
+      "zone": 3,
+      "cost": "free",
+      "duration": 45,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "history",
+        "mystic",
+        "free",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-punta-camarinal",
+      "name": "Punta Camarinal lighthouse",
+      "type": "viewpoint",
+      "homeBase": "tarifa",
+      "area": "Coast",
+      "coords": [
+        36.09611,
+        -5.81303
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.09611,-5.81303",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-punta-camarinal/800/600",
+          "alt": "Punta Camarinal lighthouse"
+        }
+      ],
+      "description": "Wild cape between Bolonia & Zahara.",
+      "priority": "optional",
+      "zone": 3,
+      "cost": "free",
+      "duration": 90,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "nature",
+        "views",
+        "free",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-silla-papa",
+      "name": "Hike Silla del Papa",
+      "type": "hike",
+      "homeBase": "tarifa",
+      "area": "Bolonia",
+      "coords": [
+        36.075,
+        -5.79
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.075,-5.79",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-silla-papa/800/600",
+          "alt": "Hike Silla del Papa"
+        }
+      ],
+      "description": "Iberian-Roman ruins on a viewpoint above Bolonia.",
+      "priority": "optional",
+      "zone": 3,
+      "cost": "free",
+      "duration": 120,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "hike",
+        "history",
+        "views",
+        "free",
+        "raluca-camera"
+      ],
+      "energy": "heavy",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-vejer",
+      "name": "Vejer de la Frontera",
+      "type": "daytrip",
+      "homeBase": "tarifa",
+      "area": "N45min",
+      "coords": [
+        36.25,
+        -5.96667
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.25,-5.96667",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-vejer/800/600",
+          "alt": "Vejer de la Frontera"
+        }
+      ],
+      "description": "White village, 45min north.",
+      "priority": "optional",
+      "zone": 4,
+      "cost": "free",
+      "duration": 240,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "walking",
+        "photo-friendly",
+        "raluca-camera",
+        "free"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-zahara",
+      "name": "Zahara de los Atunes",
+      "type": "daytrip",
+      "homeBase": "tarifa",
+      "area": "NW",
+      "coords": [
+        36.13,
+        -5.85
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.13,-5.85",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-zahara/800/600",
+          "alt": "Zahara de los Atunes"
+        }
+      ],
+      "description": "Fishing village, atún rojo capital.",
+      "priority": "optional",
+      "zone": 4,
+      "cost": "free",
+      "duration": 240,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "seafood",
+        "local",
+        "free",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-tangier",
+      "name": "Tangier (Morocco)",
+      "type": "daytrip",
+      "homeBase": "tarifa",
+      "area": "Ferry",
+      "coords": [
+        35.78,
+        -5.81
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=35.78,-5.81",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-tangier/800/600",
+          "alt": "Tangier (Morocco)"
+        }
+      ],
+      "description": "Ferry 1h to Morocco. Bring passport.",
+      "priority": "recommended",
+      "zone": 4,
+      "cost": "mid",
+      "duration": 600,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "walking",
+        "quirky",
+        "extra-territory",
+        "raluca-camera",
+        "photo-friendly"
+      ],
+      "energy": "moderate",
+      "bookingRequired": true,
+      "notes": "FRS or Inter Shipping. ~€40 round trip. Passport required."
+    },
+    {
+      "id": "trf-gibraltar",
+      "name": "Gibraltar",
+      "type": "daytrip",
+      "homeBase": "tarifa",
+      "area": "E45min",
+      "coords": [
+        36.14039,
+        -5.35345
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.14039,-5.35345",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-gibraltar/800/600",
+          "alt": "Gibraltar"
+        }
+      ],
+      "description": "Monkeys + The Rock + duty-free.",
+      "priority": "optional",
+      "zone": 4,
+      "cost": "mid",
+      "duration": 480,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "nature",
+        "quirky",
+        "extra-territory",
+        "family",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-betis-fortress",
+      "name": "Castillo Santa Catalina",
+      "type": "monument",
+      "homeBase": "tarifa",
+      "area": "West cliff",
+      "coords": [
+        36.00917,
+        -5.61222
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.00917,-5.61222",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-betis-fortress/800/600",
+          "alt": "Castillo Santa Catalina"
+        }
+      ],
+      "description": "19th-c fort on cliff (often closed, exterior only).",
+      "priority": "backup",
+      "zone": 1,
+      "cost": "free",
+      "duration": 20,
+      "validSlots": [
+        "afternoon",
+        "evening"
+      ],
+      "tags": [
+        "history",
+        "views",
+        "free",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-whale",
+      "name": "Whale & dolphin watching",
+      "type": "activity",
+      "homeBase": "tarifa",
+      "area": "Port",
+      "coords": [
+        36.009,
+        -5.605
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.009,-5.605",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-whale/800/600",
+          "alt": "Whale & dolphin watching"
+        }
+      ],
+      "description": "Boat trip in the Strait of Gibraltar. ALREADY BOOKED.",
+      "priority": "must",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 180,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "nature",
+        "family",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": true,
+      "validDays": [
+        "2026-05-18"
+      ],
+      "notes": "May 18 — Raluca's birthday. Bring layers, sun cream, seasickness pills if needed.",
+      "bookingUrl": "https://www.firmm.org/"
+    },
+    {
+      "id": "trf-kite-lesson",
+      "name": "Kitesurf taster lesson",
+      "type": "activity",
+      "homeBase": "tarifa",
+      "area": "Beach",
+      "coords": [
+        36.062,
+        -5.69
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.062,-5.69",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-kite-lesson/800/600",
+          "alt": "Kitesurf taster lesson"
+        }
+      ],
+      "description": "Tarifa is THE European kitesurf spot. Schools: Freeride, Tarifa Max, ION Club.",
+      "priority": "optional",
+      "zone": 2,
+      "cost": "high",
+      "duration": 120,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "activity",
+        "kitesurf",
+        "outdoor"
+      ],
+      "energy": "heavy",
+      "bookingRequired": true,
+      "weather": "sun"
+    },
+    {
+      "id": "trf-horse",
+      "name": "Horse riding on the beach",
+      "type": "activity",
+      "homeBase": "tarifa",
+      "area": "Hurricane",
+      "coords": [
+        36.055,
+        -5.69
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.055,-5.69",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-horse/800/600",
+          "alt": "Horse riding on the beach"
+        }
+      ],
+      "description": "Hurricane Hotel stables, ~€40/h.",
+      "priority": "optional",
+      "zone": 2,
+      "cost": "high",
+      "duration": 60,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "evening"
+      ],
+      "tags": [
+        "activity",
+        "outdoor",
+        "romantic",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": true
+    },
+    {
+      "id": "trf-yoga-beach",
+      "name": "Sunrise yoga Los Lances",
+      "type": "wellness",
+      "homeBase": "tarifa",
+      "area": "Beach",
+      "coords": [
+        36.02143,
+        -5.61237
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.02143,-5.61237",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-yoga-beach/800/600",
+          "alt": "Sunrise yoga Los Lances"
+        }
+      ],
+      "description": "Drop-in beach yoga, multiple schools.",
+      "priority": "backup",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 75,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "wellness",
+        "outdoor",
+        "golden-hour"
+      ],
+      "energy": "moderate",
+      "bookingRequired": true,
+      "weather": "wind-bad"
+    },
+    {
+      "id": "trf-sup",
+      "name": "SUP / paddleboard",
+      "type": "activity",
+      "homeBase": "tarifa",
+      "area": "Beach",
+      "coords": [
+        36.02,
+        -5.605
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.02,-5.605",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-sup/800/600",
+          "alt": "SUP / paddleboard"
+        }
+      ],
+      "description": "Calmer days only — rent at Hurricane or surf schools.",
+      "priority": "backup",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 90,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "activity",
+        "outdoor",
+        "swim"
+      ],
+      "energy": "moderate",
+      "bookingRequired": true,
+      "weather": "wind-bad"
+    },
+    {
+      "id": "trf-bird-watching",
+      "name": "Strait bird migration",
+      "type": "nature",
+      "homeBase": "tarifa",
+      "area": "Coast",
+      "coords": [
+        36.05,
+        -5.6
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.05,-5.6",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-bird-watching/800/600",
+          "alt": "Strait bird migration"
+        }
+      ],
+      "description": "May = peak migration over Strait.",
+      "priority": "optional",
+      "zone": 2,
+      "cost": "free",
+      "duration": 120,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "nature",
+        "free",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-bibo",
+      "name": "BiBo Beach House",
+      "type": "food",
+      "homeBase": "tarifa",
+      "area": "Valdevaqueros",
+      "coords": [
+        36.062,
+        -5.693
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.062,-5.693",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-bibo/800/600",
+          "alt": "BiBo Beach House"
+        }
+      ],
+      "description": "Dani García's beach concept — Michelin chef, sunset over Atlantic.",
+      "priority": "recommended",
+      "zone": 2,
+      "cost": "high",
+      "duration": 120,
+      "validSlots": [
+        "lunch",
+        "dinner"
+      ],
+      "tags": [
+        "food",
+        "seafood",
+        "romantic",
+        "sea-view",
+        "golden-hour",
+        "birthday"
+      ],
+      "energy": "moderate",
+      "bookingRequired": true,
+      "notes": "Verify open mid-May (seasonal). Reservation essential."
+    },
+    {
+      "id": "trf-hurricane-rest",
+      "name": "Hurricane Hotel Restaurant",
+      "type": "food",
+      "homeBase": "tarifa",
+      "area": "Valdevaqueros",
+      "coords": [
+        36.0455,
+        -5.6689
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.0455,-5.6689",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-hurricane-rest/800/600",
+          "alt": "Hurricane Hotel Restaurant"
+        }
+      ],
+      "description": "Elegant beachfront restaurant. Live music, flamenco, romantic.",
+      "priority": "must",
+      "zone": 2,
+      "cost": "high",
+      "duration": 120,
+      "validSlots": [
+        "dinner"
+      ],
+      "tags": [
+        "food",
+        "romantic",
+        "sea-view",
+        "music",
+        "birthday"
+      ],
+      "energy": "moderate",
+      "bookingRequired": true,
+      "notes": "Top birthday-dinner pick — book ASAP."
+    },
+    {
+      "id": "trf-biento",
+      "name": "Biento",
+      "type": "food",
+      "homeBase": "tarifa",
+      "area": "Los Lances",
+      "coords": [
+        36.025,
+        -5.615
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.025,-5.615",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-biento/800/600",
+          "alt": "Biento"
+        }
+      ],
+      "description": "Rooftop with Los Lances views, paellas, DJ sessions.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 90,
+      "validSlots": [
+        "lunch",
+        "dinner"
+      ],
+      "tags": [
+        "food",
+        "sea-view",
+        "golden-hour",
+        "modern",
+        "romantic"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-arte-vida",
+      "name": "Arte Vida",
+      "type": "food",
+      "homeBase": "tarifa",
+      "area": "Los Lances",
+      "coords": [
+        36.031,
+        -5.622
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.031,-5.622",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-arte-vida/800/600",
+          "alt": "Arte Vida"
+        }
+      ],
+      "description": "Funky garden on the beach, DJs in summer, reasonable prices.",
+      "priority": "recommended",
+      "zone": 2,
+      "cost": "mid",
+      "duration": 90,
+      "validSlots": [
+        "lunch",
+        "dinner",
+        "evening"
+      ],
+      "tags": [
+        "food",
+        "sea-view",
+        "outdoor",
+        "local"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-las-rejas",
+      "name": "Las Rejas (Bolonia)",
+      "type": "food",
+      "homeBase": "tarifa",
+      "area": "Bolonia",
+      "coords": [
+        36.082,
+        -5.774
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.082,-5.774",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-las-rejas/800/600",
+          "alt": "Las Rejas (Bolonia)"
+        }
+      ],
+      "description": "Fresh fish on the beach at Bolonia, atún rojo specialty.",
+      "priority": "must",
+      "zone": 3,
+      "cost": "mid",
+      "duration": 90,
+      "validSlots": [
+        "lunch"
+      ],
+      "tags": [
+        "seafood",
+        "food",
+        "local",
+        "sea-view",
+        "outdoor",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "pairs": [
+        "trf-bolonia",
+        "trf-baelo-claudia"
+      ]
+    },
+    {
+      "id": "trf-el-lola",
+      "name": "El Lola",
+      "type": "food",
+      "homeBase": "tarifa",
+      "area": "Old town",
+      "coords": [
+        36.01076,
+        -5.60522
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.01076,-5.60522",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-el-lola/800/600",
+          "alt": "El Lola"
+        }
+      ],
+      "description": "Flamenco-themed tapas, atmospheric.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 90,
+      "validSlots": [
+        "dinner",
+        "evening"
+      ],
+      "tags": [
+        "food",
+        "tapas",
+        "flamenco",
+        "romantic"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-silos-19",
+      "name": "Silos 19",
+      "type": "food",
+      "homeBase": "tarifa",
+      "area": "Old town",
+      "coords": [
+        36.0106,
+        -5.6051
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.0106,-5.6051",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-silos-19/800/600",
+          "alt": "Silos 19"
+        }
+      ],
+      "description": "Modern, great wine list.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "high",
+      "duration": 90,
+      "validSlots": [
+        "dinner"
+      ],
+      "tags": [
+        "food",
+        "wine",
+        "modern",
+        "romantic"
+      ],
+      "energy": "moderate",
+      "bookingRequired": true
+    },
+    {
+      "id": "trf-frances",
+      "name": "El Francés",
+      "type": "food",
+      "homeBase": "tarifa",
+      "area": "Port",
+      "coords": [
+        36.009,
+        -5.605
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.009,-5.605",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-frances/800/600",
+          "alt": "El Francés"
+        }
+      ],
+      "description": "Tapas near the port, walkable from whale-watching pier.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 60,
+      "validSlots": [
+        "lunch",
+        "snack",
+        "evening"
+      ],
+      "tags": [
+        "tapas",
+        "food",
+        "local",
+        "budget"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-pescaderia",
+      "name": "La Pescadería",
+      "type": "food",
+      "homeBase": "tarifa",
+      "area": "Old town",
+      "coords": [
+        36.011,
+        -5.605
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.011,-5.605",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-pescaderia/800/600",
+          "alt": "La Pescadería"
+        }
+      ],
+      "description": "Fresh fish, casual.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 90,
+      "validSlots": [
+        "lunch",
+        "dinner"
+      ],
+      "tags": [
+        "seafood",
+        "food",
+        "local"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-mandragora",
+      "name": "Mandrágora",
+      "type": "food",
+      "homeBase": "tarifa",
+      "area": "Old town",
+      "coords": [
+        36.0105,
+        -5.6054
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.0105,-5.6054",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-mandragora/800/600",
+          "alt": "Mandrágora"
+        }
+      ],
+      "description": "Moroccan-Andalusian, candlelit. Backup romantic option.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 90,
+      "validSlots": [
+        "dinner"
+      ],
+      "tags": [
+        "food",
+        "romantic",
+        "quirky"
+      ],
+      "energy": "moderate",
+      "bookingRequired": true
+    },
+    {
+      "id": "trf-cafe-azul",
+      "name": "Café Azul",
+      "type": "cafe",
+      "homeBase": "tarifa",
+      "area": "Old town",
+      "coords": [
+        36.01094,
+        -5.60484
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.01094,-5.60484",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-cafe-azul/800/600",
+          "alt": "Café Azul"
+        }
+      ],
+      "description": "Best breakfast bowls in town.",
+      "priority": "must",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 45,
+      "validSlots": [
+        "morning",
+        "snack"
+      ],
+      "tags": [
+        "coffee",
+        "brunch",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-surla",
+      "name": "Surla",
+      "type": "cafe",
+      "homeBase": "tarifa",
+      "area": "Beach",
+      "coords": [
+        36.012,
+        -5.608
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.012,-5.608",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-surla/800/600",
+          "alt": "Surla"
+        }
+      ],
+      "description": "Brunch on the beach.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 60,
+      "validSlots": [
+        "morning",
+        "snack"
+      ],
+      "tags": [
+        "coffee",
+        "brunch",
+        "sea-view",
+        "photo-friendly"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-tarifena",
+      "name": "Confitería La Tarifeña",
+      "type": "cafe",
+      "homeBase": "tarifa",
+      "area": "Old town",
+      "coords": [
+        36.011,
+        -5.6051
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.011,-5.6051",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-tarifena/800/600",
+          "alt": "Confitería La Tarifeña"
+        }
+      ],
+      "description": "Old town bakery — birthday cake source.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 20,
+      "validSlots": [
+        "morning",
+        "snack"
+      ],
+      "tags": [
+        "coffee",
+        "local",
+        "birthday",
+        "budget"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-tumbao",
+      "name": "Tumbao chiringuito",
+      "type": "bar",
+      "homeBase": "tarifa",
+      "area": "Valdevaqueros",
+      "coords": [
+        36.062,
+        -5.694
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.062,-5.694",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-tumbao/800/600",
+          "alt": "Tumbao chiringuito"
+        }
+      ],
+      "description": "Sundown beers, watch kitesurfers.",
+      "priority": "recommended",
+      "zone": 2,
+      "cost": "cheap",
+      "duration": 90,
+      "validSlots": [
+        "snack",
+        "evening"
+      ],
+      "tags": [
+        "bar",
+        "sea-view",
+        "golden-hour",
+        "local",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "weather": "sun"
+    },
+    {
+      "id": "trf-waikiki",
+      "name": "Waikiki chiringuito",
+      "type": "bar",
+      "homeBase": "tarifa",
+      "area": "Los Lances",
+      "coords": [
+        36.023,
+        -5.614
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.023,-5.614",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-waikiki/800/600",
+          "alt": "Waikiki chiringuito"
+        }
+      ],
+      "description": "Pre-dinner drinks at sunset, view of Morocco.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 90,
+      "validSlots": [
+        "snack",
+        "evening"
+      ],
+      "tags": [
+        "bar",
+        "sea-view",
+        "golden-hour",
+        "photo-friendly",
+        "raluca-camera"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-sky-bar-lances",
+      "name": "Sky Bar Hotel Tarifa Lances",
+      "type": "bar",
+      "homeBase": "tarifa",
+      "area": "Los Lances",
+      "coords": [
+        36.03,
+        -5.617
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.03,-5.617",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-sky-bar-lances/800/600",
+          "alt": "Sky Bar Hotel Tarifa Lances"
+        }
+      ],
+      "description": "New panoramic rooftop over Los Lances + Valdevaqueros.",
+      "priority": "recommended",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 60,
+      "validSlots": [
+        "snack",
+        "evening"
+      ],
+      "tags": [
+        "bar",
+        "sea-view",
+        "golden-hour",
+        "modern",
+        "romantic"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-bar-ahti",
+      "name": "Bar Ahti",
+      "type": "bar",
+      "homeBase": "tarifa",
+      "area": "Los Lances",
+      "coords": [
+        36.024,
+        -5.615
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.024,-5.615",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-bar-ahti/800/600",
+          "alt": "Bar Ahti"
+        }
+      ],
+      "description": "2nd-floor sea view, panoramic windows. Best at sunset.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 60,
+      "validSlots": [
+        "snack",
+        "evening"
+      ],
+      "tags": [
+        "bar",
+        "sea-view",
+        "golden-hour",
+        "local"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-waves",
+      "name": "Waves Beach Bar",
+      "type": "bar",
+      "homeBase": "tarifa",
+      "area": "Los Lances",
+      "coords": [
+        36.025,
+        -5.617
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.025,-5.617",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-waves/800/600",
+          "alt": "Waves Beach Bar"
+        }
+      ],
+      "description": "DJs, kitesurf zone.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 90,
+      "validSlots": [
+        "evening",
+        "night"
+      ],
+      "tags": [
+        "bar",
+        "beach",
+        "music",
+        "night-owl"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-akra",
+      "name": "Akra Café",
+      "type": "cafe",
+      "homeBase": "tarifa",
+      "area": "Old town",
+      "coords": [
+        36.0108,
+        -5.6046
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.0108,-5.6046",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-akra/800/600",
+          "alt": "Akra Café"
+        }
+      ],
+      "description": "Specialty coffee, surf vibe.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 30,
+      "validSlots": [
+        "morning",
+        "snack"
+      ],
+      "tags": [
+        "coffee",
+        "modern",
+        "local"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-clandestino",
+      "name": "Clandestino bar",
+      "type": "bar",
+      "homeBase": "tarifa",
+      "area": "Old town",
+      "coords": [
+        36.0109,
+        -5.60525
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.0109,-5.60525",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-clandestino/800/600",
+          "alt": "Clandestino bar"
+        }
+      ],
+      "description": "Late-night locals' spot.",
+      "priority": "backup",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 90,
+      "validSlots": [
+        "night"
+      ],
+      "tags": [
+        "bar",
+        "local",
+        "night-owl"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "trf-mercadillo-tarifa",
+      "name": "Mercadillo de Tarifa",
+      "type": "flea-market",
+      "homeBase": "tarifa",
+      "area": "Town",
+      "coords": [
+        36.013,
+        -5.608
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.013,-5.608",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-mercadillo-tarifa/800/600",
+          "alt": "Mercadillo de Tarifa"
+        }
+      ],
+      "description": "Tuesdays — eclectic vendors.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "free",
+      "duration": 60,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "flea-market",
+        "local",
+        "free"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "validDays": [
+        "2026-05-19"
+      ]
+    },
+    {
+      "id": "trf-surf-shops",
+      "name": "Surf shop wander",
+      "type": "shopping",
+      "homeBase": "tarifa",
+      "area": "Old town",
+      "coords": [
+        36.0108,
+        -5.6048
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.0108,-5.6048",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/trf-surf-shops/800/600",
+          "alt": "Surf shop wander"
+        }
+      ],
+      "description": "Eco-clothing, surf gear, hidden treasures.",
+      "priority": "optional",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 60,
+      "validSlots": [
+        "afternoon",
+        "snack"
+      ],
+      "tags": [
+        "shopping",
+        "local",
+        "quirky"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false
+    },
+    {
+      "id": "log-arrival-mlg",
+      "name": "Arrival at MLG airport",
+      "type": "logistics",
+      "homeBase": "malaga-1",
+      "area": "Airport",
+      "coords": [
+        36.67492,
+        -4.49911
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.67492,-4.49911",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/log-arrival-mlg/800/600",
+          "alt": "Arrival at MLG airport"
+        }
+      ],
+      "description": "Flight arrives Málaga AGP airport.",
+      "priority": "must",
+      "zone": 4,
+      "cost": "free",
+      "duration": 60,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "transit"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "validDays": [
+        "2026-05-12"
+      ]
+    },
+    {
+      "id": "log-pickup-car",
+      "name": "Pick up rental car",
+      "type": "logistics",
+      "homeBase": "malaga-1",
+      "area": "Airport or city",
+      "coords": [
+        36.67492,
+        -4.49911
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.67492,-4.49911",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/log-pickup-car/800/600",
+          "alt": "Pick up rental car"
+        }
+      ],
+      "description": "Rental for May 17–20 (Málaga → Tarifa → Málaga).",
+      "priority": "must",
+      "zone": 1,
+      "cost": "mid",
+      "duration": 60,
+      "validSlots": [
+        "morning"
+      ],
+      "tags": [
+        "transit"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "validDays": [
+        "2026-05-17"
+      ]
+    },
+    {
+      "id": "log-drive-tarifa",
+      "name": "Drive Málaga → Tarifa",
+      "type": "transit",
+      "homeBase": "malaga-1",
+      "area": "Road",
+      "coords": [
+        36.3,
+        -5.1
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.3,-5.1",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/log-drive-tarifa/800/600",
+          "alt": "Drive Málaga → Tarifa"
+        }
+      ],
+      "description": "AP-7 (toll) or N-340 (coastal, free, 20min slower). ~2h30.",
+      "priority": "must",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 150,
+      "validSlots": [
+        "afternoon"
+      ],
+      "tags": [
+        "transit"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "validDays": [
+        "2026-05-17"
+      ]
+    },
+    {
+      "id": "log-checkin-tarifa",
+      "name": "Check-in Tarifa",
+      "type": "logistics",
+      "homeBase": "tarifa",
+      "area": "Tarifa",
+      "coords": [
+        36.012,
+        -5.605
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.012,-5.605",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/log-checkin-tarifa/800/600",
+          "alt": "Check-in Tarifa"
+        }
+      ],
+      "description": "Arrive at the Tarifa accommodation.",
+      "priority": "must",
+      "zone": 1,
+      "cost": "free",
+      "duration": 30,
+      "validSlots": [
+        "evening"
+      ],
+      "tags": [
+        "transit"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "validDays": [
+        "2026-05-17"
+      ]
+    },
+    {
+      "id": "log-drive-malaga",
+      "name": "Drive Tarifa → Málaga",
+      "type": "transit",
+      "homeBase": "malaga-1",
+      "area": "Road",
+      "coords": [
+        36.3,
+        -5.1
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.3,-5.1",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/log-drive-malaga/800/600",
+          "alt": "Drive Tarifa → Málaga"
+        }
+      ],
+      "description": "Return drive. ~2h30.",
+      "priority": "must",
+      "zone": 1,
+      "cost": "cheap",
+      "duration": 150,
+      "validSlots": [
+        "morning",
+        "afternoon"
+      ],
+      "tags": [
+        "transit"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "validDays": [
+        "2026-05-20"
+      ]
+    },
+    {
+      "id": "log-dropoff-car",
+      "name": "Return rental car",
+      "type": "logistics",
+      "homeBase": "malaga-1",
+      "area": "Airport or city",
+      "coords": [
+        36.67492,
+        -4.49911
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.67492,-4.49911",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/log-dropoff-car/800/600",
+          "alt": "Return rental car"
+        }
+      ],
+      "description": "Return at agreed location.",
+      "priority": "must",
+      "zone": 1,
+      "cost": "free",
+      "duration": 30,
+      "validSlots": [
+        "afternoon"
+      ],
+      "tags": [
+        "transit"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "validDays": [
+        "2026-05-20"
+      ]
+    },
+    {
+      "id": "log-checkin-mlg2",
+      "name": "Check-in Málaga 2",
+      "type": "logistics",
+      "homeBase": "malaga-2",
+      "area": "Málaga",
+      "coords": [
+        36.721,
+        -4.421
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.721,-4.421",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/log-checkin-mlg2/800/600",
+          "alt": "Check-in Málaga 2"
+        }
+      ],
+      "description": "Final stay accommodation.",
+      "priority": "must",
+      "zone": 1,
+      "cost": "free",
+      "duration": 30,
+      "validSlots": [
+        "afternoon",
+        "evening"
+      ],
+      "tags": [
+        "transit"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "validDays": [
+        "2026-05-20"
+      ]
+    },
+    {
+      "id": "log-flight-out",
+      "name": "Flight home",
+      "type": "logistics",
+      "homeBase": "malaga-1",
+      "area": "Airport",
+      "coords": [
+        36.67492,
+        -4.49911
+      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.67492,-4.49911",
+      "photos": [
+        {
+          "src": "https://picsum.photos/seed/log-flight-out/800/600",
+          "alt": "Flight home"
+        }
+      ],
+      "description": "Departure from MLG.",
+      "priority": "must",
+      "zone": 1,
+      "cost": "free",
+      "duration": 60,
+      "validSlots": [
+        "morning",
+        "afternoon",
+        "evening"
+      ],
+      "tags": [
+        "transit"
+      ],
+      "energy": "moderate",
+      "bookingRequired": false,
+      "validDays": [
+        "2026-05-23"
+      ]
+    }
+  ],
+  "days": [
+    {
+      "id": "day-01",
+      "date": "2026-05-12",
+      "dayNum": 1,
+      "homeBase": "malaga-1",
+      "theme": "Arrival & old town",
+      "travelMode": "walking",
+      "fixed": [
+        {
+          "name": "Flight arrives MLG",
+          "type": "transit",
+          "placeId": "log-arrival-mlg"
+        },
+        {
+          "name": "Check-in Málaga 1",
+          "type": "booking"
+        }
+      ]
+    },
+    {
+      "id": "day-02",
+      "date": "2026-05-13",
+      "dayNum": 2,
+      "homeBase": "malaga-1",
+      "theme": "Alcazaba + tapas + Cortijo Wed market",
+      "travelMode": "walking",
+      "fixed": []
+    },
+    {
+      "id": "day-03",
+      "date": "2026-05-14",
+      "dayNum": 3,
+      "homeBase": "malaga-1",
+      "theme": "Day trip: Caminito del Rey",
+      "travelMode": "driving",
+      "fixed": [
+        {
+          "name": "Caminito del Rey booking",
+          "type": "booking",
+          "placeId": "dt-caminito"
+        }
+      ]
+    },
+    {
+      "id": "day-04",
+      "date": "2026-05-15",
+      "dayNum": 4,
+      "homeBase": "malaga-1",
+      "theme": "Day trip: Ronda",
+      "travelMode": "transit",
+      "fixed": []
+    },
+    {
+      "id": "day-05",
+      "date": "2026-05-16",
+      "dayNum": 5,
+      "homeBase": "malaga-1",
+      "theme": "Beach & Pedregalejo",
+      "travelMode": "walking",
+      "fixed": []
+    },
+    {
+      "id": "day-06",
+      "date": "2026-05-17",
+      "dayNum": 6,
+      "homeBase": "transit",
+      "theme": "Recinto Ferial → drive Tarifa",
+      "travelMode": "driving",
+      "fixed": [
+        {
+          "name": "Pick up rental car",
+          "type": "transit",
+          "placeId": "log-pickup-car"
+        },
+        {
+          "name": "Check-in Tarifa",
+          "type": "booking"
+        }
+      ]
+    },
+    {
+      "id": "day-07",
+      "date": "2026-05-18",
+      "dayNum": 7,
+      "homeBase": "tarifa",
+      "theme": "Birthday — whale watching",
+      "travelMode": "walking",
+      "fixed": [
+        {
+          "name": "Whale watching booked",
+          "type": "booking",
+          "placeId": "trf-whale",
+          "time": "morning"
+        }
+      ]
+    },
+    {
+      "id": "day-08",
+      "date": "2026-05-19",
+      "dayNum": 8,
+      "homeBase": "tarifa",
+      "theme": "Bolonia full day",
+      "travelMode": "driving",
+      "fixed": []
+    },
+    {
+      "id": "day-09",
+      "date": "2026-05-20",
+      "dayNum": 9,
+      "homeBase": "transit",
+      "theme": "Drive back to Málaga",
+      "travelMode": "driving",
+      "fixed": [
+        {
+          "name": "Return rental car",
+          "type": "transit",
+          "placeId": "log-dropoff-car"
+        },
+        {
+          "name": "Check-in Málaga 2",
+          "type": "booking"
+        }
+      ]
+    },
+    {
+      "id": "day-10",
+      "date": "2026-05-21",
+      "dayNum": 10,
+      "homeBase": "malaga-2",
+      "theme": "Day trip: Nerja or Granada",
+      "travelMode": "transit",
+      "fixed": []
+    },
+    {
+      "id": "day-11",
+      "date": "2026-05-22",
+      "dayNum": 11,
+      "homeBase": "malaga-2",
+      "theme": "Soho art + Hammam",
+      "travelMode": "walking",
+      "fixed": []
+    },
+    {
+      "id": "day-12",
+      "date": "2026-05-23",
+      "dayNum": 12,
+      "homeBase": "malaga-2",
+      "theme": "Last beach + flight",
+      "travelMode": "walking",
+      "fixed": [
+        {
+          "name": "Flight home",
+          "type": "transit",
+          "placeId": "log-flight-out"
+        }
+      ]
+    }
+  ],
+  "presets": {
+    "states": {
+      "trf-whale": "scheduled"
+    },
+    "scheduled": {
+      "day-07": {
+        "morning": [
+          "trf-whale"
+        ]
+      }
+    }
+  }
+}

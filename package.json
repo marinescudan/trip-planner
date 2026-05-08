@@ -14,7 +14,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@iconify-json/heroicons": "^1.2.3",
+    "@iconify-json/lucide": "^1.2.105",
     "@nuxt/fonts": "^0.14.0",
+    "@nuxt/icon": "^2.2.2",
     "@nuxt/ui": "^3.3.7",
     "nuxt": "^3.21.4",
     "vue": "^3.5.33"

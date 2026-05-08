@@ -33,16 +33,17 @@
 
 ## Phase 3: Trip loader
 
-- [ ] 3.1 `composables/useTripLoader.ts` — resolve flow: query param → locker → default `/trip.json` → /load
-- [ ] 3.2 `composables/useTripLocker.ts` — list/save/select/remove trips in localStorage
-- [ ] 3.3 `composables/useTrip.ts` — exposes active `Trip` reactive ref + `placeById`, `dayById`
-- [ ] 3.4 `pages/load.vue` — UI for URL paste, file drop, manual paste; shows Zod errors on invalid input
-- [ ] 3.5 Tests: trip-loader resolution priority, validation failures, locker CRUD
-- [ ] 3.6 Verification: with no localStorage, app loads `/trip.json`; with `?trip=<url>` loads that one; bad URL routes to `/load` with errors
+- [x] 3.1 `composables/useTripLoader.ts` — resolve flow: query param → locker → default `/trip.json` → /load
+- [x] 3.2 `composables/useTripLocker.ts` — list/save/select/remove trips in localStorage
+- [x] 3.3 `composables/useTrip.ts` — exposes active `Trip` reactive ref + `placeById`, `dayById`
+- [x] 3.4 `pages/load.vue` — UI for URL paste, file drop, manual paste; shows Zod errors on invalid input
+- [x] 3.5 Tests: trip-loader resolution priority, validation failures, locker CRUD
+- [x] 3.6 Verification: with no localStorage, app loads `/trip.json`; with `?trip=<url>` loads that one; bad URL routes to `/load` with errors
 
 ## Phase 4: Place state + day plan
 
-- [ ] 4.1 `composables/useStorage.ts` — generic typed wrapper, Zod-validated, throttled writes, SSR-safe; key namespacing helpers
+- [~] 4.1 `composables/useStorage.ts` — generic typed wrapper, Zod-validated, throttled writes, SSR-safe; key namespacing helpers
+  - Foundation (StorageAdapter + LocalAdapter + InMemoryAdapter + Zod-validated get/set/list/delete) was pulled forward into Phase 3 because `useTripLocker` requires it and CLAUDE.md forbids direct `localStorage`. Throttling + key-namespacing helpers remain to be added in Phase 4.
 - [ ] 4.2 `composables/usePlaceState.ts` — per-trip place states; `getState`, `setState`, `cycleState`
 - [ ] 4.3 `composables/useDayPlan.ts` — per-trip day assignments; `assignToSlot`, `removeFromSlot`, `getSlot`
 - [ ] 4.4 `composables/useFilters.ts` — per-trip filter state; computed `filteredPlaces` chain

@@ -8,7 +8,7 @@
 
 ## Phase 1: Project scaffold
 
-- [ ] 1.1 `pnpm dlx nuxi@latest init trip-planner --packageManager pnpm --gitInit`
+- [x] 1.1 `pnpm dlx nuxi@latest init trip-planner --packageManager pnpm --gitInit`
 - [ ] 1.2 Install Nuxt UI v3: `pnpm add @nuxt/ui` and add `'@nuxt/ui'` to `nuxt.config.ts` modules
 - [ ] 1.3 Install fonts: `pnpm add @nuxt/fonts` and add `'@nuxt/fonts'` to modules; configure Inter + Fraunces in `app.config.ts`
 - [ ] 1.4 Install icons: `pnpm add @nuxt/icon @iconify-json/heroicons @iconify-json/lucide`

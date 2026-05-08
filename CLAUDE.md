@@ -70,6 +70,8 @@ Scopes: `trip-schema`, `trip-loading`, `trip-data`, `itinerary`, `filters`, `sta
 
 Example: `feat(filters): add zone multi-select chips`
 
+**Never** include `Co-Authored-By: Claude …` (or any other AI-attribution) trailers in commit messages or PR descriptions for this project. Plain commit messages only.
+
 ## Testing
 
 - Run `pnpm test` before claiming a task complete

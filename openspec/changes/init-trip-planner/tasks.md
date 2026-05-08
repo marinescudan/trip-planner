@@ -27,8 +27,8 @@
 - [x] 2.3 [P] `types/day.ts` — Day, DayId, TravelMode, FixedEvent
 - [x] 2.4 [P] `types/state.ts` — PlaceState, DayAssignments, Presets
 - [x] 2.5 [P] `types/taxonomy.ts` — SlotDef, PriorityTierDef, CostTierDef, ZoneDef, EnergyDef
-- [ ] 2.6 `utils/schema.ts` — Zod schemas matching all the above; export `tripSchema`, `placeSchema`, etc.
-- [ ] 2.7 `utils/schema.ts` — also export `validateTripJson(input: unknown): { ok: true, trip: Trip } | { ok: false, errors: ZodIssue[] }`
+- [x] 2.6 `utils/schema.ts` — Zod schemas matching all the above; export `tripSchema`, `placeSchema`, etc.
+- [x] 2.7 `utils/schema.ts` — also export `validateTripJson(input: unknown): { ok: true, trip: Trip } | { ok: false, errors: ZodIssue[] }`
 - [ ] 2.8 Verification: `pnpm typecheck` passes; round-trip a fixture object through Zod
 
 ## Phase 3: Trip loader

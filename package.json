@@ -11,7 +11,10 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "nuxt typecheck",
+    "validate-trip": "tsx scripts/validate-trip.ts"
   },
   "dependencies": {
     "@iconify-json/heroicons": "^1.2.3",
@@ -36,6 +39,9 @@
     "@vite-pwa/nuxt": "^1.1.1",
     "@vue/test-utils": "^2.4.10",
     "happy-dom": "^20.9.0",
-    "vitest": "^4.1.5"
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.5",
+    "vue-tsc": "^3.2.8"
   }
 }

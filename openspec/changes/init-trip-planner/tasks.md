@@ -16,7 +16,7 @@
 - [x] 1.6 Install dev tools: `pnpm add -D vitest @vue/test-utils happy-dom zod @types/leaflet`
 - [x] 1.7 Install runtime: `pnpm add leaflet`
 - [x] 1.8 Configure Vercel preset in `nuxt.config.ts`: `nitro: { preset: 'vercel' }`
-- [ ] 1.9 Add scripts to `package.json`: `dev`, `build`, `preview`, `test`, `typecheck`, `validate-trip`
+- [x] 1.9 Add scripts to `package.json`: `dev`, `build`, `preview`, `test`, `typecheck`, `validate-trip`
 - [ ] 1.10 Create folders: `components/`, `composables/`, `assets/data/`, `types/`, `utils/`, `tests/`, `public/`, `server/`
 - [ ] 1.11 Verification: `pnpm dev` opens at localhost:3000 with default Nuxt UI styling visible
 

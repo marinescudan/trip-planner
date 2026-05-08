@@ -18,7 +18,7 @@
 - [x] 1.8 Configure Vercel preset in `nuxt.config.ts`: `nitro: { preset: 'vercel' }`
 - [x] 1.9 Add scripts to `package.json`: `dev`, `build`, `preview`, `test`, `typecheck`, `validate-trip`
 - [x] 1.10 Create folders: `components/`, `composables/`, `assets/data/`, `types/`, `utils/`, `tests/`, `public/`, `server/`
-- [ ] 1.11 Verification: `pnpm dev` opens at localhost:3000 with default Nuxt UI styling visible
+- [x] 1.11 Verification: `pnpm dev` opens at localhost:3000 with default Nuxt UI styling visible
 
 ## Phase 2: Trip schema & types
 

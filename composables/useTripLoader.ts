@@ -19,6 +19,9 @@
  */
 import type { LockerSource } from '../types/locker'
 import { type TripJson, type ValidationIssue, validateTripJson } from '../utils/schema'
+import { useDayPlan } from './useDayPlan'
+import { useFilters } from './useFilters'
+import { usePlaceState } from './usePlaceState'
 import { useTrip } from './useTrip'
 import { useTripLocker } from './useTripLocker'
 
@@ -158,6 +161,7 @@ export function useTripLoader(env?: LoaderEnv): UseTripLoader {
     if (!v.ok) return { ok: false, error: { kind: 'validation', issues: v.errors } }
     trip.setActiveTrip(v.trip)
     await locker.setActiveId(v.trip.trip.id)
+    await hydratePerTripState(v.trip.trip.id)
     return { ok: true, trip: v.trip, source: entry.source }
   }
 
@@ -176,6 +180,20 @@ export function useTripLoader(env?: LoaderEnv): UseTripLoader {
     })
     await locker.setActiveId(t.trip.id)
     trip.setActiveTrip(t)
+    await hydratePerTripState(t.trip.id)
+  }
+
+  /**
+   * Hydrate the per-trip composables (place states, day plan, filters) from
+   * storage. Must run after `trip.setActiveTrip` so taxonomy-driven filter
+   * defaults and place-id pruning have the new trip in context.
+   */
+  async function hydratePerTripState(tripId: string): Promise<void> {
+    await Promise.all([
+      usePlaceState().loadForTrip(tripId),
+      useDayPlan().loadForTrip(tripId),
+      useFilters().loadForTrip(tripId),
+    ])
   }
 
   return { resolve, loadFromUrl, loadFromText }

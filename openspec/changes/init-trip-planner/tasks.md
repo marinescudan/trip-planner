@@ -42,13 +42,13 @@
 
 ## Phase 4: Place state + day plan
 
-- [~] 4.1 `composables/useStorage.ts` — generic typed wrapper, Zod-validated, throttled writes, SSR-safe; key namespacing helpers
-  - Foundation (StorageAdapter + LocalAdapter + InMemoryAdapter + Zod-validated get/set/list/delete) was pulled forward into Phase 3 because `useTripLocker` requires it and CLAUDE.md forbids direct `localStorage`. Throttling + key-namespacing helpers remain to be added in Phase 4.
-- [ ] 4.2 `composables/usePlaceState.ts` — per-trip place states; `getState`, `setState`, `cycleState`
-- [ ] 4.3 `composables/useDayPlan.ts` — per-trip day assignments; `assignToSlot`, `removeFromSlot`, `getSlot`
-- [ ] 4.4 `composables/useFilters.ts` — per-trip filter state; computed `filteredPlaces` chain
-- [ ] 4.5 Tests for each composable (key namespacing must be respected)
-- [ ] 4.6 Verification: switching active trip in locker preserves each trip's state independently
+- [x] 4.1 `composables/useStorage.ts` — generic typed wrapper, Zod-validated, throttled writes, SSR-safe; key namespacing helpers
+  - Foundation (StorageAdapter + LocalAdapter + InMemoryAdapter + Zod-validated get/set/list/delete) was pulled forward into Phase 3 because `useTripLocker` requires it and CLAUDE.md forbids direct `localStorage`. Phase 4 adds `tripKey()` namespacing + per-key trailing-throttle (`throttledWrite`/`flushThrottledWrites`).
+- [x] 4.2 `composables/usePlaceState.ts` — per-trip place states; `getState`, `setState`, `cycleState`
+- [x] 4.3 `composables/useDayPlan.ts` — per-trip day assignments; `assignToSlot`, `removeFromSlot`, `getSlot`
+- [x] 4.4 `composables/useFilters.ts` — per-trip filter state; computed `filteredPlaces` chain
+- [x] 4.5 Tests for each composable (key namespacing must be respected)
+- [x] 4.6 Verification: switching active trip in locker preserves each trip's state independently
 
 ## Phase 5: UI shell + filter rail
 

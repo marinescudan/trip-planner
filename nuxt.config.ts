@@ -4,4 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/ui', '@nuxt/fonts', '@vite-pwa/nuxt'],
   css: ['~/assets/css/main.css'],
+  nitro: {
+    preset: 'vercel',
+  },
 })

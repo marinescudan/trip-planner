@@ -1,17 +1,12 @@
 /**
- * Storage adapter foundation.
+ * Storage adapter foundation + per-key throttled writes + key namespacing
+ * helpers (task 4.1).
  *
  * Per CLAUDE.md, NO consumer SHALL touch `localStorage` directly. All
  * persistence flows through `useStorage()` which returns the active
  * `StorageAdapter`. v1 ships exactly one production implementation:
  * `LocalAdapter` (backed by `window.localStorage`). Tests inject
  * `InMemoryAdapter` via `setStorageAdapter()`.
- *
- * Note: tasks.md lists a more featureful `useStorage` at task 4.1
- * (throttled writes etc.). The interface + LocalAdapter foundation is
- * pulled forward into Phase 3 because Phase 3 composables persist data
- * and cannot violate the "never use localStorage directly" rule. Phase 4
- * adds throttling on top of this same module.
  *
  * Source of truth:
  *   openspec/changes/init-trip-planner/specs/state/spec.md
@@ -127,10 +122,85 @@ let _adapter: StorageAdapter = new LocalAdapter()
 
 /** Swap the active adapter. Used by tests to inject `InMemoryAdapter`. */
 export function setStorageAdapter(adapter: StorageAdapter): void {
+  // Discard any pending throttled writes — they target the previous adapter
+  // and any stale schema closures.
+  for (const timer of _pendingTimers.values()) clearTimeout(timer)
+  _pendingTimers.clear()
+  _pendingValues.clear()
   _adapter = adapter
 }
 
 /** Get the currently active adapter. */
 export function useStorage(): StorageAdapter {
   return _adapter
+}
+
+// --- key namespacing -------------------------------------------------------
+
+/**
+ * Per-trip storage namespace fields. Keep in sync with the localStorage
+ * schema in specs/state/spec.md.
+ */
+export type TripStorageField =
+  | 'states'
+  | 'days'
+  | 'filters'
+  | 'presetsApplied'
+
+/** Build the namespaced storage key for a per-trip field. */
+export function tripKey(tripId: string, field: TripStorageField): string {
+  return `trip:${tripId}:${field}`
+}
+
+// --- throttled writes ------------------------------------------------------
+
+/** Default throttle window (ms). Spec: writes per key max once per 200ms. */
+export const THROTTLE_MS = 200
+
+interface PendingWrite {
+  value: unknown
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- erased generic; schema is applied opaquely on flush
+  schema: z.ZodType<any>
+}
+
+const _pendingTimers = new Map<string, ReturnType<typeof setTimeout>>()
+const _pendingValues = new Map<string, PendingWrite>()
+
+/**
+ * Trailing-edge throttled write per key. Rapid calls within `delayMs`
+ * coalesce into a single flush carrying the latest value, capping disk
+ * traffic on rapid state toggles. Validation runs on flush, not on call.
+ */
+export function throttledWrite<T>(
+  key: string,
+  value: T,
+  schema: z.ZodType<T>,
+  delayMs: number = THROTTLE_MS,
+): void {
+  _pendingValues.set(key, { value, schema })
+  if (_pendingTimers.has(key)) return
+  const timer = setTimeout(() => {
+    _pendingTimers.delete(key)
+    const entry = _pendingValues.get(key)
+    _pendingValues.delete(key)
+    if (entry) void _adapter.set(key, entry.value, entry.schema)
+  }, delayMs)
+  _pendingTimers.set(key, timer)
+}
+
+/**
+ * Force-flush every pending throttled write synchronously (timers cancelled,
+ * sets awaited). Used by tests, by the export action, and by lifecycle hooks
+ * (e.g. before navigation away).
+ */
+export async function flushThrottledWrites(): Promise<void> {
+  const writes: Promise<void>[] = []
+  for (const [key, timer] of _pendingTimers) {
+    clearTimeout(timer)
+    const entry = _pendingValues.get(key)
+    if (entry) writes.push(_adapter.set(key, entry.value, entry.schema))
+  }
+  _pendingTimers.clear()
+  _pendingValues.clear()
+  await Promise.all(writes)
 }

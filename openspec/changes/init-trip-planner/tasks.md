@@ -14,7 +14,7 @@
 - [x] 1.4 Install icons: `pnpm add @nuxt/icon @iconify-json/heroicons @iconify-json/lucide`
 - [x] 1.5 Install PWA: `pnpm add -D @vite-pwa/nuxt` and add `'@vite-pwa/nuxt'` to modules (config comes in Phase 10)
 - [x] 1.6 Install dev tools: `pnpm add -D vitest @vue/test-utils happy-dom zod @types/leaflet`
-- [ ] 1.7 Install runtime: `pnpm add leaflet`
+- [x] 1.7 Install runtime: `pnpm add leaflet`
 - [ ] 1.8 Configure Vercel preset in `nuxt.config.ts`: `nitro: { preset: 'vercel' }`
 - [ ] 1.9 Add scripts to `package.json`: `dev`, `build`, `preview`, `test`, `typecheck`, `validate-trip`
 - [ ] 1.10 Create folders: `components/`, `composables/`, `assets/data/`, `types/`, `utils/`, `tests/`, `public/`, `server/`

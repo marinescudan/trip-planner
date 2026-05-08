@@ -12,7 +12,7 @@
 - [x] 1.2 Install Nuxt UI v3: `pnpm add @nuxt/ui` and add `'@nuxt/ui'` to `nuxt.config.ts` modules
 - [x] 1.3 Install fonts: `pnpm add @nuxt/fonts` and add `'@nuxt/fonts'` to modules; configure Inter + Fraunces in `app.config.ts`
 - [x] 1.4 Install icons: `pnpm add @nuxt/icon @iconify-json/heroicons @iconify-json/lucide`
-- [ ] 1.5 Install PWA: `pnpm add -D @vite-pwa/nuxt` and add `'@vite-pwa/nuxt'` to modules (config comes in Phase 10)
+- [x] 1.5 Install PWA: `pnpm add -D @vite-pwa/nuxt` and add `'@vite-pwa/nuxt'` to modules (config comes in Phase 10)
 - [ ] 1.6 Install dev tools: `pnpm add -D vitest @vue/test-utils happy-dom zod @types/leaflet`
 - [ ] 1.7 Install runtime: `pnpm add leaflet`
 - [ ] 1.8 Configure Vercel preset in `nuxt.config.ts`: `nitro: { preset: 'vercel' }`

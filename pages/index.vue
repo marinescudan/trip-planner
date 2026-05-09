@@ -1,22 +1,26 @@
 <script setup lang="ts">
 /**
- * Placeholder home page — wired in Phase 5 (task 5.5) to the full
- * AppShell + filter rail + day list. For now it triggers the trip
- * loader on first mount so we can manually verify the resolution
- * priority described in trip-loading/spec.md.
+ * Home page. Resolves the active trip on first mount per the loader
+ * priority, then renders the AppShell + filter rail. The day list
+ * lands in Phase 6; for now we surface a small live preview of how
+ * many places pass the filters so the rail is observably wired up.
+ *
+ * Source of truth:
+ *   openspec/changes/init-trip-planner/specs/ui-shell/spec.md
+ *   openspec/changes/init-trip-planner/specs/filters/spec.md
  */
 const router = useRouter()
 const { trip } = useTrip()
+const filters = useFilters()
 
 const loadError = ref<string | null>(null)
 const issues = ref<{ path: string; message: string }[]>([])
+const filtersOpen = ref(false)
 
 onMounted(async () => {
   if (trip.value) return
   const result = await useTripLoader().resolve()
   if (result.ok) return
-  // Default trip missing → /load with banner per spec.
-  // Validation errors also route to /load to surface diagnostics.
   if (
     result.error.kind === 'no-trip' ||
     (result.error.kind === 'fetch' && result.error.status === 404)
@@ -46,24 +50,57 @@ function describeError(kind: string): string {
 </script>
 
 <template>
-  <div class="mx-auto max-w-2xl p-6">
+  <AppShell v-model:filters-open="filtersOpen">
     <template v-if="trip">
-      <p class="text-sm uppercase tracking-wide text-gray-500">
-        {{ trip.trip.subtitle ?? trip.trip.startDate + ' – ' + trip.trip.endDate }}
-      </p>
-      <h1 class="font-display text-3xl mt-1">{{ trip.trip.title }}</h1>
-      <p v-if="trip.trip.description" class="mt-3 text-gray-700">
-        {{ trip.trip.description }}
-      </p>
-      <p class="mt-4 text-sm text-gray-500">
-        {{ trip.places.length }} places · {{ trip.days.length }} days · home bases:
-        {{ trip.homeBases.map(h => h.label).join(', ') }}
-      </p>
-      <p class="mt-6 text-xs text-gray-400">
-        Phase 3 placeholder — real itinerary UI lands in Phase 5.
-      </p>
+      <div class="grid gap-6 lg:grid-cols-[18rem_1fr]">
+        <FilterRail />
+
+        <section class="min-w-0">
+          <p class="text-xs uppercase tracking-wide text-[color:var(--ui-text-muted)]">
+            Phase 5 placeholder — day list lands in Phase 6
+          </p>
+          <p class="mt-1 text-sm text-[color:var(--ui-text-muted)]">
+            {{ filters.counts.value[0] }} of {{ filters.counts.value[1] }} places match the current filters.
+          </p>
+
+          <ul
+            v-if="filters.filteredPlaces.value.length > 0"
+            class="mt-4 grid gap-2 sm:grid-cols-2 xl:grid-cols-3"
+          >
+            <li
+              v-for="p in filters.filteredPlaces.value.slice(0, 24)"
+              :key="p.id"
+              class="rounded-lg border border-[color:var(--ui-border)] p-3 text-sm"
+            >
+              <p class="truncate font-medium">{{ p.name }}</p>
+              <p class="truncate text-xs text-[color:var(--ui-text-muted)]">
+                {{ p.area ?? '—' }} · {{ p.cost ?? '—' }} · zone {{ p.zone }}
+              </p>
+            </li>
+          </ul>
+
+          <p
+            v-else
+            class="mt-6 text-sm text-[color:var(--ui-text-muted)]"
+          >
+            No places match the current filters.
+          </p>
+        </section>
+      </div>
+
+      <!-- Mobile drawer (lg- only). Same body as the desktop sidebar. -->
+      <FilterRail
+        as-drawer
+        v-model:drawer-open="filtersOpen"
+      />
     </template>
-    <p v-else-if="loadError" class="text-red-600">{{ loadError }}</p>
-    <p v-else class="text-gray-500">Loading trip…</p>
-  </div>
+
+    <template v-else-if="loadError">
+      <p class="text-red-600">{{ loadError }}</p>
+    </template>
+
+    <template v-else>
+      <p class="text-[color:var(--ui-text-muted)]">Loading trip…</p>
+    </template>
+  </AppShell>
 </template>

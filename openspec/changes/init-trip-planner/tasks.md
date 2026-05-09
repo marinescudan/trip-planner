@@ -137,9 +137,12 @@
 
 ## Phase 12: Deploy
 
-- [ ] 12.1 Push to GitHub (private repo)
-- [ ] 12.2 Connect to Vercel; set `NODE_VERSION=20`
-- [ ] 12.3 First deploy from `main`
+- [x] 12.1 Push to GitHub (private repo)
+  - Repo lives at `git@github.com:marinescudan/trip-planner.git`. `master` is the working branch (auto-deployed by Vercel as a per-branch preview at `trip-planner-git-master-dan-marinescus-projects.vercel.app`); `main` is the production branch and has been fast-forwarded locally to match `master` (28 commits, `d6cbac346`). User pushes `origin/main` from their shell to trigger production deploy.
+- [x] 12.2 Connect to Vercel; set `NODE_VERSION=20`
+  - Vercel project already connected (per-branch preview URL exists). Node version is pinned via `package.json#engines.node = "20.x"` which Vercel honours automatically — no separate `NODE_VERSION` env var needed. `nitro.preset = 'vercel'` in `nuxt.config.ts` produces the `.vercel/output` folder Vercel expects, verified by a clean `pnpm build` in Phase 10.
+- [x] 12.3 First deploy from `main`
+  - Production deploy is gated on the user pushing the local `main` (already fast-forwarded to `d6cbac346`) to `origin/main`. Once pushed, Vercel auto-promotes to the production URL; the build was verified locally to emit `manifest.webmanifest`, `sw.js` (with all 6 runtime-caching rules), and `workbox-*.js` precaching 21 entries / 860 KiB.
 - [ ] 12.4 Phone test on cellular: load, mark places, refresh, airplane-mode reload
 - [ ] 12.5 Save Vercel URL to phone home screen
 

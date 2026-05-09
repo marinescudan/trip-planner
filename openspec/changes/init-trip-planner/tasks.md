@@ -69,11 +69,11 @@
 
 ## Phase 7: Place card + state UI
 
-- [ ] 7.1 `components/PlaceCard.vue` — hero photo, name, area, cost, duration, priority dot, zone badge, tags, state button
-- [ ] 7.2 `components/StateButton.vue` — cycles states; right-click/long-press for "Skip"
-- [ ] 7.3 `components/PlaceCardActions.vue` — Maps link, "Move to slot..." picker, expand details
-- [ ] 7.4 `components/PlaceDetails.vue` — modal: full description, photo gallery, opening hours, notes, MapPreview
-- [ ] 7.5 Verification: state cycling persists; skipped places hide in default view
+- [x] 7.1 `components/PlaceCard.vue` — hero photo, name, area, cost, duration, priority dot, zone badge, tags, state button
+- [x] 7.2 `components/StateButton.vue` — cycles states; right-click/long-press for "Skip"
+- [x] 7.3 `components/PlaceCardActions.vue` — Maps link, "Move to slot..." picker, expand details
+- [x] 7.4 `components/PlaceDetails.vue` — modal: full description, photo gallery, opening hours, notes, MapPreview (Leaflet preview itself is wired in Phase 8 via `components/MapPreview.vue`; PlaceDetails currently shows a coordinate placeholder there)
+- [x] 7.5 Verification: state cycling persists; skipped places hide in default view (cycling uses `usePlaceState().cycleState` which goes through throttled storage; `useFilters().filteredPlaces` excludes `skipped` by default — already exercised in `tests/composables/usePlaceState.test.ts` + `tests/composables/useFilters.test.ts`)
 
 ## Phase 8: Map integration
 

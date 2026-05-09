@@ -13,15 +13,18 @@
  * support — each day becomes a sub-menu whose leaves call
  * `useDayPlan().assignToSlot()`.
  *
- * The Maps URL builder lives in Phase 8 (`utils/maps.ts`); for now we fall
- * back to `place.mapsUrl` if present, else a Google Maps search by name.
+ * Maps URL: `utils/maps.ts → buildPlaceMapsUrl` (returns `null` for
+ * logistics or missing `mapsUrl`, in which case the entry is hidden).
  *
  * Source of truth:
  *   openspec/changes/init-trip-planner/specs/itinerary/spec.md
+ *   openspec/changes/init-trip-planner/specs/map/spec.md
  */
 import type { DropdownMenuItem } from '@nuxt/ui'
 
 import type { Place } from '~/types/place'
+
+import { buildPlaceMapsUrl } from '~/utils/maps'
 
 const props = defineProps<{
   place: Place
@@ -34,11 +37,7 @@ const emit = defineEmits<{
 const trip = useTrip()
 const dayPlan = useDayPlan()
 
-const mapsHref = computed(() => {
-  if (props.place.mapsUrl) return props.place.mapsUrl
-  const q = encodeURIComponent(`${props.place.name} ${props.place.area}`)
-  return `https://www.google.com/maps/search/?api=1&query=${q}`
-})
+const mapsHref = computed(() => buildPlaceMapsUrl(props.place))
 
 const moveToSlotChildren = computed<DropdownMenuItem[]>(() => {
   const t = trip.trip.value
@@ -62,22 +61,24 @@ const moveToSlotChildren = computed<DropdownMenuItem[]>(() => {
 })
 
 const items = computed<DropdownMenuItem[][]>(() => {
+  const primary: DropdownMenuItem[] = []
+  if (mapsHref.value) {
+    primary.push({
+      label: 'Open in Maps',
+      icon: 'i-heroicons-map',
+      to: mapsHref.value,
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    })
+  }
+  primary.push({
+    label: 'Move to slot…',
+    icon: 'i-heroicons-arrows-right-left',
+    children: moveToSlotChildren.value,
+    disabled: moveToSlotChildren.value.length === 0,
+  })
   return [
-    [
-      {
-        label: 'Open in Maps',
-        icon: 'i-heroicons-map',
-        to: mapsHref.value,
-        target: '_blank',
-        rel: 'noopener noreferrer',
-      },
-      {
-        label: 'Move to slot…',
-        icon: 'i-heroicons-arrows-right-left',
-        children: moveToSlotChildren.value,
-        disabled: moveToSlotChildren.value.length === 0,
-      },
-    ],
+    primary,
     [
       {
         label: 'Show details',

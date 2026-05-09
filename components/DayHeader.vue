@@ -4,14 +4,19 @@
  *   "Day n · weekday, MMM d"  Home-base badge   "5 scheduled"  [Open route]
  *   theme line + fixed-event chips
  *
- * "Open route in Maps" is wired in Phase 8; here it is rendered disabled
- * if no places are scheduled (per spec scenario "Open route with no
- * scheduled places") and otherwise as a stub button (no-op for now).
+ * "Open route in Maps" is wired to `utils/maps.ts → buildDayRouteUrl`.
+ * Disabled when 0 places are scheduled (per spec: "Open route with no
+ * scheduled places"). Shows a small warning text when the day has more
+ * than `MAX_DAY_ROUTE_STOPS` (9) stops since the URL is truncated.
  *
  * Source of truth:
  *   openspec/changes/init-trip-planner/specs/itinerary/spec.md
+ *   openspec/changes/init-trip-planner/specs/map/spec.md
  */
 import type { Day } from '~/types/day'
+import type { Place } from '~/types/place'
+
+import { MAX_DAY_ROUTE_STOPS, buildDayRouteUrl } from '~/utils/maps'
 
 const props = defineProps<{
   day: Day
@@ -26,15 +31,30 @@ const homeBaseLabel = computed(() => {
     ?? props.day.homeBase
 })
 
-const scheduledCount = computed(() => {
-  const slots = (dayPlan.assignments.value as Record<string, Record<string, string[]>>)[
+/** Day's slot-ordered scheduled places, used both for the count and the route. */
+const scheduledPlaces = computed<Place[]>(() => {
+  const t = trip.trip.value
+  if (!t) return []
+  const slotsAsc = [...t.taxonomy.slots].sort((a, b) => a.order - b.order)
+  const slotMap = (dayPlan.assignments.value as Record<string, Record<string, string[]>>)[
     props.day.id
   ]
-  if (!slots) return 0
-  let n = 0
-  for (const ids of Object.values(slots)) n += ids.length
-  return n
+  if (!slotMap) return []
+  const placeMap = trip.placeById.value
+  const out: Place[] = []
+  for (const s of slotsAsc) {
+    const ids = slotMap[s.id] ?? []
+    for (const id of ids) {
+      const p = placeMap.get(id)
+      if (p) out.push(p)
+    }
+  }
+  return out
 })
+
+const scheduledCount = computed(() => scheduledPlaces.value.length)
+
+const route = computed(() => buildDayRouteUrl(scheduledPlaces.value, props.day.travelMode))
 
 const dateLabel = computed(() => {
   const d = props.day.date
@@ -46,6 +66,11 @@ const dateLabel = computed(() => {
     day: 'numeric',
   }).format(dt)
 })
+
+/** Stop accordion toggle when the user clicks the route button. */
+function onRouteClick(e: MouseEvent): void {
+  e.stopPropagation()
+}
 </script>
 
 <template>
@@ -76,5 +101,54 @@ const dateLabel = computed(() => {
     <span class="shrink-0 text-xs text-[color:var(--ui-text-muted)]">
       {{ scheduledCount }} scheduled
     </span>
+
+    <UTooltip
+      v-if="scheduledCount === 0"
+      text="Schedule at least one place"
+    >
+      <UButton
+        size="xs"
+        color="neutral"
+        variant="ghost"
+        icon="i-heroicons-map"
+        disabled
+        aria-label="Open route in Maps (disabled — no places scheduled)"
+        @click="onRouteClick"
+      >
+        Route
+      </UButton>
+    </UTooltip>
+    <UTooltip
+      v-else-if="route.truncated"
+      :text="`Showing first ${MAX_DAY_ROUTE_STOPS} of ${route.total} stops`"
+    >
+      <UButton
+        :to="route.url ?? undefined"
+        target="_blank"
+        rel="noopener noreferrer"
+        size="xs"
+        color="neutral"
+        variant="soft"
+        icon="i-heroicons-map"
+        aria-label="Open route in Maps (truncated)"
+        @click="onRouteClick"
+      >
+        Route ⚠
+      </UButton>
+    </UTooltip>
+    <UButton
+      v-else
+      :to="route.url ?? undefined"
+      target="_blank"
+      rel="noopener noreferrer"
+      size="xs"
+      color="neutral"
+      variant="soft"
+      icon="i-heroicons-map"
+      aria-label="Open route in Maps"
+      @click="onRouteClick"
+    >
+      Route
+    </UButton>
   </div>
 </template>

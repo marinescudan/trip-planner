@@ -4286,7 +4286,7 @@
     {
       "id": "trf-tunel-tile-art",
       "name": "Hidden tile-art tunnel",
-      "type": "art",
+      "type": "quirky",
       "homeBase": "tarifa",
       "area": "Old town",
       "coords": [
@@ -6014,7 +6014,6 @@
       "id": "day-06",
       "date": "2026-05-17",
       "dayNum": 6,
-      "homeBase": "transit",
       "theme": "Recinto Ferial → drive Tarifa",
       "travelMode": "driving",
       "fixed": [
@@ -6058,7 +6057,6 @@
       "id": "day-09",
       "date": "2026-05-20",
       "dayNum": 9,
-      "homeBase": "transit",
       "theme": "Drive back to Málaga",
       "travelMode": "driving",
       "fixed": [

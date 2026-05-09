@@ -61,11 +61,11 @@
 
 ## Phase 6: Day & slot rendering
 
-- [ ] 6.1 `components/DayAccordion.vue` — opens by default to today's day if in trip range, else day 1
-- [ ] 6.2 `components/DayHeader.vue` — date, day num, home-base badge, theme, fixed events, "Open route" button
-- [ ] 6.3 `components/SlotRow.vue` — renders ordered slots from trip taxonomy, with scheduled + suggestions
-- [ ] 6.4 `components/SlotScroller.vue` — horizontal snap-scroll, keyboard arrows, mouse drag
-- [ ] 6.5 Verification: trip with N≠7 slots also renders correctly (taxonomy-driven)
+- [x] 6.1 `components/DayAccordion.vue` — opens by default to today's day if in trip range, else day 1
+- [x] 6.2 `components/DayHeader.vue` — date, day num, home-base badge, theme, fixed events, "Open route" button (Open-route button itself lands in Phase 8 with `utils/maps.ts`)
+- [x] 6.3 `components/SlotRow.vue` — renders ordered slots from trip taxonomy, with scheduled + suggestions
+- [x] 6.4 `components/SlotScroller.vue` — horizontal snap-scroll, keyboard arrows, mouse drag
+- [x] 6.5 Verification: trip with N≠7 slots also renders correctly (taxonomy-driven via `taxonomy.slots.sort(order)`; `SlotRow` accepts any `SlotDef`; tests in `tests/utils/suggestions.test.ts` exercise arbitrary slot ids)
 
 ## Phase 7: Place card + state UI
 

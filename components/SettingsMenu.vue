@@ -20,6 +20,7 @@ import type { DropdownMenuItem } from '@nuxt/ui'
 
 const planIO = usePlanIO()
 const toast = useToast()
+const pwa = usePwaUpdate()
 
 const fileInput = ref<HTMLInputElement | null>(null)
 const resetOpen = ref(false)
@@ -27,8 +28,18 @@ const aboutOpen = ref(false)
 const resetConfirmText = ref('')
 const resetBusy = ref(false)
 
-const items = computed<DropdownMenuItem[][]>(() => [
-  [
+const items = computed<DropdownMenuItem[][]>(() => {
+  const groups: DropdownMenuItem[][] = []
+  if (pwa.canInstall.value) {
+    groups.push([
+      {
+        label: 'Install app',
+        icon: 'i-heroicons-arrow-down-on-square',
+        onSelect: () => { void onInstall() },
+      },
+    ])
+  }
+  groups.push([
     {
       label: 'Export plan',
       icon: 'i-heroicons-arrow-down-tray',
@@ -39,8 +50,8 @@ const items = computed<DropdownMenuItem[][]>(() => [
       icon: 'i-heroicons-arrow-up-tray',
       onSelect: () => { fileInput.value?.click() },
     },
-  ],
-  [
+  ])
+  groups.push([
     {
       label: 'Reset all state',
       icon: 'i-heroicons-trash',
@@ -50,15 +61,31 @@ const items = computed<DropdownMenuItem[][]>(() => [
         resetOpen.value = true
       },
     },
-  ],
-  [
+  ])
+  groups.push([
     {
       label: 'About',
       icon: 'i-heroicons-information-circle',
       onSelect: () => { aboutOpen.value = true },
     },
-  ],
-])
+  ])
+  return groups
+})
+
+async function onInstall(): Promise<void> {
+  const outcome = await pwa.promptInstall()
+  if (outcome === 'accepted') {
+    toast.add({ title: 'App installed', color: 'success', icon: 'i-heroicons-check' })
+  }
+  else if (outcome === 'unavailable') {
+    toast.add({
+      title: 'Install not available',
+      description: 'Use your browser menu → Add to Home Screen.',
+      color: 'info',
+      icon: 'i-heroicons-information-circle',
+    })
+  }
+}
 
 async function onExport(): Promise<void> {
   try {
@@ -114,7 +141,7 @@ async function onResetConfirm(): Promise<void> {
 </script>
 
 <template>
-  <div>
+  <div data-slot="settings-menu">
     <UDropdownMenu :items="items">
       <UButton
         icon="i-heroicons-ellipsis-vertical"

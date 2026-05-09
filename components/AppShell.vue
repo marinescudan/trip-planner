@@ -6,14 +6,12 @@
  * The mobile "Filters" button is rendered here too; the parent owns the
  * drawer-open state and listens via `v-model:filtersOpen`.
  *
- * Settings menu actions (Export / Import / Reset / About) are stubs in
- * Phase 5; Phase 9 wires their real handlers per spec.
+ * Settings menu actions (Export / Import / Reset / About) live in
+ * `SettingsMenu.vue` (Phase 9 — wires the real handlers via `usePlanIO`).
  *
  * Source of truth:
  *   openspec/changes/init-trip-planner/specs/ui-shell/spec.md
  */
-import type { DropdownMenuItem } from '@nuxt/ui'
-
 import { todayISO, tripProgress } from '~/utils/trip-progress'
 
 const filtersOpen = defineModel<boolean>('filtersOpen', { default: false })
@@ -39,37 +37,6 @@ function formatShort(iso: string): string {
   const d = Number(iso.slice(8, 10))
   return `${m} ${d}`
 }
-
-// Settings menu — stubs for Phase 9 actions.
-const settingsItems: DropdownMenuItem[][] = [
-  [
-    {
-      label: 'Export plan',
-      icon: 'i-heroicons-arrow-down-tray',
-      disabled: true,
-    },
-    {
-      label: 'Import plan',
-      icon: 'i-heroicons-arrow-up-tray',
-      disabled: true,
-    },
-  ],
-  [
-    {
-      label: 'Reset all state',
-      icon: 'i-heroicons-trash',
-      color: 'error',
-      disabled: true,
-    },
-  ],
-  [
-    {
-      label: 'About',
-      icon: 'i-heroicons-information-circle',
-      disabled: true,
-    },
-  ],
-]
 </script>
 
 <template>
@@ -105,14 +72,7 @@ const settingsItems: DropdownMenuItem[][] = [
           @click="filtersOpen = true"
         />
         <TripSwitcher />
-        <UDropdownMenu :items="settingsItems">
-          <UButton
-            icon="i-heroicons-ellipsis-vertical"
-            color="neutral"
-            variant="ghost"
-            aria-label="Settings"
-          />
-        </UDropdownMenu>
+        <SettingsMenu />
       </div>
     </header>
 

@@ -15,7 +15,7 @@ export interface PlaceStateUI {
 }
 
 export const PLACE_STATE_UI: Record<PlaceState, PlaceStateUI> = {
-  untouched: { label: 'Untouched', icon: 'i-heroicons-circle', tone: 'neutral' },
+  untouched: { label: 'Untouched', icon: 'i-lucide-circle', tone: 'neutral' },
   wishlist: { label: 'Wishlist', icon: 'i-heroicons-bookmark', tone: 'info' },
   scheduled: { label: 'Scheduled', icon: 'i-heroicons-calendar-days', tone: 'primary' },
   done: { label: 'Done', icon: 'i-heroicons-check-circle', tone: 'success' },

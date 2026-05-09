@@ -77,10 +77,10 @@
 
 ## Phase 8: Map integration
 
-- [ ] 8.1 `utils/maps.ts` — `buildPlaceMapsUrl`, `buildDayRouteUrl`, with travelMode param
-- [ ] 8.2 `components/MapPreview.vue` — Leaflet, OSM tiles, dynamic-import (lazy)
-- [ ] 8.3 Wire "Open route" in `DayHeader`
-- [ ] 8.4 Verification: route URL has correct slot ordering and travelMode
+- [x] 8.1 `utils/maps.ts` — `buildPlaceMapsUrl`, `buildDayRouteUrl`, with travelMode param
+- [x] 8.2 `components/MapPreview.vue` — Leaflet, OSM tiles, dynamic-import (lazy); wired into `PlaceDetails.vue` (replaces the Phase 7 coord placeholder)
+- [x] 8.3 Wire "Open route" in `DayHeader` (disabled with tooltip when 0 places; truncation badge + tooltip when >9 stops). `PlaceCardActions.vue` switched to `buildPlaceMapsUrl` so the Maps entry is hidden for logistics + missing-mapsUrl per spec.
+- [x] 8.4 Verification: route URL has correct slot ordering (`scheduledPlaces` iterates `taxonomy.slots` sorted by `order`, then place ids within each slot) and travelMode (param appended for walking/driving/transit; omitted for `mixed`). Covered by `tests/utils/maps.test.ts` (12 tests).
 
 ## Phase 9: Polish & UX
 

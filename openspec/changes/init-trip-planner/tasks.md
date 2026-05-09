@@ -129,8 +129,10 @@
 
 ## Phase 11: Trip data — Málaga 2026
 
-- [ ] 11.1 Copy `seed-data/malaga-tarifa-2026.json` → `public/trip.json` (the default trip the app loads from same-origin); validate via `pnpm validate-trip public/trip.json`
-- [ ] 11.2 Photo audit: every `must` priority place has a real hero image (replace picsum.photos placeholders)
+- [x] 11.1 Copy `seed-data/malaga-tarifa-2026.json` → `public/trip.json` (the default trip the app loads from same-origin); validate via `pnpm validate-trip public/trip.json`
+  - `public/trip.json` mirrors the seed exactly (`diff -q` clean). Added the missing `scripts/validate-trip.ts` CLI helper that the `pnpm validate-trip` script in `package.json` was pointing at — running it confirms the file as `id=malaga-tarifa-2026, title="Málaga + Tarifa", 12 days, 159 places`.
+- [x] 11.2 Photo audit: every `must` priority place has a real hero image (replace picsum.photos placeholders)
+  - 22 must-priority sights (excluding 6 logistics + 2 transit, which are exempt) now use direct `upload.wikimedia.org` hero URLs — chosen so the SW runtime-caching rule (CacheFirst 90d/300) actually matches them. Each entry carries `alt`, `credit`, and a picsum `fallback`. `node scripts/photo-audit.mjs` exits 0 with `with real hero: 22, picsum placeholder: 0, without any photo: 0`. `scripts/merge-hero-photos.mjs` is the one-off merge tool for future curation passes.
 - [ ] 11.3 Verification: app boots cleanly, all 12 days render, all 159 places appear
 
 ## Phase 12: Deploy

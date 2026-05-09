@@ -134,7 +134,7 @@ function restore(placeId: string): void {
           v-if="scheduledPlaces.length > 0"
           :aria-label="`${slot.label} scheduled`"
         >
-          <SlotPlaceCard
+          <PlaceCard
             v-for="p in scheduledPlaces"
             :key="p.id"
             :place="p"
@@ -182,7 +182,7 @@ function restore(placeId: string): void {
           v-if="visibleSuggestions.length > 0"
           :aria-label="`${slot.label} suggestions`"
         >
-          <SlotPlaceCard
+          <PlaceCard
             v-for="p in visibleSuggestions"
             :key="p.id"
             :place="p"

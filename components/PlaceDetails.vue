@@ -189,13 +189,8 @@ const galleryPhotos = computed(() => props.place.photos.slice(1))
             </div>
           </section>
 
-          <!-- Map preview placeholder (Phase 8 wires Leaflet) -->
-          <section
-            class="flex h-32 items-center justify-center rounded border border-dashed border-[color:var(--ui-border)] text-xs text-[color:var(--ui-text-muted)]"
-            aria-label="Map preview (coming in Phase 8)"
-          >
-            Map preview · {{ place.coords[0].toFixed(3) }}, {{ place.coords[1].toFixed(3) }}
-          </section>
+          <!-- Map preview (Leaflet, lazy) -->
+          <MapPreview :place="place" />
         </div>
       </div>
     </template>

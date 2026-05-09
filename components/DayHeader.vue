@@ -17,10 +17,13 @@ import type { Day } from '~/types/day'
 import type { Place } from '~/types/place'
 
 import { MAX_DAY_ROUTE_STOPS, buildDayRouteUrl } from '~/utils/maps'
+import { todayISO } from '~/utils/trip-progress'
 
 const props = defineProps<{
   day: Day
 }>()
+
+const isToday = computed(() => props.day.date === todayISO())
 
 const trip = useTrip()
 const dayPlan = useDayPlan()
@@ -74,13 +77,25 @@ function onRouteClick(e: MouseEvent): void {
 </script>
 
 <template>
-  <div class="flex w-full items-center gap-3 text-left">
+  <div
+    class="flex w-full items-center gap-3 text-left"
+    :data-day-id="day.id"
+    :data-today="isToday ? 'true' : undefined"
+  >
     <div class="flex min-w-0 flex-1 flex-col">
       <div class="flex items-center gap-2">
         <span class="font-display text-base">Day {{ day.dayNum }}</span>
         <span class="text-xs text-[color:var(--ui-text-muted)]">
           {{ dateLabel }}
         </span>
+        <UBadge
+          v-if="isToday"
+          color="warning"
+          variant="solid"
+          size="xs"
+        >
+          Today
+        </UBadge>
         <UBadge
           v-if="homeBaseLabel"
           color="neutral"

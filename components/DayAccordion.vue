@@ -67,10 +67,28 @@ watch(
 function dayById(id: string) {
   return sortedDays.value.find(d => d.id === id)
 }
+
+const rootEl = ref<HTMLElement | null>(null)
+
+/**
+ * Spec "Today's day banner": when today is in trip range the accordion
+ * for today scrolls into view on first render. We wait for the DOM to
+ * settle (default-open watcher above pushes the id, then the accordion
+ * mounts the trigger), then scroll the marked element into view.
+ */
+onMounted(async () => {
+  if (typeof window === 'undefined') return
+  const id = defaultId.value
+  if (!id) return
+  await nextTick()
+  const el = rootEl.value?.querySelector<HTMLElement>(`[data-day-id="${id}"][data-today="true"]`)
+  if (!el) return
+  el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+})
 </script>
 
 <template>
-  <div>
+  <div ref="rootEl">
     <div
       v-if="isPostTrip && !showAllPost"
       class="rounded-lg border border-[color:var(--ui-border)] bg-[color:var(--ui-bg-elevated)] p-4 text-sm"

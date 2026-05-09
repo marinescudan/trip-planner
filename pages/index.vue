@@ -10,10 +10,22 @@
  */
 const router = useRouter()
 const { trip } = useTrip()
+const filters = useFilters()
 
 const loadError = ref<string | null>(null)
 const issues = ref<{ path: string; message: string }[]>([])
 const filtersOpen = ref(false)
+
+/**
+ * Spec "Empty states & loading" — when active filters exclude every
+ * place we surface a friendly relief banner above the day list with a
+ * one-click "Reset filters" action, instead of a silently empty grid.
+ */
+const filtersHideEverything = computed(() => {
+  if (!trip.value) return false
+  const [matching, total] = filters.counts.value
+  return total > 0 && matching === 0
+})
 
 onMounted(async () => {
   if (trip.value) return
@@ -54,6 +66,24 @@ function describeError(kind: string): string {
         <FilterRail />
 
         <section class="min-w-0">
+          <div
+            v-if="filtersHideEverything"
+            class="mb-4 flex flex-wrap items-center gap-3 rounded-lg border border-[color:var(--ui-border)] bg-[color:var(--ui-bg-elevated)] p-4 text-sm"
+            role="status"
+          >
+            <p class="flex-1 font-medium">
+              Filters hide everything.
+            </p>
+            <UButton
+              size="sm"
+              color="primary"
+              variant="soft"
+              icon="i-heroicons-arrow-path"
+              @click="filters.reset()"
+            >
+              Reset filters
+            </UButton>
+          </div>
           <DayAccordion />
         </section>
       </div>

@@ -52,12 +52,12 @@
 
 ## Phase 5: UI shell + filter rail
 
-- [ ] 5.1 [P] `components/AppShell.vue` — top bar with title (from trip), dates, day-of-N progress, trip switcher menu, settings menu
-- [ ] 5.2 [P] `components/TripSwitcher.vue` — locker dropdown, "Load another trip" link to /load
-- [ ] 5.3 [P] `components/FilterRail.vue` — sticky desktop / drawer mobile
-- [ ] 5.4 [P] `components/PriorityTierFilter.vue`, `ZoneFilter.vue`, `CostFilter.vue`, `TagChips.vue`, `SearchInput.vue`
-- [ ] 5.5 `pages/index.vue` — wires shell + rail + day list
-- [ ] 5.6 Verification: filters and trip selection both persist across reloads
+- [x] 5.1 [P] `components/AppShell.vue` — top bar with title (from trip), dates, day-of-N progress, trip switcher menu, settings menu
+- [x] 5.2 [P] `components/TripSwitcher.vue` — locker dropdown, "Load another trip" link to /load
+- [x] 5.3 [P] `components/FilterRail.vue` — sticky desktop / drawer mobile
+- [x] 5.4 [P] `components/PriorityTierFilter.vue`, `ZoneFilter.vue`, `CostFilter.vue`, `TagChips.vue`, `SearchInput.vue`
+- [x] 5.5 `pages/index.vue` — wires shell + rail + day list
+- [x] 5.6 Verification: filters and trip selection both persist across reloads (covered by `tests/composables/tripIsolation.test.ts` round-tripping both `trip:<id>:filters` and the active trip id through the locker)
 
 ## Phase 6: Day & slot rendering
 

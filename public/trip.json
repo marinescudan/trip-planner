@@ -234,9 +234,9 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72175,-4.41541",
       "photos": [
         {
-          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Alcazaba_de_M%C3%A1laga_overview.jpg?width=800",
-          "alt": "Alcazaba",
-          "credit": "Wikimedia Commons",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Alcazaba_de_M%C3%A1laga_overview.jpg/1280px-Alcazaba_de_M%C3%A1laga_overview.jpg",
+          "alt": "Alcazaba of Málaga, Moorish citadel seen in panoramic overview",
+          "credit": "Fernando / Wikimedia Commons / CC-BY-SA-4.0",
           "fallback": "https://picsum.photos/seed/mlg-alcazaba/800/600"
         }
       ],
@@ -277,9 +277,9 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72374,-4.41024",
       "photos": [
         {
-          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Castillo_de_Gibralfaro%2C_M%C3%A1laga%2C_Andalucia%2C_Spain.jpg?width=800",
-          "alt": "Castillo de Gibralfaro",
-          "credit": "Wikimedia Commons",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Castillo_de_Gibralfaro%2C_OCT2015.jpg/1280px-Castillo_de_Gibralfaro%2C_OCT2015.jpg",
+          "alt": "Castillo de Gibralfaro overlooking Málaga",
+          "credit": "Jwh / Wikimedia Commons / CC-BY-SA-3.0-LU",
           "fallback": "https://picsum.photos/seed/mlg-gibralfaro/800/600"
         }
       ],
@@ -360,9 +360,9 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.7199,-4.4205",
       "photos": [
         {
-          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Catedral_de_M%C3%A1laga.JPG?width=800",
-          "alt": "Catedral La Manquita",
-          "credit": "Wikimedia Commons",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/6/61/Torrecatedralypalmeras.jpg",
+          "alt": "Tower of Málaga Cathedral (La Manquita) framed by palm trees",
+          "credit": "mahr / Wikimedia Commons / CC-BY-2.0",
           "fallback": "https://picsum.photos/seed/mlg-catedral/800/600"
         }
       ],
@@ -433,9 +433,9 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.72163,-4.41842",
       "photos": [
         {
-          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Museo_Picasso_M%C3%A1laga.jpg?width=800",
-          "alt": "Museo Picasso",
-          "credit": "Wikimedia Commons",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/MuseoPicassoMalaga.jpg/1280px-MuseoPicassoMalaga.jpg",
+          "alt": "Courtyard entrance of the Museo Picasso Málaga",
+          "credit": "Llecco / Wikimedia Commons / CC-BY-SA-3.0",
           "fallback": "https://picsum.photos/seed/mlg-picasso/800/600"
         }
       ],
@@ -867,9 +867,9 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71988,-4.42172",
       "photos": [
         {
-          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Calle_Larios_%28M%C3%A1laga%2C_Espa%C3%B1a%29.jpg?width=800",
-          "alt": "Calle Larios",
-          "credit": "Wikimedia Commons",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Calle_Marqu%C3%A9s_de_Larios_M%C3%A1laga.jpg/1280px-Calle_Marqu%C3%A9s_de_Larios_M%C3%A1laga.jpg",
+          "alt": "Calle Marqués de Larios, the main pedestrian shopping street in Málaga",
+          "credit": "mahr / Wikimedia Commons / CC-BY-2.0",
           "fallback": "https://picsum.photos/seed/mlg-larios/800/600"
         }
       ],
@@ -907,8 +907,10 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71699,-4.42435",
       "photos": [
         {
-          "src": "https://picsum.photos/seed/mlg-soho/800/600",
-          "alt": "Soho district walk"
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/M%C3%A1laga_Soho_graffiti_03.jpg/1280px-M%C3%A1laga_Soho_graffiti_03.jpg",
+          "alt": "Street art mural in the Soho district of Málaga",
+          "credit": "ESM / Wikimedia Commons / CC-BY-SA-4.0",
+          "fallback": "https://picsum.photos/seed/mlg-soho/800/600"
         }
       ],
       "description": "Street art district, MAUS murals.",
@@ -1422,8 +1424,10 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71792,-4.34861",
       "photos": [
         {
-          "src": "https://picsum.photos/seed/mlg-tintero/800/600",
-          "alt": "El Tintero"
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/El_Palo_Beach.jpg/1280px-El_Palo_Beach.jpg",
+          "alt": "El Palo beach in eastern Málaga, the area home to El Tintero restaurant",
+          "credit": "Daniel Capilla / Wikimedia Commons / CC-BY-SA-4.0",
+          "fallback": "https://picsum.photos/seed/mlg-tintero/800/600"
         }
       ],
       "description": "Auction-style fish — waiters yell dishes, you grab. Lunch only.",
@@ -2402,8 +2406,10 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.69835,-4.4592",
       "photos": [
         {
-          "src": "https://picsum.photos/seed/mlg-recinto-ferial/800/600",
-          "alt": "Mercadillo Recinto Ferial"
+          "src": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Malaga-feria-Recinto_ferial.jpg",
+          "alt": "Recinto Ferial in Málaga during the Feria de Málaga",
+          "credit": "Lanzi / Wikimedia Commons / CC-BY-SA-3.0",
+          "fallback": "https://picsum.photos/seed/mlg-recinto-ferial/800/600"
         }
       ],
       "description": "300+ stalls — Málaga's biggest Sunday flea. Vintage clothing, vinyl, antiques, plants.",
@@ -2702,9 +2708,9 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.71941,-4.42481",
       "photos": [
         {
-          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercado_Central_de_Atarazanas_%28M%C3%A1laga%29.jpg?width=800",
-          "alt": "Mercado Atarazanas",
-          "credit": "Wikimedia Commons",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Mercadoatarazana.jpg/1280px-Mercadoatarazana.jpg",
+          "alt": "Mercado Central de Atarazanas, the historic covered market of Málaga",
+          "credit": "NACLE2 / Wikimedia Commons / CC-BY-3.0",
           "fallback": "https://picsum.photos/seed/mlg-atarazanas/800/600"
         }
       ],
@@ -3160,9 +3166,9 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.91367,-4.76461",
       "photos": [
         {
-          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Caminito_del_Rey%2C_salida_sur%2C_desfiladero_del_Gran_Gait%C3%A1n.jpg?width=800",
-          "alt": "Caminito del Rey",
-          "credit": "Wikimedia Commons",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Caminito_del_Rey_3.jpg/1280px-Caminito_del_Rey_3.jpg",
+          "alt": "Caminito del Rey walkway clinging to the cliff face of the El Chorro gorge",
+          "credit": "Gabirulo / Wikimedia Commons / CC-BY-SA-2.0",
           "fallback": "https://picsum.photos/seed/dt-caminito/800/600"
         }
       ],
@@ -3199,9 +3205,9 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.74244,-5.16563",
       "photos": [
         {
-          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Puente_Nuevo_Ronda_Spain.jpg?width=800",
-          "alt": "Ronda",
-          "credit": "Wikimedia Commons",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/%22Puente_Nuevo%22_de_Ronda.jpg/1280px-%22Puente_Nuevo%22_de_Ronda.jpg",
+          "alt": "Puente Nuevo bridge spanning the El Tajo gorge in Ronda",
+          "credit": "Andbog / Wikimedia Commons / CC-BY-SA-4.0",
           "fallback": "https://picsum.photos/seed/dt-ronda/800/600"
         }
       ],
@@ -3665,8 +3671,10 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.02143,-5.61237",
       "photos": [
         {
-          "src": "https://picsum.photos/seed/trf-los-lances/800/600",
-          "alt": "Playa Los Lances"
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Playa_de_los_Lances_%28Tarifa%29_%283%29.jpg/1280px-Playa_de_los_Lances_%28Tarifa%29_%283%29.jpg",
+          "alt": "Playa de los Lances in Tarifa, with kitesurfers along the broad sandy beach",
+          "credit": "Olivier Bruchez / Wikimedia Commons / CC-BY-SA-2.0",
+          "fallback": "https://picsum.photos/seed/trf-los-lances/800/600"
         }
       ],
       "description": "Main town beach, 10km of sand, kitesurfers everywhere.",
@@ -3704,8 +3712,10 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.06331,-5.69528",
       "photos": [
         {
-          "src": "https://picsum.photos/seed/trf-valdevaqueros/800/600",
-          "alt": "Valdevaqueros + dune"
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/YLH-TLE_%28Duna_de_Valdevaqueros%29_-_Flickr_-_Basilievich.jpg/1280px-YLH-TLE_%28Duna_de_Valdevaqueros%29_-_Flickr_-_Basilievich.jpg",
+          "alt": "Duna de Valdevaqueros, the great sand dune at Punta Paloma near Tarifa",
+          "credit": "Basilievich / Wikimedia Commons / CC-BY-2.0",
+          "fallback": "https://picsum.photos/seed/trf-valdevaqueros/800/600"
         }
       ],
       "description": "Iconic dune, kitesurf central, chiringuitos.",
@@ -3742,9 +3752,9 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.08261,-5.7801",
       "photos": [
         {
-          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Playa_de_Bolonia%2C_Tarifa.jpg?width=800",
-          "alt": "Playa Bolonia",
-          "credit": "Wikimedia Commons",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Beach_of_Bolonia_-_014_-_view.jpg/1280px-Beach_of_Bolonia_-_014_-_view.jpg",
+          "alt": "Playa de Bolonia with its dune and turquoise water on the Cádiz coast",
+          "credit": "Roland Geider (Ogre) / Wikimedia Commons / Public Domain",
           "fallback": "https://picsum.photos/seed/trf-bolonia/800/600"
         }
       ],
@@ -4001,9 +4011,9 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.00746,-5.60598",
       "photos": [
         {
-          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Castillo_de_Guzm%C3%A1n_el_Bueno_%28Tarifa%29.jpg?width=800",
-          "alt": "Castillo Guzmán el Bueno",
-          "credit": "Wikimedia Commons",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/2/24/Tarifa_castillo.jpg",
+          "alt": "Castillo de Guzmán el Bueno, the medieval castle of Tarifa",
+          "credit": "Antonio M. Romero Dorado / Wikimedia Commons / Public Domain",
           "fallback": "https://picsum.photos/seed/trf-castillo/800/600"
         }
       ],
@@ -4110,9 +4120,9 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.00006,-5.60887",
       "photos": [
         {
-          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Tarifa_island.jpg?width=800",
-          "alt": "Punta de Tarifa",
-          "credit": "Wikimedia Commons",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Tarifa_SPOT_1165.jpg",
+          "alt": "Aerial view of Punta de Tarifa and Isla de las Palomas, the southernmost point of mainland Europe",
+          "credit": "CNES / Spot Image / Wikimedia Commons / CC-BY-SA-3.0",
           "fallback": "https://picsum.photos/seed/trf-punta-tarifa/800/600"
         }
       ],
@@ -4187,8 +4197,10 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.0108,-5.6047",
       "photos": [
         {
-          "src": "https://picsum.photos/seed/trf-old-town-walk/800/600",
-          "alt": "Tarifa old town wander"
+          "src": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Tarifa_Puerta_de_Jerez2004.jpg",
+          "alt": "Puerta de Jerez, the medieval gateway into the old walled town of Tarifa",
+          "credit": "Wikimedia Commons / CC-BY-SA-3.0",
+          "fallback": "https://picsum.photos/seed/trf-old-town-walk/800/600"
         }
       ],
       "description": "Whitewashed alleys, surf shops, Moorish details.",
@@ -4332,9 +4344,9 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.08222,-5.775",
       "photos": [
         {
-          "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Baelo_Claudia_2.jpg?width=800",
-          "alt": "Baelo Claudia ruins",
-          "credit": "Wikimedia Commons",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Bas%C3%ADlica_Baelo_001.jpg/1280px-Bas%C3%ADlica_Baelo_001.jpg",
+          "alt": "Roman ruins of Baelo Claudia near Bolonia, with the basilica in the foreground",
+          "credit": "Anual / Wikimedia Commons / CC-BY-3.0",
           "fallback": "https://picsum.photos/seed/trf-baelo-claudia/800/600"
         }
       ],
@@ -4692,8 +4704,10 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.009,-5.605",
       "photos": [
         {
-          "src": "https://picsum.photos/seed/trf-whale/800/600",
-          "alt": "Whale & dolphin watching"
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/CZ_Rorcual_FinWhale_Estrecho_Strait_Gibraltar.jpg/1280px-CZ_Rorcual_FinWhale_Estrecho_Strait_Gibraltar.jpg",
+          "alt": "Fin whale surfacing in the Strait of Gibraltar off Tarifa",
+          "credit": "Carine Zimmermann / Wikimedia Commons / Public Domain",
+          "fallback": "https://picsum.photos/seed/trf-whale/800/600"
         }
       ],
       "description": "Boat trip in the Strait of Gibraltar. ALREADY BOOKED.",
@@ -4942,8 +4956,10 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.0455,-5.6689",
       "photos": [
         {
-          "src": "https://picsum.photos/seed/trf-hurricane-rest/800/600",
-          "alt": "Hurricane Hotel Restaurant"
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Beach_view_of_Tarifa.jpg/1280px-Beach_view_of_Tarifa.jpg",
+          "alt": "Coastal view of Tarifa beach near the Hurricane Hotel",
+          "credit": "Olivier Bruchez / Wikimedia Commons / CC-BY-SA-2.0",
+          "fallback": "https://picsum.photos/seed/trf-hurricane-rest/800/600"
         }
       ],
       "description": "Elegant beachfront restaurant. Live music, flamenco, romantic.",
@@ -5050,8 +5066,10 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.082,-5.774",
       "photos": [
         {
-          "src": "https://picsum.photos/seed/trf-las-rejas/800/600",
-          "alt": "Las Rejas (Bolonia)"
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Beach_of_Bolonia_-_014_-_view.jpg/1280px-Beach_of_Bolonia_-_014_-_view.jpg",
+          "alt": "Bolonia beach where the Las Rejas chiringuito is located",
+          "credit": "Roland Geider (Ogre) / Wikimedia Commons / Public Domain",
+          "fallback": "https://picsum.photos/seed/trf-las-rejas/800/600"
         }
       ],
       "description": "Fresh fish on the beach at Bolonia, atún rojo specialty.",
@@ -5262,8 +5280,10 @@
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=36.01094,-5.60484",
       "photos": [
         {
-          "src": "https://picsum.photos/seed/trf-cafe-azul/800/600",
-          "alt": "Café Azul"
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/2009_Tarifa_panorama-view_of_the_town.jpg/1280px-2009_Tarifa_panorama-view_of_the_town.jpg",
+          "alt": "Panorama of Tarifa old town where Café Azul is located",
+          "credit": "Łukasz Ciesielski (Guma89) / Wikimedia Commons / CC-BY-SA-4.0",
+          "fallback": "https://picsum.photos/seed/trf-cafe-azul/800/600"
         }
       ],
       "description": "Best breakfast bowls in town.",

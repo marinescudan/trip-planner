@@ -107,16 +107,22 @@
 
 ## Phase 10: PWA (offline + installable)
 
-- [ ] 10.1 Configure `@vite-pwa/nuxt` in `nuxt.config.ts` with strategy `'generateSW'`, registerType `'autoUpdate'`
-- [ ] 10.2 Author `public/manifest.webmanifest` via the module config: name "Trip Planner", short_name "Trip", theme_color from trip default, display "standalone", start_url "/", scope "/"
-- [ ] 10.3 Add app icons in `public/icons/` (192, 512, 512 maskable) — generate from one source via a one-off script
-- [ ] 10.4 Workbox runtime caching rules:
+- [x] 10.1 Configure `@vite-pwa/nuxt` in `nuxt.config.ts` with strategy `'generateSW'`, registerType `'autoUpdate'`
+  - `nuxt.config.ts` PWA block uses `strategies: 'generateSW'` + `registerType: 'autoUpdate'`; `usePwaUpdate()` registers the SW and surfaces a "Refresh" toast via `useRegisterSW({ immediate: true })` from `virtual:pwa-register/vue` (typed in `types/pwa.d.ts`).
+- [x] 10.2 Author `public/manifest.webmanifest` via the module config: name "Trip Planner", short_name "Trip", theme_color from trip default, display "standalone", start_url "/", scope "/"
+  - Build emits `.vercel/output/static/manifest.webmanifest` with `name`, `short_name`, `theme_color: #0369a1`, `background_color: #fefcf9`, `display: standalone`, `start_url: /`, `scope: /`, plus 192/512/maskable icons. iOS meta tags (`apple-mobile-web-app-capable`, `apple-mobile-web-app-status-bar-style`, `apple-touch-icon`) are emitted from `app.vue` via `useHead` per the spec's "Theme color & status bar" requirement.
+- [x] 10.3 Add app icons in `public/icons/` (192, 512, 512 maskable) — generate from one source via a one-off script
+  - `scripts/generate-icons.mjs` (zero-dep PNG encoder using built-in `zlib`) renders four solid-fill icons: `icon-192.png`, `icon-512.png`, `icon-maskable-512.png` (10% safe-area padding), and `apple-touch-icon.png` (180×180). Re-run with `node scripts/generate-icons.mjs` after editing the colour palette.
+- [x] 10.4 Workbox runtime caching rules:
   - `/trip.json` → NetworkFirst (24h fallback to cache)
   - `*.{png,jpg,webp,svg}` → CacheFirst (30d)
   - `tile.openstreetmap.org` → CacheFirst (90d, max 200 entries)
   - `picsum.photos` + `upload.wikimedia.org` → CacheFirst (90d, max 300 entries)
-- [ ] 10.5 Add install prompt UX: detect `beforeinstallprompt` event, surface a small "Install app" button in settings menu (only on supported browsers)
-- [ ] 10.6 Cache the active trip JSON in `localStorage` for boot when /trip.json is unreachable (belt & suspenders alongside SW)
+  - Six `runtimeCaching` rules in `nuxt.config.ts` mirror the spec table 1:1 (added `images.unsplash.com` per spec). Verified all six handlers/patterns appear in the generated `sw.js`.
+- [x] 10.5 Add install prompt UX: detect `beforeinstallprompt` event, surface a small "Install app" button in settings menu (only on supported browsers)
+  - `usePwaUpdate()` captures `beforeinstallprompt` (preventing the default banner) and exposes `canInstall`/`promptInstall()`/`isInstalled`. `SettingsMenu.vue` shows an "Install app" item only when `canInstall` is true; on accept a success toast fires, otherwise a fallback toast tells iOS users to use Share → Add to Home Screen.
+- [x] 10.6 Cache the active trip JSON in `localStorage` for boot when /trip.json is unreachable (belt & suspenders alongside SW)
+  - Already satisfied by the existing trip locker (`useTripLocker` + `LocalAdapter`): every successful load (`activate()` in `useTripLoader.ts:174`) upserts the validated `sourceJson` into `localStorage` keyed by the active trip id. `resolve()` step 2 reads the locker entry BEFORE attempting the network fetch, so offline boot never depends on `/trip.json` being reachable. The SW's NetworkFirst rule on `/trip.json` is the second layer of defence.
 - [ ] 10.7 Verification: build → preview → DevTools application tab shows manifest + SW registered
 - [ ] 10.8 Verification: airplane mode, hard refresh — app loads, full data visible
 - [ ] 10.9 Verification: install to iOS home screen (Safari → Share → Add) and Android (Chrome install prompt) — works as standalone app

@@ -84,13 +84,13 @@
 
 ## Phase 9: Polish & UX
 
-- [ ] 9.1 Hidden section per slot ("N skipped") with restore
-- [ ] 9.2 "Surprise me" per slot
-- [ ] 9.3 Today highlight banner with auto-scroll on first render
-- [ ] 9.4 Print stylesheet (one day per page)
-- [ ] 9.5 Empty states with relief actions (per ux-design spec)
-- [ ] 9.6 Export plan / Import plan (JSON file)
-- [ ] 9.7 "Reset all state" with typed confirmation
+- [x] 9.1 Hidden section per slot ("N skipped") with restore (already implemented in `SlotRow.vue` — `hiddenInSlot` computed at lines 75-89, footer + restore button at lines 201-239)
+- [x] 9.2 "Surprise me" per slot (already implemented in `SlotRow.vue` — `surpriseMe()` at lines 99-104, button at lines 161-169; disabled when 0 suggestions per spec scenario)
+- [x] 9.3 Today highlight banner with auto-scroll on first render — `DayHeader.vue` adds a "Today" `UBadge` (warning solid) when `day.date === todayISO()`; `DayAccordion.vue` queries `[data-day-id="…"][data-today="true"]` after `nextTick()` and `scrollIntoView({ behavior: 'smooth', block: 'center' })`.
+- [x] 9.4 Print stylesheet (one day per page) — `assets/css/main.css` `@media print` block hides chrome (header, filter rail, drawer, route buttons, kebabs via `[data-slot]` / `[data-print-hide]`), forces every accordion body open, starts each day on a new sheet (`break-before: page` on `[data-day-id]`), and replaces horizontal slot scrollers with wrap layout.
+- [x] 9.5 Empty states with relief actions — `pages/index.vue` shows a "Filters hide everything" relief banner with one-click Reset filters when `filters.counts === [0, total>0]`; `SlotRow.vue` already shows "No suggestions match your filters" inline when `allSuggestions.length === 0`.
+- [x] 9.6 Export plan / Import plan (JSON file) — `composables/usePlanIO.ts` builds a versioned `PlanFile` (states + days + filters + tripId), downloads it as JSON, parses + validates uploads, refuses cross-trip imports per spec; `components/SettingsMenu.vue` wires the dropdown actions and a hidden file picker.
+- [x] 9.7 "Reset all state" with typed confirmation — `usePlanIO().resetAllState()` clears all four per-trip keys (`states`, `days`, `filters`, `presetsApplied`) and re-hydrates composables; `SettingsMenu.vue` opens a `UModal` requiring the user to type `RESET` (computed `canReset === confirmText === 'RESET'`) before the destructive button enables.
 
 ## Phase 9.5: Visual & motion polish
 

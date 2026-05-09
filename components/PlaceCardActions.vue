@@ -98,6 +98,7 @@ const items = computed<DropdownMenuItem[][]>(() => {
       color="neutral"
       variant="ghost"
       aria-label="Place actions"
+      data-print-hide="true"
     />
   </UDropdownMenu>
 </template>

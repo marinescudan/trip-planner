@@ -1,2 +1,78 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+/* ---------------------------------------------------------------------------
+ * Print stylesheet — task 9.4 ("one day per page").
+ *
+ * Goals:
+ *   - hide app chrome (sticky top bar, filter rail, settings, route buttons,
+ *     drawer overlay) so the page is content-only
+ *   - force every day's accordion body open (UAccordion uses [data-state] on
+ *     its trigger and animates the body via Reka-UI; we override both)
+ *   - one page per day (`break-after: page`)
+ *   - drop horizontal scrollers for slot rows so all places print
+ *
+ * Source of truth:
+ *   openspec/changes/init-trip-planner/specs/itinerary/spec.md (task 9.4)
+ * ------------------------------------------------------------------------- */
+@media print {
+  /* Layout: white background, no shadows, full-width content. */
+  html, body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  /* Hide chrome that's noisy on paper. */
+  header,
+  [role="dialog"],
+  [data-slot="filter-rail"],
+  [data-slot="settings-menu"],
+  [data-print-hide="true"],
+  .lg\:hidden {
+    display: none !important;
+  }
+
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  /* Force every accordion body open. UAccordion uses Reka-UI's
+   * [data-state="closed"] on the panel + a max-height animation. */
+  [data-state="closed"][role="region"],
+  [role="region"][data-state="closed"] {
+    display: block !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  [data-state="closed"] > [data-state="closed"] { display: block !important; }
+
+  /* Each day starts on its own sheet of paper. */
+  [data-day-id] {
+    break-before: page;
+    page-break-before: always;
+  }
+  [data-day-id]:first-of-type {
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  /* Slot rows: drop the horizontal scroll, wrap cards instead. */
+  [data-slot="slot-scroller"] {
+    overflow: visible !important;
+    flex-wrap: wrap !important;
+    scroll-snap-type: none !important;
+  }
+
+  /* Cards: keep together where possible, no shadows. */
+  article, section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+  }
+
+  /* Don't print anchor href trails (jsdom-friendly: print engines do this
+   * by default for <a>; this just makes hrefs explicit when desired). */
+  a[href]::after { content: ""; }
+}

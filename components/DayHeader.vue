@@ -120,6 +120,7 @@ function onRouteClick(e: MouseEvent): void {
     <UTooltip
       v-if="scheduledCount === 0"
       text="Schedule at least one place"
+      data-print-hide="true"
     >
       <UButton
         size="xs"
@@ -136,6 +137,7 @@ function onRouteClick(e: MouseEvent): void {
     <UTooltip
       v-else-if="route.truncated"
       :text="`Showing first ${MAX_DAY_ROUTE_STOPS} of ${route.total} stops`"
+      data-print-hide="true"
     >
       <UButton
         :to="route.url ?? undefined"
@@ -161,6 +163,7 @@ function onRouteClick(e: MouseEvent): void {
       variant="soft"
       icon="i-heroicons-map"
       aria-label="Open route in Maps"
+      data-print-hide="true"
       @click="onRouteClick"
     >
       Route

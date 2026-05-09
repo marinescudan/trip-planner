@@ -46,6 +46,7 @@ const drawerOpen = defineModel<boolean>('drawerOpen', { default: false })
   <aside
     v-else
     class="hidden lg:block lg:sticky lg:top-[4.5rem] lg:max-h-[calc(100vh-5rem)] lg:overflow-y-auto lg:pr-2"
+    data-slot="filter-rail"
   >
     <FilterRailBody />
   </aside>

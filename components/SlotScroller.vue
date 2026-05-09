@@ -76,6 +76,7 @@ function endDrag(event: PointerEvent): void {
     role="region"
     :aria-label="props.ariaLabel"
     tabindex="0"
+    data-slot="slot-scroller"
     @keydown="onKeydown"
     @pointerdown="onPointerDown"
     @pointermove="onPointerMove"

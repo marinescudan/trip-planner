@@ -27,6 +27,12 @@ const isToday = computed(() => props.day.date === todayISO())
 
 const trip = useTrip()
 const dayPlan = useDayPlan()
+const dayViewMode = useDayViewMode()
+
+const grouped = computed<boolean>({
+  get: () => dayViewMode.isGrouped(props.day.id),
+  set: (on) => dayViewMode.setGrouped(props.day.id, on),
+})
 
 const homeBaseLabel = computed(() => {
   if (!props.day.homeBase) return null
@@ -116,6 +122,21 @@ function onRouteClick(e: MouseEvent): void {
     <span class="shrink-0 text-xs text-[color:var(--ui-text-muted)]">
       {{ scheduledCount }} scheduled
     </span>
+
+    <div
+      class="flex shrink-0 items-center gap-1.5"
+      data-print-hide="true"
+      @click.stop
+    >
+      <span class="hidden text-xs text-[color:var(--ui-text-muted)] lg:inline">
+        Slots
+      </span>
+      <USwitch
+        v-model="grouped"
+        size="sm"
+        aria-label="Group by slot"
+      />
+    </div>
 
     <UTooltip
       v-if="scheduledCount === 0"

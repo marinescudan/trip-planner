@@ -17,6 +17,7 @@ import { pickDefaultOpenDay } from '~/utils/default-day'
 import { todayISO } from '~/utils/trip-progress'
 
 const trip = useTrip()
+const dayViewMode = useDayViewMode()
 
 const openDays = ref<string[]>([])
 const showAllPost = ref(false)
@@ -123,11 +124,18 @@ onMounted(async () => {
 
       <template #body="{ item }">
         <div v-if="dayById(item.value!)" class="px-1 pb-2">
-          <SlotRow
-            v-for="s in taxonomySlots"
-            :key="s.id"
+          <template v-if="dayViewMode.isGrouped(item.value!)">
+            <SlotRow
+              v-for="s in taxonomySlots"
+              :key="s.id"
+              :day="dayById(item.value!)!"
+              :slot="s"
+              hide-if-empty
+            />
+          </template>
+          <DayFlatList
+            v-else
             :day="dayById(item.value!)!"
-            :slot="s"
           />
         </div>
       </template>

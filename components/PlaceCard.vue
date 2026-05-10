@@ -21,7 +21,8 @@
  * Source of truth:
  *   openspec/changes/init-trip-planner/specs/itinerary/spec.md (Place card in slot)
  */
-import type { Place } from '~/types/place'
+import type { DayId } from '~/types/day'
+import type { Place, Slot } from '~/types/place'
 import { proximityLabel } from '~/utils/zones'
 
 const props = defineProps<{
@@ -30,6 +31,12 @@ const props = defineProps<{
   scheduled?: boolean
   /** When true, the place is in `skipped` state — render dimmed. */
   hidden?: boolean
+  /**
+   * When set on an unscheduled card, the action footer renders an
+   * `AddToSlotMenu` that assigns the place directly via `useDayPlan()`.
+   * When omitted, the card emits `schedule` and the parent handles it.
+   */
+  dayId?: DayId
 }>()
 
 const emit = defineEmits<{
@@ -53,12 +60,6 @@ const costSymbol = computed(() => {
   )?.symbol ?? props.place.cost
 })
 
-const zoneLabel = computed(() => {
-  return trip.trip.value?.taxonomy.zones.find(
-    z => z.id === props.place.zone,
-  )?.label ?? `Zone ${props.place.zone}`
-})
-
 const heroPhoto = computed(() => props.place.photos[0] ?? null)
 const visibleTags = computed(() => props.place.tags.slice(0, 3))
 
@@ -68,8 +69,15 @@ const proximity = computed(() => {
   return proximityLabel(props.place, t)
 })
 
+const dayPlan = useDayPlan()
+
 function openDetails(): void {
   detailsOpen.value = true
+}
+
+function onAddToSlot(slotId: Slot): void {
+  if (!props.dayId) return
+  dayPlan.assignToSlot(props.dayId, slotId, props.place.id)
 }
 
 function onCardKeydown(e: KeyboardEvent): void {
@@ -139,7 +147,7 @@ function onCardKeydown(e: KeyboardEvent): void {
       </div>
 
       <p class="truncate text-xs text-[color:var(--ui-text-muted)]">
-        {{ place.area }} · {{ zoneLabel }}
+        {{ place.area }}
       </p>
       <p class="text-xs text-[color:var(--ui-text-muted)]">
         {{ costSymbol }} · {{ place.duration }} min
@@ -161,8 +169,13 @@ function onCardKeydown(e: KeyboardEvent): void {
       <!-- Action footer -->
       <div class="mt-auto flex items-center justify-between pt-2">
         <StateButton :place-id="place.id" size="sm" />
+        <AddToSlotMenu
+          v-if="!props.scheduled && props.dayId"
+          :place="place"
+          @select="onAddToSlot"
+        />
         <UButton
-          v-if="!props.scheduled"
+          v-else-if="!props.scheduled"
           icon="i-heroicons-plus"
           size="xs"
           color="neutral"

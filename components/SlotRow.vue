@@ -14,10 +14,19 @@ import type { SlotDef } from '~/types/taxonomy'
 
 import { computeSuggestions } from '~/utils/suggestions'
 
-const props = defineProps<{
-  day: Day
-  slot: SlotDef
-}>()
+const props = withDefaults(
+  defineProps<{
+    day: Day
+    slot: SlotDef
+    /**
+     * When true, the row renders nothing if the slot has no scheduled
+     * places, no suggestions, and no skipped entries today. Used by the
+     * grouped-mode wrapper in `DayAccordion` to collapse empty slots.
+     */
+    hideIfEmpty?: boolean
+  }>(),
+  { hideIfEmpty: false },
+)
 
 const trip = useTrip()
 const filters = useFilters()
@@ -106,10 +115,21 @@ function surpriseMe(): void {
 function restore(placeId: string): void {
   placeState.setState(placeId, 'untouched')
 }
+
+const isEmpty = computed(() => {
+  return (
+    scheduledPlaces.value.length === 0
+    && allSuggestions.value.length === 0
+    && hiddenInSlot.value.length === 0
+  )
+})
 </script>
 
 <template>
-  <section class="border-t border-[color:var(--ui-border)] py-3 first:border-t-0">
+  <section
+    v-if="!(props.hideIfEmpty && isEmpty)"
+    class="border-t border-[color:var(--ui-border)] py-3 first:border-t-0"
+  >
     <header class="mb-2 flex items-center gap-2">
       <h4 class="text-sm font-semibold uppercase tracking-wide">
         {{ slot.label }}

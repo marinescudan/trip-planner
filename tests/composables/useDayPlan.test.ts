@@ -149,4 +149,28 @@ describe('useDayPlan', () => {
     await dp.loadForTrip('A')
     expect(dp.getSlot('d1', 'morning')).toEqual(['p1'])
   })
+
+  describe('flatScheduled', () => {
+    it('returns [] for missing day', () => {
+      const dp = useDayPlan()
+      expect(dp.flatScheduled('does-not-exist')).toEqual([])
+      expect(dp.flatScheduled('d1')).toEqual([])
+    })
+
+    it('respects slot order (taxonomy.slots.order asc)', () => {
+      const dp = useDayPlan()
+      // Assign in reverse slot order; flat output should follow taxonomy
+      // order (morning order=1 before dinner order=2).
+      dp.assignToSlot('d1', 'dinner', 'p1')
+      dp.assignToSlot('d1', 'morning', 'p2')
+      expect(dp.flatScheduled('d1')).toEqual(['p2', 'p1'])
+    })
+
+    it('preserves insertion order within a slot', () => {
+      const dp = useDayPlan()
+      dp.assignToSlot('d1', 'morning', 'p1')
+      dp.assignToSlot('d1', 'morning', 'p2')
+      expect(dp.flatScheduled('d1')).toEqual(['p1', 'p2'])
+    })
+  })
 })

@@ -141,7 +141,7 @@ A place card SHALL communicate importance at a glance:
 - Hero photo lazy-loaded with blurhash placeholder
 - State icon top-right of card (changes shape/color by state)
 - Tag chips wrap, max 3 visible by default, "+N" pill if more
-- Zone & duration as small text below title, separated by a `·`
+- Duration as small text below title; the proximity badge (see *City proximity badge*) is the only zone-derived visual on the card
 
 State visual encoding:
 | State | Card opacity | Border | Icon |
@@ -183,6 +183,58 @@ On any device tier, when the current date falls within the trip range, the day c
 - Slot scrollers expose left/right arrow buttons for keyboard users (not pure scroll)
 - Reduced motion respected
 - All forms (filter rail, search) keyboard-navigable with logical tab order
+
+### Requirement: City proximity badge
+Every place card SHALL surface a glanceable "how far is this from where I'm staying" badge derived from the place's `zone` and (optionally) its `homeBase`.
+
+Format: `~<minutes>' <homeBaseLabel>` for zones tied to a home base; `~<minutes>'` (no label) for day-trip zones.
+
+Examples: `~5' Málaga`, `~15' Tarifa`, `~30' Málaga`, `~1h`.
+
+Zone-to-minutes mapping (pure function in `utils/zones.ts`):
+
+| Zone id | Label produced |
+|---|---|
+| 1 | `~5'` |
+| 2 | `~15'` |
+| 3 | `~30'` |
+| 4 | `~1h` |
+
+The `<homeBaseLabel>` SHALL be resolved from the place's `homeBase` field via the trip's `homeBases[].label` (e.g. `"Málaga"`, `"Tarifa"`). Zone-4 places (day trips) SHALL NOT append a home-base label even if `homeBase` is set, because they are by definition not "near" any one stay.
+
+If the zone is unknown (not 1–4) the badge SHALL be omitted entirely rather than shown empty. If the place has no `homeBase` (or it doesn't resolve), the badge SHALL fall back to the minutes-only form (`~5'`).
+
+The badge SHALL appear:
+- on `PlaceCard.vue` as a small chip prefixed with a clock icon, positioned where it does not compete with the priority dot or state controls. This badge is the **sole** zone-derived encoding on the card; it replaces the previously-required inline zone label/badge below the title.
+- on `PlaceDetails.vue` as a short sentence near the top, e.g. `~15 minutes from your Tarifa stay` (or `~1 h day trip` for zone 4), giving the user the same information in plain prose.
+
+#### Scenario: Zone 1 with home base
+- **GIVEN** a place with `zone = 1` and `homeBase = "malaga-1"`
+- **AND** the trip's `homeBases` contains `{ id: "malaga-1", label: "Málaga", ... }`
+- **WHEN** the proximity label is computed
+- **THEN** the result is `~5' Málaga`
+
+#### Scenario: Zone 2 with home base
+- **GIVEN** a place with `zone = 2` and `homeBase = "tarifa"`
+- **AND** the trip's `homeBases` contains `{ id: "tarifa", label: "Tarifa", ... }`
+- **WHEN** the proximity label is computed
+- **THEN** the result is `~15' Tarifa`
+
+#### Scenario: Zone 3 with home base
+- **GIVEN** a place with `zone = 3` and `homeBase = "malaga-2"`
+- **AND** the trip's `homeBases` contains `{ id: "malaga-2", label: "Málaga", ... }`
+- **WHEN** the proximity label is computed
+- **THEN** the result is `~30' Málaga`
+
+#### Scenario: Zone 4 day trip drops home base
+- **GIVEN** a place with `zone = 4` and `homeBase = "malaga-1"`
+- **WHEN** the proximity label is computed
+- **THEN** the result is `~1h` (no home-base suffix)
+
+#### Scenario: Unknown zone yields no badge
+- **GIVEN** a place with `zone = 99`
+- **WHEN** the proximity label is computed
+- **THEN** the result is the empty string and the UI omits the badge
 
 ### Requirement: Internationalization-readiness
 The app does NOT ship with i18n in v1, but text SHALL NOT be hardcoded inside CSS or images. All user-facing strings live in component templates so a future change can extract them. The trip JSON's `language` field is reserved for future per-trip localization.

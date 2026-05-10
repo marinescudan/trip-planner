@@ -146,6 +146,7 @@ export type TripStorageField =
   | 'days'
   | 'filters'
   | 'presetsApplied'
+  | 'dayViewMode'
 
 /** Build the namespaced storage key for a per-trip field. */
 export function tripKey(tripId: string, field: TripStorageField): string {

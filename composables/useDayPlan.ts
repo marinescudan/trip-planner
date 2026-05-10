@@ -21,6 +21,7 @@ import type { DayAssignments } from '../types/state'
 
 import { usePlaceState } from './usePlaceState'
 import { throttledWrite, tripKey, useStorage } from './useStorage'
+import { useTrip } from './useTrip'
 
 const dayAssignmentsSchema: z.ZodType<DayAssignments> = z.record(
   z.string(),
@@ -36,6 +37,13 @@ export interface UseDayPlan {
 
   /** Ordered placeIds in `(dayId, slot)`, or `[]`. */
   getSlot(dayId: DayId, slot: Slot): PlaceId[]
+  /**
+   * Flat ordered placeIds for `dayId`: `taxonomy.slots` (sorted by `order`)
+   * flat-mapped through `getSlot()`. Insertion order within a slot is
+   * preserved. Returns `[]` when the day has no assignments or no active
+   * trip is loaded.
+   */
+  flatScheduled(dayId: DayId): PlaceId[]
   /** Append `placeId` to `(dayId, slot)`; remove from other slots of same day; auto-schedule. */
   assignToSlot(dayId: DayId, slot: Slot, placeId: PlaceId): void
   /** Remove `placeId` from `(dayId, slot)`. Slot/day are pruned when empty. */
@@ -50,6 +58,7 @@ export function useDayPlan(): UseDayPlan {
     assignments: readonly(_assignments),
     currentTripId: computed(() => _currentTripId),
     getSlot,
+    flatScheduled,
     assignToSlot,
     removeFromSlot,
     loadForTrip,
@@ -59,6 +68,20 @@ export function useDayPlan(): UseDayPlan {
 
 function getSlot(dayId: DayId, slot: Slot): PlaceId[] {
   return _assignments.value[dayId]?.[slot] ?? []
+}
+
+function flatScheduled(dayId: DayId): PlaceId[] {
+  const day = _assignments.value[dayId]
+  if (!day) return []
+  const tax = useTrip().trip.value?.taxonomy
+  if (!tax) return []
+  const slotsAsc = [...tax.slots].sort((a, b) => a.order - b.order)
+  const out: PlaceId[] = []
+  for (const s of slotsAsc) {
+    const ids = day[s.id]
+    if (ids) for (const id of ids) out.push(id)
+  }
+  return out
 }
 
 function assignToSlot(dayId: DayId, slot: Slot, placeId: PlaceId): void {

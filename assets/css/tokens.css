@@ -1,0 +1,100 @@
+/* ---------------------------------------------------------------------------
+ * Design tokens — task 9.5.1 / 9.5.4 / 9.5.6.
+ *
+ * Mirrors `openspec/changes/init-trip-planner/specs/ux-design/spec.md`
+ * (Color palette, Typography, Motion, Accessibility) onto `:root`. Loaded
+ * BEFORE `@nuxt/ui` in `assets/css/main.css` so Nuxt UI's own variables can
+ * still override surface tokens where it has its own opinions, but the
+ * Andalusian palette + motion + focus tokens stay available for any
+ * component that opts in via `var(--color-...)`.
+ *
+ * Source of truth:
+ *   openspec/changes/init-trip-planner/specs/ux-design/spec.md
+ * ------------------------------------------------------------------------- */
+:root {
+  /* Surfaces */
+  --color-bg:           #fefcf9;
+  --color-surface:      #ffffff;
+  --color-surface-2:    #f5f1ea;
+  --color-surface-3:    #ebe5d8;
+  --color-border:       #e2dccf;
+  --color-border-hard:  #c9c0ad;
+
+  /* Text */
+  --color-text:         #1c1917;
+  --color-text-muted:   #57534e;
+  --color-text-subtle:  #a8a29e;
+
+  /* Brand accents (trip-overridable at runtime — out of scope for 9.5) */
+  --color-primary:      #0369a1;
+  --color-accent:       #c2410c;
+  --color-highlight:    #f59e0b;
+
+  /* Priority dots (taxonomy-driven, but the defaults match the trip) */
+  --color-priority-must:        #dc2626;
+  --color-priority-recommended: #f59e0b;
+  --color-priority-optional:    #16a34a;
+  --color-priority-backup:      #94a3b8;
+
+  /* State semantics */
+  --color-state-wishlist:  #f59e0b;
+  --color-state-scheduled: #0369a1;
+  --color-state-done:      #65a30d;
+  --color-state-skipped:   #a8a29e;
+
+  /* Feedback */
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-error:   #dc2626;
+  --color-focus:   #0ea5e9;
+
+  /* Typography — phone-first scale (matches spec table) */
+  --font-sans:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-mono:    ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --text-xs:   12px;
+  --text-sm:   13px;
+  --text-base: 15px;
+  --text-lg:   17px;
+  --text-xl:   20px;
+  --text-2xl:  24px;
+  --text-3xl:  30px;
+
+  /* Motion — task 9.5.4. Durations + easing tokens; consumers pull them
+   * via Tailwind arbitrary values: `duration-[var(--motion-base)]`. */
+  --motion-fast: 120ms;
+  --motion-base: 200ms;
+  --motion-slow: 280ms;
+  --motion-ease: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Desktop type-scale step-up — matches spec table's Desktop column. */
+@media (min-width: 1024px) {
+  :root {
+    --text-xs:   12px;
+    --text-sm:   14px;
+    --text-base: 16px;
+    --text-lg:   18px;
+    --text-xl:   22px;
+    --text-2xl:  28px;
+    --text-3xl:  36px;
+  }
+}
+
+/* Reduced-motion override — spec "Motion" + "Accessibility". */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms;
+    --motion-base: 0ms;
+    --motion-slow: 0ms;
+  }
+}
+
+/* Global focus ring — task 9.5.6. Nuxt UI ships its own focus styles for
+ * its primitives, but this catches any vanilla element (links, custom
+ * buttons, scrollers) that we wire by hand. */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}

@@ -114,20 +114,24 @@ function onContextMenu(e: MouseEvent): void {
     :ui="{ content: 'min-w-32' }"
   >
     <UTooltip :text="ui.label">
-      <UButton
-        :icon="ui.icon"
-        :color="toneColor"
-        :size="props.size ?? 'sm'"
-        variant="ghost"
-        :aria-label="`State: ${ui.label}. Click to advance, right-click for more.`"
-        @click="onClick"
-        @contextmenu="onContextMenu"
-        @pointerdown="onPointerDown"
-        @pointermove="onPointerMove"
-        @pointerup="onPointerUp"
-        @pointercancel="clearLongPress"
-        @pointerleave="clearLongPress"
-      />
+      <!-- 44×44 hit area wrap — task 9.5.7. The visual button keeps its
+           passed-in size; the wrap only enlarges the pointer target. -->
+      <span class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center">
+        <UButton
+          :icon="ui.icon"
+          :color="toneColor"
+          :size="props.size ?? 'sm'"
+          variant="ghost"
+          :aria-label="`State: ${ui.label}. Click to advance, right-click for more.`"
+          @click="onClick"
+          @contextmenu="onContextMenu"
+          @pointerdown="onPointerDown"
+          @pointermove="onPointerMove"
+          @pointerup="onPointerUp"
+          @pointercancel="clearLongPress"
+          @pointerleave="clearLongPress"
+        />
+      </span>
     </UTooltip>
   </UDropdownMenu>
 </template>

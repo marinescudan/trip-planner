@@ -15,6 +15,7 @@
  *   openspec/changes/init-trip-planner/specs/itinerary/spec.md (Place card in slot)
  */
 import type { Place } from '~/types/place'
+import { zoneToMinutes } from '~/utils/zones'
 
 const props = defineProps<{
   place: Place
@@ -50,6 +51,31 @@ const zoneLabel = computed(() => {
 
 const heroPhoto = computed(() => props.place.photos[0] ?? null)
 const galleryPhotos = computed(() => props.place.photos.slice(1))
+
+const homeBaseLabel = computed(() => {
+  const id = props.place.homeBase
+  if (!id) return ''
+  return trip.trip.value?.homeBases.find(h => h.id === id)?.label ?? ''
+})
+
+/**
+ * Plain-English proximity sentence for the details modal.
+ * - Zone 4 (any home base): "~1 h day trip"
+ * - Other zones with home base: "~5 minutes from your Málaga stay"
+ * - Other zones without home base: "~15 minutes away"
+ * - Unknown zone: empty string (UI omits)
+ */
+const proximitySentence = computed(() => {
+  const minutes = zoneToMinutes(props.place.zone)
+  if (!minutes) return ''
+  // Convert "~5'" → "~5 minutes" and "~1h" → "~1 h"
+  const pretty = minutes.endsWith('h')
+    ? minutes.replace('h', ' h')
+    : `${minutes.replace('\'', '')} minutes`
+  if (String(props.place.zone) === '4') return `${pretty} day trip`
+  if (homeBaseLabel.value) return `${pretty} from your ${homeBaseLabel.value} stay`
+  return `${pretty} away`
+})
 </script>
 
 <template>
@@ -87,6 +113,13 @@ const galleryPhotos = computed(() => props.place.photos.slice(1))
               <h2 class="font-display text-xl">{{ place.name }}</h2>
               <p class="text-sm text-[color:var(--ui-text-muted)]">
                 {{ place.area }} · {{ zoneLabel }}
+              </p>
+              <p
+                v-if="proximitySentence"
+                class="mt-1 inline-flex items-center gap-1 text-sm text-[color:var(--ui-text-muted)]"
+              >
+                <UIcon name="i-lucide-clock" class="size-3.5" />
+                <span>{{ proximitySentence }}</span>
               </p>
             </div>
             <UButton

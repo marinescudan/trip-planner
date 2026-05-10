@@ -20,6 +20,7 @@
 import type { LockerSource } from '../types/locker'
 import { type TripJson, type ValidationIssue, validateTripJson } from '../utils/schema'
 import { useDayPlan } from './useDayPlan'
+import { useDayViewMode } from './useDayViewMode'
 import { useFilters } from './useFilters'
 import { usePlaceState } from './usePlaceState'
 import { useTrip } from './useTrip'
@@ -193,6 +194,7 @@ export function useTripLoader(env?: LoaderEnv): UseTripLoader {
       usePlaceState().loadForTrip(tripId),
       useDayPlan().loadForTrip(tripId),
       useFilters().loadForTrip(tripId),
+      useDayViewMode().loadForTrip(tripId),
     ])
   }
 

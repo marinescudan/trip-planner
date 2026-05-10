@@ -100,7 +100,19 @@ function describeError(kind: string): string {
     </template>
 
     <template v-else>
-      <p class="text-[color:var(--ui-text-muted)]">Loading trip…</p>
+      <!-- Boot loader window — task 9.5.3.
+           Spec ("Empty states & loading") asks for a skeleton, never a
+           bare spinner. The skeleton fades out at `--motion-fast` once
+           `trip.value` resolves. -->
+      <div
+        class="grid gap-6 lg:grid-cols-[18rem_1fr]"
+        :style="{ transition: `opacity var(--motion-fast) var(--motion-ease)` }"
+      >
+        <div class="hidden lg:block">
+          <div class="h-72 animate-pulse rounded-lg bg-[color:var(--color-surface-2)]" />
+        </div>
+        <DayListSkeleton />
+      </div>
     </template>
   </AppShell>
 </template>

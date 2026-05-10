@@ -91,14 +91,17 @@ const items = computed<DropdownMenuItem[][]>(() => {
 </script>
 
 <template>
+  <!-- 44×44 hit area wrap — task 9.5.7. -->
   <UDropdownMenu :items="items" :ui="{ content: 'min-w-44' }">
-    <UButton
-      icon="i-heroicons-ellipsis-vertical"
-      size="xs"
-      color="neutral"
-      variant="ghost"
-      aria-label="Place actions"
-      data-print-hide="true"
-    />
+    <span class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center">
+      <UButton
+        icon="i-heroicons-ellipsis-vertical"
+        size="xs"
+        color="neutral"
+        variant="ghost"
+        aria-label="Place actions"
+        data-print-hide="true"
+      />
+    </span>
   </UDropdownMenu>
 </template>

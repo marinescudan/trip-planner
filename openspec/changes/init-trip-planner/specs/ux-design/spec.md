@@ -141,7 +141,7 @@ A place card SHALL communicate importance at a glance:
 - Hero photo lazy-loaded with blurhash placeholder
 - State icon top-right of card (changes shape/color by state)
 - Tag chips wrap, max 3 visible by default, "+N" pill if more
-- Zone & duration as small text below title, separated by a `·`
+- Duration as small text below title; the proximity badge (see *City proximity badge*) is the only zone-derived visual on the card
 
 State visual encoding:
 | State | Card opacity | Border | Icon |
@@ -205,7 +205,7 @@ The `<homeBaseLabel>` SHALL be resolved from the place's `homeBase` field via th
 If the zone is unknown (not 1–4) the badge SHALL be omitted entirely rather than shown empty. If the place has no `homeBase` (or it doesn't resolve), the badge SHALL fall back to the minutes-only form (`~5'`).
 
 The badge SHALL appear:
-- on `PlaceCard.vue` as a small chip prefixed with a clock icon, positioned where it does not compete with the priority dot or state controls;
+- on `PlaceCard.vue` as a small chip prefixed with a clock icon, positioned where it does not compete with the priority dot or state controls. This badge is the **sole** zone-derived encoding on the card; it replaces the previously-required inline zone label/badge below the title.
 - on `PlaceDetails.vue` as a short sentence near the top, e.g. `~15 minutes from your Tarifa stay` (or `~1 h day trip` for zone 4), giving the user the same information in plain prose.
 
 #### Scenario: Zone 1 with home base

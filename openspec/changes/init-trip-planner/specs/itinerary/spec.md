@@ -42,13 +42,37 @@ Each day header SHALL show:
 - **THEN** a new tab opens at `https://www.google.com/maps/dir/{lat,lng}/{lat,lng}/{lat,lng}` in slot order
 
 ### Requirement: Slot rendering
-Each day SHALL render slot rows in the order defined by `trip.taxonomy.slots[]` sorted by their `order` field. The number of slots is trip-defined; default Málaga trip uses seven (morning, lunch, afternoon, snack, evening, dinner, night), but the renderer MUST handle any N≥1.
+Each day SHALL render in one of two view modes per the `Day view mode toggle` requirement:
 
-Each slot row SHALL contain two horizontally-scrollable groups separated by a divider:
-1. **Scheduled** — places the user has explicitly assigned to this slot for this day, in user-defined order
-2. **Suggestions** — top 5 places matching all of: `validSlots includes <slot>`, current filters allow, place state ∉ `{skipped}`, `validDays` allows this date, place not already scheduled in another slot of this same day. Sorted by priority then alphabetically.
+- **Flat (default)**: a single chronological list of scheduled places per day, ordered by `taxonomy.slots[].order` then by user insertion order within each slot. Below the scheduled list, the day SHALL render exactly one **Suggestions** group containing the top-8 candidates across the whole day, plus exactly one **Surprise me 🎲** button at day scope.
+- **Grouped (toggle)**: per-slot rendering in the order defined by `trip.taxonomy.slots[]` sorted by their `order` field. Each slot row SHALL contain two horizontally-scrollable groups separated by a divider:
+  1. **Scheduled** — places the user has explicitly assigned to this slot for this day, in user-defined order
+  2. **Suggestions** — top 5 places per slot matching the predicates below
+  Empty slots in grouped mode SHALL collapse (driven by the `hide-if-empty` prop on `SlotRow`). A "Show all (n)" link expands suggestions to the full filtered list.
 
-A "Show all (n)" link expands suggestions to the full filtered list.
+The number of slots is trip-defined; default Málaga trip uses seven (morning, lunch, afternoon, snack, evening, dinner, night), but the renderer MUST handle any N≥1.
+
+Both modes share the same suggestion predicates: a place is a candidate when ALL of the following hold:
+- `validSlots` intersects any slot in `trip.taxonomy.slots` (in flat mode), or `validSlots includes <slot>` (in grouped mode)
+- current filters allow the place
+- place state ∉ `{skipped}` (skipped places are reachable only via the slot footer in grouped mode)
+- `validDays` allows this date
+- place is not already scheduled in another slot of this same day
+
+Suggestions SHALL be sorted by priority then alphabetically.
+
+#### Scenario: Default flat
+- **GIVEN** a fresh trip with no per-day overrides
+- **WHEN** any day renders
+- **THEN** the day shows a single chronological list of scheduled places
+- **AND** a single "Suggestions" group with up to 8 candidates
+- **AND** a single "Surprise me 🎲" button at day scope
+
+#### Scenario: Grouped restores per-slot suggestion count
+- **GIVEN** the user toggles `Group by slot` on Day 1
+- **WHEN** Day 1 re-renders
+- **THEN** each non-empty slot row shows its own top-5 suggestions list
+- **AND** empty slots collapse out of view
 
 #### Scenario: Suggestions exclude scheduled-elsewhere-today
 - **GIVEN** place `mlg-alcazaba` is scheduled for Day 2 morning
@@ -65,17 +89,62 @@ A "Show all (n)" link expands suggestions to the full filtered list.
 - **WHEN** the morning slot for any day is rendered
 - **THEN** `mlg-trinchera` is NOT in suggestions
 
+### Requirement: Day view mode toggle
+Each day SHALL expose a switch in its day header that flips the day between **flat** (default) and **grouped** view modes. The selection SHALL be stored per-day in `trip:<id>:dayViewMode` (a `Record<DayId, 'flat' | 'grouped'>`) so refreshing the page restores the per-day choice.
+
+#### Scenario: Default flat
+- **GIVEN** a fresh trip with no stored `dayViewMode` entries
+- **WHEN** any day renders
+- **THEN** every day uses flat mode
+- **AND** the day-header `Group by slot` switch reads off
+
+#### Scenario: Toggle persists per-day
+- **GIVEN** the user calls `setGrouped('d1', true)` on Day 1
+- **WHEN** the page reloads
+- **THEN** Day 1 renders in grouped mode
+- **AND** every other day remains in flat mode
+
+#### Scenario: Cross-trip isolation
+- **GIVEN** the user has set Day 1 grouped on Trip A
+- **WHEN** the user switches to Trip B in the trip locker
+- **THEN** the in-memory `dayViewMode` map resets
+- **AND** every day on Trip B starts in flat mode
+
+### Requirement: Add-to-slot dropdown
+On suggestion cards rendered in flat mode, the action footer SHALL render an `AddToSlotMenu` dropdown trigger in place of the legacy `[+]` button. Selecting an item SHALL call `useDayPlan().assignToSlot(dayId, slotId, placeId)` and the chosen place SHALL appear immediately in the day's scheduled list.
+
+#### Scenario: Items match `taxonomy.slots ∩ place.validSlots`
+- **GIVEN** a place with `validSlots: ['morning', 'dinner']`
+- **AND** a trip whose taxonomy declares 7 slots
+- **WHEN** the user opens the add-to-slot dropdown for that place
+- **THEN** the dropdown lists exactly two items: morning and dinner
+- **AND** items are ordered by `slot.order`
+
+#### Scenario: Selecting calls `assignToSlot(dayId, slotId, placeId)`
+- **GIVEN** a place visible in the Day 3 suggestions list (flat mode)
+- **WHEN** the user picks "Morning" from the add-to-slot dropdown
+- **THEN** `useDayPlan().assignToSlot('d3', 'morning', <placeId>)` is invoked
+- **AND** the place appears at the top of the Day 3 scheduled list
+- **AND** the suggestion's "+" trigger is replaced by a "scheduled" affordance
+
+#### Scenario: Surprise me (flat)
+- **GIVEN** Day 5 is in flat mode with at least one valid suggestion
+- **WHEN** the user clicks the day-scope "Surprise me 🎲" button
+- **THEN** one place is picked from the top-8 suggestions
+- **AND** the place is assigned to the earliest valid slot present in `taxonomy.slots`
+
 ### Requirement: Place card in slot
 Each card in a slot SHALL display:
 
 - Hero photo (lazy-loaded)
 - Name
-- Area + zone badge
+- Area
 - Cost tier symbol
 - Duration
 - Priority dot (color-coded)
 - State button
 - Optional tag pills (max 3 visible)
+- City proximity badge (see *City proximity badge* in `ux-design`) — the canonical glanceable encoding of "how far is this from where I'm staying"; replaces the previously-required inline zone label
 
 Tapping the card opens `PlaceDetails` with full info.
 
@@ -86,7 +155,10 @@ Tapping the card opens `PlaceDetails` with full info.
 - **AND** the change persists to localStorage within 250ms
 
 ### Requirement: Surprise me action
-Each slot row SHALL provide a "🎲 Surprise me" button that, when clicked, randomly selects one place from the current top-5 suggestions and assigns it as scheduled in that slot.
+The "🎲 Surprise me" button SHALL randomly select one place from the current candidate list and assign it as scheduled in an appropriate slot. Its scope depends on the active view mode:
+
+- **Grouped mode**: each slot row exposes its own button, picking from that slot's top-5 suggestions and assigning to that slot.
+- **Flat mode**: each day exposes a single day-scope button, picking from the day's top-8 suggestions and auto-assigning to the earliest slot in `taxonomy.slots` (sorted by `order`) that intersects the chosen place's `validSlots`.
 
 #### Scenario: Surprise with empty suggestions
 - **GIVEN** filters are configured such that 0 suggestions exist for Day 3 morning

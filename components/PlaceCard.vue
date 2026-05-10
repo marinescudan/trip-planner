@@ -45,6 +45,7 @@ const emit = defineEmits<{
 }>()
 
 const trip = useTrip()
+const placeState = usePlaceState()
 
 const detailsOpen = ref(false)
 
@@ -52,6 +53,39 @@ const priorityColor = computed(() => {
   return trip.trip.value?.taxonomy.priorityTiers.find(
     p => p.id === props.place.priority,
   )?.color ?? '#999'
+})
+
+/**
+ * Per-spec visual encoding (ux-design "Place card visual hierarchy"):
+ *
+ *   | State     | Card opacity | Border                                        |
+ *   |-----------|--------------|-----------------------------------------------|
+ *   | untouched | 100%         | none (only the article default)               |
+ *   | wishlist  | 100%         | none                                          |
+ *   | scheduled | 100%         | 2px solid var(--color-state-scheduled)        |
+ *   | done      | 70%          | 2px dashed var(--color-state-done)            |
+ *   | skipped   | 50% (hidden) | none — only via `props.hidden`                |
+ *
+ * The state icon itself is owned by `<StateButton>` so we don't duplicate
+ * it here.
+ */
+const currentState = computed(() => placeState.getState(props.place.id))
+
+const stateBorderStyle = computed<Record<string, string> | null>(() => {
+  switch (currentState.value) {
+    case 'scheduled':
+      return { border: '2px solid var(--color-state-scheduled)' }
+    case 'done':
+      return { border: '2px dashed var(--color-state-done)' }
+    default:
+      return null
+  }
+})
+
+const stateOpacityClass = computed(() => {
+  if (props.hidden) return 'opacity-50'
+  if (currentState.value === 'done') return 'opacity-70'
+  return ''
 })
 
 const costSymbol = computed(() => {
@@ -91,7 +125,8 @@ function onCardKeydown(e: KeyboardEvent): void {
 <template>
   <article
     class="flex w-60 shrink-0 snap-start flex-col overflow-hidden rounded-lg border border-[color:var(--ui-border)] bg-[color:var(--ui-bg-elevated)] text-sm focus-within:ring-2 focus-within:ring-[color:var(--ui-primary)]"
-    :class="{ 'opacity-50': props.hidden }"
+    :class="stateOpacityClass"
+    :style="stateBorderStyle ?? undefined"
   >
     <!-- Hero (clickable to open details) -->
     <button
@@ -174,24 +209,33 @@ function onCardKeydown(e: KeyboardEvent): void {
           :place="place"
           @select="onAddToSlot"
         />
-        <UButton
+        <!-- 44×44 hit area wrap — task 9.5.7. -->
+        <span
           v-else-if="!props.scheduled"
-          icon="i-heroicons-plus"
-          size="xs"
-          color="neutral"
-          variant="soft"
-          aria-label="Schedule in this slot"
-          @click="emit('schedule', place.id)"
-        />
-        <UButton
+          class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center"
+        >
+          <UButton
+            icon="i-heroicons-plus"
+            size="xs"
+            color="neutral"
+            variant="soft"
+            aria-label="Schedule in this slot"
+            @click="emit('schedule', place.id)"
+          />
+        </span>
+        <span
           v-else
-          icon="i-heroicons-x-mark"
-          size="xs"
-          color="neutral"
-          variant="ghost"
-          aria-label="Remove from slot"
-          @click="emit('remove', place.id)"
-        />
+          class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center"
+        >
+          <UButton
+            icon="i-heroicons-x-mark"
+            size="xs"
+            color="neutral"
+            variant="ghost"
+            aria-label="Remove from slot"
+            @click="emit('remove', place.id)"
+          />
+        </span>
       </div>
     </div>
 

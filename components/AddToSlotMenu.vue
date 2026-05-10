@@ -42,14 +42,18 @@ const items = computed<DropdownMenuItem[]>(() => {
 </script>
 
 <template>
+  <!-- 44×44 hit area wrap per ux-design "Spacing & touch targets" / task
+       9.5.7. The visual button stays xs/soft to keep the card rhythm. -->
   <UDropdownMenu :items="items" :ui="{ content: 'min-w-40' }">
-    <UButton
-      icon="i-lucide-calendar-plus"
-      size="xs"
-      color="neutral"
-      variant="soft"
-      aria-label="Add to slot"
-      :disabled="items.length === 0"
-    />
+    <span class="inline-flex min-h-[44px] min-w-[44px] items-center justify-center">
+      <UButton
+        icon="i-lucide-calendar-plus"
+        size="xs"
+        color="neutral"
+        variant="soft"
+        aria-label="Add to slot"
+        :disabled="items.length === 0"
+      />
+    </span>
   </UDropdownMenu>
 </template>

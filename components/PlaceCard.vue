@@ -22,6 +22,7 @@
  *   openspec/changes/init-trip-planner/specs/itinerary/spec.md (Place card in slot)
  */
 import type { Place } from '~/types/place'
+import { proximityLabel } from '~/utils/zones'
 
 const props = defineProps<{
   place: Place
@@ -61,6 +62,12 @@ const zoneLabel = computed(() => {
 const heroPhoto = computed(() => props.place.photos[0] ?? null)
 const visibleTags = computed(() => props.place.tags.slice(0, 3))
 
+const proximity = computed(() => {
+  const t = trip.trip.value
+  if (!t) return ''
+  return proximityLabel(props.place, t)
+})
+
 function openDetails(): void {
   detailsOpen.value = true
 }
@@ -99,6 +106,18 @@ function onCardKeydown(e: KeyboardEvent): void {
       >
         No photo
       </div>
+
+      <UBadge
+        v-if="proximity"
+        icon="i-lucide-clock"
+        color="neutral"
+        variant="solid"
+        size="xs"
+        class="pointer-events-none absolute left-2 top-2 bg-black/60 text-white backdrop-blur-sm"
+        :aria-label="`Proximity: ${proximity}`"
+      >
+        {{ proximity }}
+      </UBadge>
     </button>
 
     <div class="flex flex-1 flex-col gap-1.5 p-3">
